@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculatics — Live Football Scores & Forecasts</title>
+  <style>
+    body { font-family: system-ui, sans-serif; background: #0f172a; color: #f8fafc; margin: 0; padding: 20px; }
+    header { max-width: 800px; margin: 0 auto 20px; display: flex; justify-content: space-between; align-items: center; }
+    h1 { color: #38bdf8; margin: 0; }
+    .card { background: #1e293b; border-radius: 10px; padding: 16px; max-width: 800px; margin: 0 auto 12px; }
+    .meta { font-size: 12px; color: #94a3b8; display: flex; justify-content: space-between; margin-bottom: 8px; }
+    .live { color: #ef4444; font-weight: bold; }
+    .teams { display: flex; justify-content: space-between; font-size: 18px; font-weight: 600; margin-bottom: 12px; }
+    .forecast-bar { display: flex; gap: 8px; font-size: 13px; background: #0f172a; padding: 8px; border-radius: 6px; }
+    .tip { background: #0284c7; padding: 2px 8px; border-radius: 4px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Calculatics</h1>
+    <span id="last-updated">Loading...</span>
+  </header>
+  <div id="matches"></div>
+
+  <script>
+    async function loadMatches() {
+      const res = await fetch(`forecasts.json?t=${Date.now()}`);
+      const data = await res.json();
+      if (!data.matches) {
+        document.getElementById('last-updated').textContent = 'Waiting for first data sync...';
+        return;
+      }
+      document.getElementById('last-updated').textContent = 
+        'Updated: ' + new Date(data.updated_at).toLocaleTimeString();
+
+      const container = document.getElementById('matches');
+      container.innerHTML = data.matches.map(m => {
+        const isLive = m.status === 'IN_PLAY' || m.status === 'PAUSED';
+        const score = m.score.home !== null ? `${m.score.home} - ${m.score.away}` : 'vs';
+        return `
+          <div class="card">
+            <div class="meta">
+              <span>${m.competition}</span>
+              <span class="${isLive ? 'live' : ''}">${isLive ? '● LIVE' : m.status}</span>
+            </div>
+            <div class="teams">
+              <span>${m.homeTeam}</span>
+              <span>${score}</span>
+              <span>${m.awayTeam}</span>
+            </div>
+            <div class="forecast-bar">
+              <span>1: <strong>${m.forecast.home_prob}%</strong></span>
+              <span>X: <strong>${m.forecast.draw_prob}%</strong></span>
+              <span>2: <strong>${m.forecast.away_prob}%</strong></span>
+              <span style="margin-left:auto;">Tip: <span class="tip">${m.forecast.tip}</span></span>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    loadMatches();
+    setInterval(loadMatches, 60000);
+  </script>
+</body>
+</html>
