@@ -9,7 +9,7 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 API_KEY = os.environ.get("FOOTBALL_API_KEY")
 HEADERS = {"X-Auth-Token": API_KEY}
-URL = "https://football-data.org"
+URL = "https://" + "api.football-data.org" + "/v4/matches"
 
 def poisson_probability(lmbda, k):
     return (lmbda ** k * math.exp(-lmbda)) / math.factorial(k)
