@@ -1,8 +1,11 @@
 import os
 import json
 import math
+import urllib3
 import requests
 from datetime import datetime, timezone
+
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 API_KEY = os.environ.get("FOOTBALL_API_KEY")
 HEADERS = {"X-Auth-Token": API_KEY}
@@ -30,7 +33,7 @@ def calculate_forecast(home_xg=1.45, away_xg=1.15):
     }
 
 def main():
-    response = requests.get(URL, headers=HEADERS)
+    response = requests.get(URL, headers=HEADERS, verify=False)
     data = response.json()
     matches_output = []
 
@@ -41,8 +44,8 @@ def main():
             "competition": match["competition"]["name"],
             "utcDate": match["utcDate"],
             "status": match["status"],
-            "homeTeam": match["homeTeam"]["shortName"] or match["homeTeam"]["name"],
-            "awayTeam": match["awayTeam"]["shortName"] or match["awayTeam"]["name"],
+            "homeTeam": match["homeTeam"].get("shortName") or match["homeTeam"]["name"],
+            "awayTeam": match["awayTeam"].get("shortName") or match["awayTeam"]["name"],
             "score": match["score"]["fullTime"],
             "forecast": forecast
         })
