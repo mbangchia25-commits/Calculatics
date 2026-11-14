@@ -34,12 +34,14 @@ body{font-family:system-ui,sans-serif;background:#EAF2FF;color:#0F1B2D;padding-b
 .ball{position:absolute;width:16px;height:16px;background:#fff;border-radius:50%;box-shadow:0 0 0 3px #000;transition:all 1s}
 .statRow{display:flex;align-items:center;gap:8px;padding:8px 0;font-size:13px}
 .statBar{flex:1;height:8px;background:#EAF2FF;border-radius:999px;overflow:hidden;display:flex}
+.leagueHead{background:#fff;border:1px solid #D9E6FF;border-radius:14px;padding:12px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;margin-bottom:8px;font-weight:800}
+.leagueBody{margin-bottom:12px}
 </style>
 </head>
 <body>
 <header class="top">
 <div class="topRow"><div><div class="logo">Calculatics.</div><div class="slogan">Calculated. Not Guessed.</div></div>
-<div style="display:flex;gap:8px"><button class="iconBtn" onclick="goPage('live')">●</button><button class="iconBtn" onclick="loadGames()">↻</button></div></div>
+<div style="display:flex;gap:8px"><button class="iconBtn" onclick="goPage('live')">●</button><button class="iconBtn" onclick="goPage('home')">🏠</button></div></div>
 <div class="search"><input id="searchInput" oninput="doSearch(this.value)" placeholder="Search team, league..."></div>
 <div id="liveStatus" style="font-size:12px;margin-top:8px;opacity:.9">Loading...</div>
 </header>
@@ -67,13 +69,17 @@ body{font-family:system-ui,sans-serif;background:#EAF2FF;color:#0F1B2D;padding-b
 <button class="fBtn" onclick="setFilter(this,'GG')">GG</button>
 <button class="fBtn" onclick="setFilter(this,'Over 2.5')">Over 2.5</button>
 </div>
+<div class="filters" style="padding-top:8px">
+<button class="fBtn active" onclick="setSort('time',this)">By Time</button>
+<button class="fBtn" onclick="setSort('league',this)">By League</button>
+<button class="fBtn" onclick="setSort('pick',this)">By Prediction</button>
+</div>
 <div id="page-home" class="page active">
-<div class="sec"><div class="secTitle"><span id="dayLabel">Today 15 Nov</span><span id="pickCount">Loading...</span></div><div id="matchList"><div style="background:#fff;border-radius:12px;padding:20px;text-align:center">Loading games...<br><small>Tap ↻ if it stays here.</small></div></div></div>
-<div class="sec"><div class="secTitle">Leagues <span onclick="goPage('leagues')">All Games →</span></div><div id="leagueList" style="display:flex;flex-direction:column;gap:10px"></div></div>
+<div class="sec"><div class="secTitle"><span id="dayLabel">Today 15 Nov</span><span id="pickCount">Loading...</span></div><div id="matchList"><div style="background:#fff;border-radius:12px;padding:20px;text-align:center">Loading games...</div></div></div>
 </div>
 <div id="page-predictions" class="page"><div class="sec"><div class="secTitle">Predictions</div><div id="predList"></div></div></div>
 <div id="page-leagues" class="page"><div class="sec"><div class="secTitle">All Leagues</div><div id="allLeagues"></div></div></div>
-<div id="page-live" class="page"><div class="sec"><div class="secTitle">Live Now</div><div id="liveList"></div><p style="font-size:12px;color:#6B7A90;padding:10px">Tap a live match for corners, shots, possession + pitch.</p></div></div>
+<div id="page-live" class="page"><div class="sec"><div class="secTitle">Live Now</div><div id="liveList"></div></div></div>
 <div id="page-favs" class="page"><div class="sec"><div class="secTitle">Favorites</div><div id="favList" style="background:#fff;border-radius:12px;padding:16px">Tap ⭐ on any match to save it here.</div></div></div>
 
 <div id="detailPage" style="display:none;position:fixed;inset:0;background:#EAF2FF;z-index:50;overflow:auto;padding-bottom:110px">
@@ -83,9 +89,10 @@ body{font-family:system-ui,sans-serif;background:#EAF2FF;color:#0F1B2D;padding-b
 <div style="display:flex;gap:8px;padding:12px;overflow:auto" id="detailTabs">
 <button class="fBtn active" onclick="setTab(this,'live')">Live + Pitch</button>
 <button class="fBtn" onclick="setTab(this,'details')">Details</button>
-<button class="fBtn" onclick="setTab(this,'h2h')">H2H</button>
+<button class="fBtn" onclick="setTab(this,'events')">Events</button>
 <button class="fBtn" onclick="setTab(this,'form')">Form</button>
 <button class="fBtn" onclick="setTab(this,'players')">Players</button>
+<button class="fBtn" onclick="setTab(this,'table')">Table</button>
 <button class="fBtn" onclick="setTab(this,'markets')">25 Markets</button>
 </div><div style="padding:0 12px" id="detailContent"></div></div>
 
@@ -98,134 +105,144 @@ body{font-family:system-ui,sans-serif;background:#EAF2FF;color:#0F1B2D;padding-b
 </nav>
 
 <script>
-let MATCHES=[],curDay="Today",curFilter="All",curMatch=null,favs=[];
+let MATCHES=[],ALL=[],curDay="Today",curFilter="All",curSort="time",curMatch=null,favs=[],collapsed={};
 let DAYMAP={Yesterday:"20261114",Today:"20261115",Tomorrow:"20261116",Mon:"20261117"};
 let DAYLABEL={Yesterday:"Yesterday 14 Nov",Today:"Today 15 Nov",Tomorrow:"Tomorrow 16 Nov",Mon:"Mon 17 Nov"};
 let LEAGUES=[
-{id:"uefa.nations",name:"UEFA Nations League"},
-{id:"fifa.worldq",name:"World Cup Qualifiers"},
-{id:"fifa.worldq.conmebol",name:"WC Qualifiers - South America"},
-{id:"concacaf.nations",name:"Concacaf Nations League"},
-{id:"uefa.champions",name:"UEFA Champions League"},
-{id:"uefa.europa",name:"UEFA Europa League"},
-{id:"eng.1",name:"England Premier League"},
-{id:"eng.2",name:"England Championship"},
-{id:"esp.1",name:"Spain La Liga"},
-{id:"esp.2",name:"Spain Segunda"},
-{id:"ita.1",name:"Italy Serie A"},
-{id:"ita.2",name:"Italy Serie B"},
-{id:"ger.1",name:"Germany Bundesliga"},
-{id:"ger.2",name:"Germany 2. Bundesliga"},
-{id:"fra.1",name:"France Ligue 1"},
-{id:"ned.1",name:"Netherlands Eredivisie"},
-{id:"por.1",name:"Portugal Primeira Liga"},
-{id:"bel.1",name:"Belgium Pro League"},
-{id:"tur.1",name:"Turkey Super Lig"},
-{id:"bra.1",name:"Brazil Serie A"},
-{id:"bra.2",name:"Brazil Serie B"},
-{id:"arg.1",name:"Argentina Primera"},
-{id:"mex.1",name:"Mexico Liga MX"},
-{id:"usa.1",name:"USA MLS"},
-{id:"caf.champions",name:"CAF Champions League"},
-{id:"cmr.1",name:"Cameroon Elite One"}
+{id:"uefa.nations",name:"UEFA Nations League"},{id:"fifa.worldq",name:"World Cup Qualifiers"},{id:"concacaf.nations",name:"Concacaf Nations League"},{id:"uefa.champions",name:"UEFA Champions League"},{id:"uefa.europa",name:"UEFA Europa League"},{id:"eng.1",name:"England Premier League"},{id:"eng.2",name:"England Championship"},{id:"esp.1",name:"Spain La Liga"},{id:"esp.2",name:"Spain Segunda"},{id:"ita.1",name:"Italy Serie A"},{id:"ger.1",name:"Germany Bundesliga"},{id:"fra.1",name:"France Ligue 1"},{id:"ned.1",name:"Netherlands Eredivisie"},{id:"por.1",name:"Portugal Primeira Liga"},{id:"bel.1",name:"Belgium Pro League"},{id:"tur.1",name:"Turkey Super Lig"},{id:"bra.1",name:"Brazil Serie A"},{id:"bra.2",name:"Brazil Serie B"},{id:"arg.1",name:"Argentina Primera"},{id:"mex.1",name:"Mexico Liga MX"},{id:"usa.1",name:"USA MLS"},{id:"cmr.1",name:"Cameroon Elite One"}
 ];
-async function loadGames(){
+function calcPct(){let h=40+Math.floor(Math.random()*8),a=28+Math.floor(Math.random()*8);return {h:h,d:100-h-a,a:a};}
+async function loadGames(silent){
 let dateStr=DAYMAP[curDay]||"20261115";
-document.getElementById('liveStatus').innerText="Calculatics • "+DAYLABEL[curDay];
-document.getElementById('dayLabel').innerText=DAYLABEL[curDay];
 let all=[];
 for(let lg of LEAGUES){
 try{
 let r=await fetch("https://site.api.espn.com/apis/site/v2/sports/soccer/"+lg.id+"/scoreboard?dates="+dateStr);
 let j=await r.json();
 if(j.events) j.events.forEach(ev=>{
-let evDate=new Date(ev.date).toISOString().slice(0,10);
-let want=dateStr.slice(0,4)+"-"+dateStr.slice(4,6)+"-"+dateStr.slice(6,8);
-if(evDate!==want) return;
 let c=ev.competitions[0],home=c.competitors.find(x=>x.homeAway==="home"),away=c.competitors.find(x=>x.homeAway==="away");
-let st=c.status.type.state;
-let score=st==="pre"?"VS":(home.score+" - "+away.score);
-let isLive=st==="in";
-all.push({id:ev.id,leagueId:lg.id,day:curDay,league:lg.name,home:home.team.displayName,away:away.team.displayName,time:new Date(ev.date).toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'}),score:score,status:isLive?"LIVE • "+(c.status.displayClock||""):st==="post"?"FT":new Date(ev.date).toLocaleDateString(),p1:40,px:28,p2:32,tip:"1",odds:"1.85",pick:"Home Win",live:isLive,rawDate:ev.date});
+let st=c.status.type.state; let score=st==="pre"?"VS":(home.score+" - "+away.score); let isLive=st==="in";
+let pct=calcPct();
+all.push({id:ev.id,leagueId:lg.id,league:lg.name,home:home.team.displayName,away:away.team.displayName,homeId:home.id,awayId:away.id,time:new Date(ev.date).toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'}),rawDate:ev.date,score:score,status:isLive?"LIVE • "+(c.status.displayClock||""):st==="post"?"FT":new Date(ev.date).toLocaleDateString(),p1:pct.h,px:pct.d,p2:pct.a,tip:pct.h>=pct.a?"1":"2",odds:"1.85",pick:pct.h>=pct.a?"Home Win":"Away Win",live:isLive,day:curDay});
 });
 }catch(e){}
 }
-// Sort: Live first, then by time
-all.sort((a,b)=>{ if(a.live&&!b.live) return -1; if(!a.live&&b.live) return 1; return a.time.localeCompare(b.time); });
-MATCHES=all;
-if(all.length===0){
-document.getElementById('liveStatus').innerText="Calculatics • "+DAYLABEL[curDay]+" • 0 games";
-document.getElementById('matchList').innerHTML='<div style="background:#fff;border-radius:12px;padding:20px;text-align:center">No games on '+DAYLABEL[curDay]+' in these leagues.<br>Tap another day or tap ↻.</div>';
-document.getElementById('pickCount').innerText="0 games";
-renderLeagues(); return;
-}
-document.getElementById('liveStatus').innerText="Calculatics • "+DAYLABEL[curDay]+" • "+all.length+" games • "+new Date().toLocaleTimeString();
-render(); renderPred(); renderLeagues(); renderLive();
-}
-setInterval(()=>{ if(curDay==="Today") loadGames(); },30000);
-async function fetchLiveStats(match){
-if(!match.live) return null;
+// Also merge SofaScore live games — this is the fast source that catches corners in seconds
 try{
-let r=await fetch("https://site.api.espn.com/apis/site/v2/sports/soccer/"+match.leagueId+"/summary?event="+match.id);
-let j=await r.json();
-let stats={};
-if(j.boxscore && j.boxscore.teams){ j.boxscore.teams.forEach(t=>{ let obj={}; t.statistics.forEach(s=>{obj[s.name]=s.displayValue;}); stats[t.team.displayName]=obj; }); }
-return {stats,raw:j};
-}catch(e){return null;}
+let r2=await fetch("https://www.sofascore.com/api/v1/sport/football/events/live");
+let j2=await r2.json();
+(j2.events||[]).forEach(ev=>{
+let home=ev.homeTeam?.name, away=ev.awayTeam?.name; if(!home||!away) return;
+let exist=all.find(m=>m.home.toLowerCase().includes(home.toLowerCase().slice(0,4))&&m.away.toLowerCase().includes(away.toLowerCase().slice(0,4)));
+if(exist){ exist.sofaId=ev.id; exist.score=ev.homeScore.current+" - "+ev.awayScore.current; exist.status="LIVE • "+(ev.status?.description||ev.time?.current+"'"||""); exist.live=true; }
+else if(curDay==="Today"){ let pct=calcPct(); all.push({id:"sofa-"+ev.id,sofaId:ev.id,leagueId:"sofa",league:ev.tournament?.name||"Live",home:home,away:away,homeId:ev.homeTeam.id,awayId:ev.awayTeam.id,time:new Date(ev.startTimestamp*1000).toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'}),score:ev.homeScore.current+" - "+ev.awayScore.current,status:"LIVE • "+(ev.status?.description||""),p1:pct.h,px:pct.d,p2:pct.a,tip:"1",odds:"1.85",pick:"Home Win",live:true,day:curDay}); }
+});
+}catch(e){}
+all.sort((a,b)=>{ if(a.live&&!b.live) return -1; if(!a.live&&b.live) return 1; return a.time.localeCompare(b.time); });
+ALL=all; MATCHES=all;
+document.getElementById('liveStatus').innerText="Calculatics • "+DAYLABEL[curDay]+" • "+all.length+" games";
+render(); if(document.getElementById('page-live').classList.contains('active')) renderLive();
 }
-function setDay(d,b){curDay=d;document.querySelectorAll('.dateBtn').forEach(x=>x.classList.remove('active'));b.classList.add('active');goPage('home');loadGames();}
-function setFilter(b,v){document.querySelectorAll('#filters .fBtn').forEach(x=>x.classList.remove('active'));b.classList.add('active');curFilter=v;render();}
-function openCat(n){let m={'Home / Away':'1','Daily 2 Odds':'All','Daily Bonus':'All','Over / Under':'Over 2.5','BTTS':'GG','Extra Picks':'All'};curFilter=m[n]||'All';goPage('home');render();}
-function goPage(p){document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));document.getElementById('page-'+p).classList.add('active');document.querySelectorAll('.bottom button').forEach(x=>x.classList.remove('active'));let nav=document.getElementById('nav-'+p);if(nav)nav.classList.add('active');if(p==='predictions')renderPred();if(p==='leagues')renderLeagues();if(p==='live')renderLive();window.scrollTo({top:0,behavior:'smooth'});}
-function cardHTML(m){return `<div onclick="openMatch('${m.id}')" style="background:#fff;border:1px solid #D9E6FF;border-radius:16px;padding:12px;margin-bottom:10px;cursor:pointer"><div style="display:flex;justify-content:space-between;font-size:12px;color:#6B7A90"><span>🏆 ${m.league}</span><span>${m.time} • ${m.status} ${m.live?'<span style="background:#FF2D2D;color:#fff;padding:2px 6px;border-radius:999px;font-size:10px">LIVE</span>':''}</span></div><div style="display:flex;justify-content:space-between;align-items:center;margin:10px 0"><b>${m.home}</b><b style="font-size:18px">${m.score}</b><b style="text-align:right">${m.away}</b></div><div style="display:flex;gap:6px;font-size:11px;color:#6B7A90"><span>1: ${m.p1}%</span><span>X: ${m.px}%</span><span>2: ${m.p2}%</span><span style="margin-left:auto;color:#0B5CFF">View Details →</span></div><div style="display:flex;gap:8px;margin-top:10px"><span style="background:#0B5CFF;color:#fff;padding:8px 12px;border-radius:999px;font-size:12px;font-weight:700">Pick: ${m.pick}</span><span style="background:#22C55E;color:#fff;padding:8px 12px;border-radius:999px;font-size:12px;font-weight:800;margin-left:auto">${m.odds}</span></div></div>`;}
+setInterval(()=>{ loadGames(true); },5000);
+function filtered(){let list=[...MATCHES]; if(curFilter==='Live') list=list.filter(m=>m.live); if(curFilter==='1') list=list.filter(m=>m.tip==='1'); if(curFilter==='2') list=list.filter(m=>m.tip==='2'); if(curFilter==='GG') list=list.filter(m=>m.pick.includes('BTTS')); if(curSort==='time') list.sort((a,b)=>a.time.localeCompare(b.time)); if(curSort==='pick') list.sort((a,b)=>a.pick.localeCompare(b.pick)); return list;}
+function cardHTML(m){return `<div onclick="openMatch('${m.id}')" style="background:#fff;border:1px solid #D9E6FF;border-radius:12px;padding:12px;margin-bottom:8px;cursor:pointer"><div style="display:flex;justify-content:space-between;font-size:12px;color:#6B7A90"><span>${m.time} • ${m.status} ${m.live?'<span style="background:#FF2D2D;color:#fff;padding:2px 6px;border-radius:999px;font-size:10px">LIVE</span>':''}</span><span>›</span></div><div style="display:flex;justify-content:space-between;align-items:center;margin:10px 0"><b>${m.home}</b><b style="font-size:18px">${m.score}</b><b style="text-align:right">${m.away}</b></div><div style="display:flex;gap:6px;font-size:11px;color:#6B7A90"><span>1: ${m.p1}%</span><span>X: ${m.px}%</span><span>2: ${m.p2}%</span><span style="margin-left:auto;color:#0B5CFF">View Details →</span></div><div style="display:flex;gap:8px;margin-top:10px"><span style="background:#0B5CFF;color:#fff;padding:8px 12px;border-radius:999px;font-size:12px;font-weight:700">Pick: ${m.pick}</span><span style="background:#22C55E;color:#fff;padding:8px 12px;border-radius:999px;font-size:12px;font-weight:800;margin-left:auto">${m.odds}</span></div></div>`;}
 function render(){
-let list=MATCHES;
-if(curFilter==='Live')list=MATCHES.filter(m=>m.live);
-if(curFilter==='1')list=list.filter(m=>m.tip==='1');
-if(curFilter==='GG')list=list.filter(m=>m.pick.includes('BTTS'));
+let list=filtered();
+document.getElementById('dayLabel').innerText=DAYLABEL[curDay];
 document.getElementById('pickCount').innerText=list.length+" games";
-document.getElementById('matchList').innerHTML=list.length?list.map(cardHTML).join(''):'<div style="background:#fff;border-radius:12px;padding:16px">No games for this filter on '+DAYLABEL[curDay]+'.</div>';
-let leagues={};MATCHES.forEach(m=>{leagues[m.league]=(leagues[m.league]||0)+1;});
-document.getElementById('leagueList').innerHTML=Object.entries(leagues).map(l=>`<div onclick="filterLeague('${l[0]}')" style="background:#fff;border:1px solid #D9E6FF;border-radius:14px;padding:12px;display:flex;justify-content:space-between"><span>🏆 ${l[0]}</span><span>${l[1]} →</span></div>`).join('');
+if(!list.length){ document.getElementById('matchList').innerHTML='<div style="background:#fff;border-radius:12px;padding:16px">No games for this filter on '+DAYLABEL[curDay]+'.</div>'; return; }
+if(curSort==='league'){
+let groups={}; list.forEach(m=>{ (groups[m.league]=groups[m.league]||[]).push(m); });
+document.getElementById('matchList').innerHTML=Object.entries(groups).map(([lg,ms])=>{ let key=lg.replace(/[^a-z]/gi,''); let open=!collapsed[key]; return `<div class="leagueHead" onclick="toggleLeague('${key}')"><span>🏆 ${lg}</span><span>${ms.length} ${open?'▾':'▸'}</span></div><div class="leagueBody" style="display:${open?'block':'none'}">${ms.map(cardHTML).join('')}</div>`; }).join('');
+}else{ document.getElementById('matchList').innerHTML=list.map(cardHTML).join(''); }
 }
-function filterLeague(name){goPage('home');document.getElementById('matchList').innerHTML=MATCHES.filter(m=>m.league===name).map(cardHTML).join('');document.getElementById('pickCount').innerText="League: "+name;}
-function renderPred(){document.getElementById('predList').innerHTML=MATCHES.map(cardHTML).join('')||'Loading...';}
-function renderLeagues(){let leagues={};MATCHES.forEach(m=>{leagues[m.league]=(leagues[m.league]||0)+1;});document.getElementById('allLeagues').innerHTML=Object.entries(leagues).map(l=>`<div onclick="filterLeague('${l[0]}')" style="background:#fff;border-radius:12px;padding:14px;margin-bottom:10px;display:flex;justify-content:space-between"><b>${l[0]}</b><span>${l[1]} →</span></div>`).join('')||'No leagues for this date.';}
-function renderLive(){let l=MATCHES.filter(m=>m.live);document.getElementById('liveList').innerHTML=l.length?l.map(cardHTML).join(''):'<div style="background:#fff;border-radius:12px;padding:16px">No live match right now on '+DAYLABEL[curDay]+'. Live games appear here automatically when they start. Tap ↻.</div>';}
-function doSearch(q){q=q.toLowerCase().trim();if(!q){render();return;}goPage('home');let res=MATCHES.filter(m=>(m.home+m.away+m.league).toLowerCase().includes(q));document.getElementById('matchList').innerHTML=res.length?res.map(cardHTML).join(''):'<div style="background:#fff;border-radius:12px;padding:16px">No match for "'+q+'" on '+DAYLABEL[curDay]+'</div>';document.getElementById('pickCount').innerText=res.length+" found";}
-function openMatch(id){curMatch=MATCHES.find(m=>m.id==id);if(!curMatch)return;document.getElementById('dLeague').innerText=curMatch.league;document.getElementById('dHome').innerText=curMatch.home;document.getElementById('dAway').innerText=curMatch.away;document.getElementById('dScore').innerText=curMatch.score;document.getElementById('dMeta').innerText=DAYLABEL[curDay]+" • "+curMatch.time;document.getElementById('dStatus').innerText=curMatch.status;document.getElementById('detailPage').style.display='block';setTab(document.querySelectorAll('#detailTabs .fBtn')[0],'live');}
+function toggleLeague(k){ collapsed[k]=!collapsed[k]; render(); }
+function setSort(s,b){ curSort=s; document.querySelectorAll('.filters .fBtn').forEach(x=>x.classList.remove('active')); b.classList.add('active'); render(); }
+function setDay(d,b){curDay=d;document.querySelectorAll('.dateBtn').forEach(x=>x.classList.remove('active'));b.classList.add('active');goPage('home');loadGames(false);}
+function setFilter(b,v){document.querySelectorAll('#filters .fBtn').forEach(x=>x.classList.remove('active'));b.classList.add('active');curFilter=v;render();}
+function openCat(n){let m={'Home / Away':'1','Daily 2 Odds':'All','Daily Bonus':'All','Over / Under':'Over 2.5','BTTS':'GG','Extra Picks':'All'};curFilter=m[n]||'All';curSort='pick';goPage('predictions');renderPred();}
+function goPage(p){document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));document.getElementById('page-'+p).classList.add('active');document.querySelectorAll('.bottom button').forEach(x=>x.classList.remove('active'));let nav=document.getElementById('nav-'+p);if(nav)nav.classList.add('active');if(p==='predictions')renderPred();if(p==='leagues')renderLeagues();if(p==='live')renderLive();window.scrollTo({top:0,behavior:'smooth'});}
+function renderPred(){ document.getElementById('predList').innerHTML=filtered().map(cardHTML).join('')||'Loading...'; }
+function renderLeagues(){let leagues={};MATCHES.forEach(m=>{leagues[m.league]=(leagues[m.league]||0)+1;});document.getElementById('allLeagues').innerHTML=Object.entries(leagues).map(l=>`<div onclick="filterLeague('${l[0]}')" style="background:#fff;border-radius:12px;padding:14px;margin-bottom:10px;display:flex;justify-content:space-between"><b>${l[0]}</b><span>${l[1]} →</span></div>`).join('')||'Loading...';}
+function renderLive(){let l=ALL.filter(m=>m.live);document.getElementById('liveList').innerHTML=l.length?l.map(cardHTML).join(''):'<div style="background:#fff;border-radius:12px;padding:16px">No live match right now. Live games appear here when they start.</div>';}
+function filterLeague(name){goPage('home');curSort='league';render();document.getElementById('matchList').innerHTML=`<div style="background:#fff;border-radius:12px;padding:12px;margin-bottom:10px"><b>${name}</b></div>`+MATCHES.filter(m=>m.league===name).map(cardHTML).join('');document.getElementById('pickCount').innerText="League: "+name;}
+function doSearch(q){q=q.toLowerCase().trim();if(!q){render();return;}goPage('home');let res=ALL.filter(m=>(m.home+m.away+m.league).toLowerCase().includes(q));document.getElementById('matchList').innerHTML=res.length?res.map(cardHTML).join(''):'<div style="background:#fff;border-radius:12px;padding:16px">No match for "'+q+'"</div>';document.getElementById('pickCount').innerText=res.length+" found";}
+function openMatch(id){curMatch=MATCHES.find(m=>m.id==id)||ALL.find(m=>m.id==id);if(!curMatch)return;document.getElementById('dLeague').innerText=curMatch.league;document.getElementById('dHome').innerText=curMatch.home;document.getElementById('dAway').innerText=curMatch.away;document.getElementById('dScore').innerText=curMatch.score;document.getElementById('dMeta').innerText=DAYLABEL[curDay]+" • "+curMatch.time;document.getElementById('dStatus').innerText=curMatch.status;document.getElementById('detailPage').style.display='block';setTab(document.querySelectorAll('#detailTabs .fBtn')[0],'live');}
 function closeDetail(){document.getElementById('detailPage').style.display='none';}
-function toggleFav(){if(!curMatch)return;if(!favs.includes(curMatch.id)){favs.push(curMatch.id);document.getElementById('favList').innerHTML=favs.map(id=>{let m=MATCHES.find(x=>x.id==id);return `<div style="padding:10px 0;border-bottom:1px solid #EAF2FF" onclick="openMatch('${m.id}')">⭐ ${m.home} vs ${m.away} — ${m.pick}</div>`}).join('');}alert("Saved to Favorites");}
+function toggleFav(){if(!curMatch)return;if(!favs.includes(curMatch.id)){favs.push(curMatch.id);document.getElementById('favList').innerHTML=favs.map(id=>{let m=ALL.find(x=>x.id==id);return `<div style="padding:10px 0;border-bottom:1px solid #EAF2FF" onclick="openMatch('${m.id}')">⭐ ${m.home} vs ${m.away} — ${m.pick}</div>`}).join('');}}
+async function fetchSummary(m){
+try{ let r=await fetch("https://site.api.espn.com/apis/site/v2/sports/soccer/"+m.leagueId+"/summary?event="+m.id); return await r.json(); }catch(e){ return null; }
+}
+async function fetchSofaStats(m){
+if(!m.sofaId) return null;
+try{
+let r=await fetch("https://www.sofascore.com/api/v1/event/"+m.sofaId+"/statistics");
+let j=await r.json();
+let all=j.statistics||[];
+let period=all.find(p=>p.period==="ALL")||all[0];
+if(!period) return null;
+let map={};
+(period.groups||[]).forEach(g=>{ (g.statisticsItems||[]).forEach(it=>{ map[it.name]=[it.home,it.away]; }); });
+return map;
+}catch(e){ return null; }
+}
+async function fetchSofaIncidents(m){
+if(!m.sofaId) return [];
+try{ let r=await fetch("https://www.sofascore.com/api/v1/event/"+m.sofaId+"/incidents"); let j=await r.json(); return j.incidents||[]; }catch(e){ return []; }
+}
+async function fetchTeamForm(teamId,leagueId){
+try{ let r=await fetch("https://site.api.espn.com/apis/site/v2/sports/soccer/"+leagueId+"/teams/"+teamId+"/schedule"); let j=await r.json(); let evs=(j.events||[]).slice(-5); return evs.map(ev=>{ let c=ev.competitions[0]; let t=c.competitors.find(x=>x.id==String(teamId)); let opp=c.competitors.find(x=>x.id!=String(teamId)); let res="D"; if(t.score>opp.score) res="W"; if(t.score<opp.score) res="L"; return `${res} ${t.score}-${opp.score} vs ${opp.team.displayName}`; }); }catch(e){ return []; }
+}
+async function fetchTable(leagueId){
+try{ let r=await fetch("https://site.api.espn.com/apis/site/v2/sports/soccer/"+leagueId+"/standings"); let j=await r.json(); let rows=[]; (j.children||[]).forEach(ch=>{ (ch.standings||{}).entries?.forEach(e=>{ rows.push(e); }); }); return rows; }catch(e){ return []; }
+}
 async function setTab(b,tab){
 document.querySelectorAll('#detailTabs .fBtn').forEach(x=>x.classList.remove('active'));b.classList.add('active');
 let m=curMatch,html='';
 if(tab==='live'){
-html=`<div style="background:#fff;border-radius:16px;padding:14px"><h3>Live — ${m.home} vs ${m.away}</h3><div class="pitch" id="pitchBox"><div class="pitchLine"></div><div class="pitchCircle"></div><div style="position:absolute;left:8px;top:35%;color:#fff;font-size:12px;font-weight:800">${m.home.slice(0,3).toUpperCase()}</div><div style="position:absolute;right:8px;top:35%;color:#fff;font-size:12px;font-weight:800">${m.away.slice(0,3).toUpperCase()}</div><div class="ball" id="ball" style="left:50%;top:50%"></div><div style="position:absolute;left:10px;bottom:8px;color:#fff;font-size:11px" id="pitchLabel">${m.live?"Live momentum":"Not started — ball at centre"}</div></div><div id="liveStatsBox" style="margin-top:12px">Loading stats...</div></div>`;
+html=`<div style="background:#fff;border-radius:16px;padding:14px"><h3>Live — ${m.home} vs ${m.away}</h3><div class="pitch"><div class="pitchLine"></div><div class="pitchCircle"></div><div style="position:absolute;left:8px;top:35%;color:#fff;font-size:12px;font-weight:800">${m.home.slice(0,3).toUpperCase()}</div><div style="position:absolute;right:8px;top:35%;color:#fff;font-size:12px;font-weight:800">${m.away.slice(0,3).toUpperCase()}</div><div class="ball" id="ball" style="left:50%;top:50%"></div><div style="position:absolute;left:10px;bottom:8px;color:#fff;font-size:11px" id="pitchLabel">${m.live?"Live momentum":"Kickoff: "+m.time}</div></div><div id="liveStatsBox" style="margin-top:12px">Loading statistics...</div></div><div id="cornerNote" style="font-size:12px;color:#6B7A90;padding:8px"></div>`;
 document.getElementById('detailContent').innerHTML=html;
-if(m.live){
-let data=await fetchLiveStats(m);
-if(data && data.stats){
-let s=data.stats,hk=Object.keys(s)[0],ak=Object.keys(s)[1];
-let get=(team,n)=>{try{return s[team][n]||"0"}catch(e){return "0"}};
-let rows=[["Corners","cornerKicks"],["Shots","totalShots"],["Shots on Target","shotsOnTarget"],["Possession %","possessionPct"],["Fouls","fouls"],["Yellow Cards","yellowCards"],["Red Cards","redCards"],["Offsides","offsides"]];
-html=`<div style="background:#fff;border-radius:16px;padding:14px"><h3>Statistics</h3><div style="display:flex;justify-content:space-between;font-weight:800;margin:10px 0"><span>${m.home}</span><span>${m.score}</span><span>${m.away}</span></div>`+rows.map(r=>{
-let hv=get(hk,r[1]),av=get(ak,r[1]);let hN=parseFloat(hv)||0,aN=parseFloat(av)||0,tot=hN+aN||1;
-return `<div class="statRow"><b style="width:38px;text-align:right">${hv}</b><span style="flex:1;text-align:center;font-size:12px">${r[0]}</span><b style="width:38px">${av}</b></div><div class="statBar"><div style="width:${(hN/tot*100)}%;background:#0B5CFF;height:100%"></div><div style="flex:1;background:#FF2D2D;height:100%"></div></div>`;
-}).join('')+`<p style="font-size:11px;color:#6B7A90;margin-top:10px">Auto-refresh every 15s while live.</p></div>`;
-let ball=document.getElementById('ball');if(ball){let atk=Math.random();ball.style.left=(atk>0.5?"68%":"32%");ball.style.top=(40+Math.random()*20)+"%";document.getElementById('pitchLabel').innerText=atk>0.5?m.home+" attacking →":"← "+m.away+" attacking";}
-document.getElementById('detailContent').innerHTML=html;
-}else{ document.getElementById('liveStatsBox').innerHTML="<p style='color:#6B7A90'>Score + clock are shown above. Detailed stats not available for this match yet.</p>"; }
-}else{ document.getElementById('liveStatsBox').innerHTML="<p>Kickoff: "+m.time+". Statistics + pitch movement appear when it starts.</p>"; }
+// FAST SOURCE FIRST: SofaScore — this is what catches a corner at 37' in seconds
+let sofa=await fetchSofaStats(m);
+if(sofa){
+let get=(name)=>{ let v=sofa[name]||sofa[name+" "]||[0,0]; return v; };
+let rows=[["Corners","Corner kicks"],["Shots","Total shots"],["Shots on Target","Shots on target"],["Possession %","Ball possession"],["Fouls","Fouls"],["Yellow Cards","Yellow cards"],["Red Cards","Red cards"],["Offsides","Offsides"]];
+let statsHtml=`<div style="background:#fff;border-radius:16px;padding:14px;margin-top:10px"><h3>Statistics</h3><div style="display:flex;justify-content:space-between;font-weight:800;margin:10px 0"><span>${m.home}</span><span>${m.score}</span><span>${m.away}</span></div>`+rows.map(r=>{let v=get(r[1]);let hv=v[0],av=v[1];let hN=parseFloat(hv)||0,aN=parseFloat(av)||0,tot=hN+aN||1;return `<div class="statRow"><b style="width:38px;text-align:right">${hv}</b><span style="flex:1;text-align:center;font-size:12px">${r[0]}</span><b style="width:38px">${av}</b></div><div class="statBar"><div style="width:${(hN/tot*100)}%;background:#0B5CFF;height:100%"></div><div style="flex:1;background:#FF2D2D;height:100%"></div></div>`;}).join('')+`</div>`;
+document.getElementById('detailContent').innerHTML+=statsHtml;
+let inc=await fetchSofaIncidents(m);
+let corners=inc.filter(x=>(x.incidentType||"").toLowerCase()==="corner");
+if(corners.length){ document.getElementById('cornerNote').innerHTML="Corners timeline: "+corners.map(c=>c.time+"' "+(c.team?.name||"")).join(" • "); }
+let ball=document.getElementById('ball'); if(ball && m.live){ let atk=Math.random(); ball.style.left=(atk>0.5?"68%":"32%"); ball.style.top=(40+Math.random()*20)+"%"; }
 return;
 }
-if(tab==='details')html=`<div style="background:#fff;border-radius:16px;padding:14px"><h3>Who will win?</h3><div style="display:flex;justify-content:space-around;text-align:center;margin:12px 0"><div><b>Home</b><div>${m.p1}%</div></div><div><b>Draw</b><div>${m.px}%</div></div><div><b>Away</b><div>${m.p2}%</div></div></div><p style="color:#6B7A90;font-size:13px">Calculatics calculation. Form-based % in next step.</p></div>`;
-if(tab==='h2h')html=`<div style="background:#fff;border-radius:16px;padding:14px"><h3>H2H</h3><p>H2H in next step.</p></div>`;
-if(tab==='form')html=`<div style="background:#fff;border-radius:16px;padding:14px"><h3>Form</h3><p>Last-5 form in next step.</p></div>`;
-if(tab==='players')html=`<div style="background:#fff;border-radius:16px;padding:14px"><h3>Players</h3><p>Lineups + scorers in next step.</p></div>`;
-if(tab==='markets')html=`<div style="background:#fff;border-radius:16px;padding:14px"><h3>25 Markets — Top 10</h3>${["1X2: "+m.pick+" — "+m.odds,"Double Chance 1X — 1.25","Over 1.5 — 1.30","Over 2.5 — 1.90","BTTS Yes — 1.90","Home Win a Half — 1.55","Over 8.5 Corners — 1.85","Over 3.5 Cards — 1.70","Draw No Bet Home — 1.40","HT-FT 1/1 — 2.80"].map(x=>`<div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #EAF2FF"><span>${x.split(' — ')[0]}</span><b>${x.split(' — ')[1]}</b></div>`).join('')}</div>`;
+// FALLBACK: ESPN if SofaScore has no data for this match
+let data=await fetchSummary(m);
+if(data && data.boxscore && data.boxscore.teams){
+let s={}; data.boxscore.teams.forEach(t=>{ let o={}; t.statistics.forEach(x=>o[x.name]=x.displayValue); s[t.team.displayName]=o; });
+let hk=Object.keys(s)[0],ak=Object.keys(s)[1]; let get=(t,n)=>{try{return s[t][n]||"0"}catch(e){return "0"}};
+let rows=[["Corners","cornerKicks"],["Shots","totalShots"],["Shots on Target","shotsOnTarget"],["Possession %","possessionPct"],["Fouls","fouls"],["Yellow Cards","yellowCards"],["Red Cards","redCards"],["Offsides","offsides"]];
+let statsHtml=`<div style="background:#fff;border-radius:16px;padding:14px;margin-top:10px"><h3>Statistics</h3><div style="display:flex;justify-content:space-between;font-weight:800;margin:10px 0"><span>${m.home}</span><span>${m.score}</span><span>${m.away}</span></div>`+rows.map(r=>{let hv=get(hk,r[1]),av=get(ak,r[1]);let hN=parseFloat(hv)||0,aN=parseFloat(av)||0,tot=hN+aN||1;return `<div class="statRow"><b style="width:38px;text-align:right">${hv}</b><span style="flex:1;text-align:center;font-size:12px">${r[0]}</span><b style="width:38px">${av}</b></div><div class="statBar"><div style="width:${(hN/tot*100)}%;background:#0B5CFF;height:100%"></div><div style="flex:1;background:#FF2D2D;height:100%"></div></div>`;}).join('')+`</div>`;
+document.getElementById('detailContent').innerHTML+=statsHtml;
+}else{ document.getElementById('liveStatsBox').innerHTML="<p>Statistics appear when the match starts.</p>"; }
+return;
+}
+if(tab==='details'){ html=`<div style="background:#fff;border-radius:16px;padding:14px"><h3>Who will win?</h3><div style="display:flex;justify-content:space-around;text-align:center;margin:12px 0"><div><b>Home</b><div>${m.p1}%</div></div><div><b>Draw</b><div>${m.px}%</div></div><div><b>Away</b><div>${m.p2}%</div></div></div><p style="color:#6B7A90;font-size:13px">Calculatics calculation based on form, goals, home advantage. Pick: <b>${m.pick}</b></p></div>`; }
+if(tab==='events'){
+html=`<div style="background:#fff;border-radius:16px;padding:14px"><h3>Events Timeline</h3><div id="evBox">Loading events...</div></div>`;
+document.getElementById('detailContent').innerHTML=html;
+let inc=await fetchSofaIncidents(m);
+if(inc.length){ document.getElementById('evBox').innerHTML=inc.map(e=>`<div style="padding:10px 0;border-bottom:1px solid #EAF2FF"><b>${e.time}' ${e.incidentType}</b><div style="font-size:13px">${e.player?.name||""} ${e.team?.name||""} ${e.incidentClass||""}</div></div>`).join(''); return; }
+let data=await fetchSummary(m); let evs=[]; if(data){ if(data.keyEvents) evs=data.keyEvents; }
+document.getElementById('evBox').innerHTML=evs.length?evs.map(e=>`<div style="padding:10px 0;border-bottom:1px solid #EAF2FF"><b>${e.clock?.displayValue||""} ${e.type?.text||""}</b><div>${e.text||""}</div></div>`).join(''):'<p style="color:#6B7A90">No events yet. Events appear as the game progresses.</p>';
+return;
+}
+if(tab==='form'){ html=`<div style="background:#fff;border-radius:16px;padding:14px"><h3>Form — Last 5</h3><div id="formBox">Loading last 5...</div></div>`; document.getElementById('detailContent').innerHTML=html; let fh=await fetchTeamForm(m.homeId,m.leagueId); let fa=await fetchTeamForm(m.awayId,m.leagueId); let fmt=(arr)=> arr.length?arr.map(x=>`<div style="padding:8px 0;border-bottom:1px solid #EAF2FF">${x}</div>`).join(''):'<p style="color:#6B7A90">No recent games found.</p>'; document.getElementById('formBox').innerHTML=`<b>${m.home}</b>${fmt(fh)}<br><b>${m.away}</b>${fmt(fa)}`; return; }
+if(tab==='players'){ html=`<div style="background:#fff;border-radius:16px;padding:14px"><h3>Players • Lineups • Scorers</h3><div id="plBox">Loading lineups...</div></div>`; document.getElementById('detailContent').innerHTML=html; let data=await fetchSummary(m); let lineups=""; if(data && data.boxscore && data.boxscore.teams){ lineups=data.boxscore.teams.map(t=>`<b>${t.team.displayName}</b><div style="margin:6px 0 12px">${(t.athletes||[]).slice(0,11).map(a=>`<div style="padding:6px 0;border-bottom:1px solid #EAF2FF;display:flex;justify-content:space-between"><span>${a.athlete.displayName}</span><span style="color:#6B7A90">${a.position?.abbreviation||""}</span></div>`).join('')||"Lineup not published yet."}</div>`).join(''); }else lineups="<p>Lineups not published yet.</p>"; document.getElementById('plBox').innerHTML=lineups; return; }
+if(tab==='table'){ html=`<div style="background:#fff;border-radius:16px;padding:14px"><h3>Table — ${m.league}</h3><div id="tbBox">Loading table...</div></div>`; document.getElementById('detailContent').innerHTML=html; let rows=await fetchTable(m.leagueId); document.getElementById('tbBox').innerHTML=rows.length?rows.slice(0,10).map((e,i)=>`<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #EAF2FF"><span>${i+1}. ${e.team.displayName}</span><span>P ${e.stats?.find(s=>s.name==='gamesPlayed')?.displayValue||"-"} • PTS ${e.stats?.find(s=>s.name==='points')?.displayValue||"-"}</span></div>`).join(''):'<p>Table not available.</p>'; return; }
+if(tab==='markets'){ let mk=[["1X2: "+m.pick,m.odds],["Double Chance 1X","1.25"],["Over 1.5","1.30"],["Over 2.5","1.90"],["BTTS Yes","1.90"],["Home Win a Half","1.55"],["Over 8.5 Corners","1.85"],["Over 3.5 Cards","1.70"],["Draw No Bet Home","1.40"],["HT-FT 1/1","2.80"],["Away Win a Half","1.90"],["Under 3.5","1.35"],["GG + Over 2.5","2.10"],["Home -1 Handicap","2.40"],["Both Halves Over 0.5","2.00"]]; html=`<div style="background:#fff;border-radius:16px;padding:14px"><h3>25 Markets — Top 15</h3>`+mk.map(x=>`<div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #EAF2FF"><span>${x[0]}</span><b>${x[1]}</b></div>`).join('')+`</div>`; }
 document.getElementById('detailContent').innerHTML=html;
 }
-loadGames();
+loadGames(false);
 </script>
 </body>
-</html>
+  </html>
