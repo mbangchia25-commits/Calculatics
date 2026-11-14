@@ -14,6 +14,7 @@
     .teams { display: flex; justify-content: space-between; font-size: 18px; font-weight: 600; margin-bottom: 12px; }
     .forecast-bar { display: flex; gap: 8px; font-size: 13px; background: #0f172a; padding: 8px; border-radius: 6px; }
     .tip { background: #0284c7; padding: 2px 8px; border-radius: 4px; font-weight: bold; }
+    .msg { max-width: 800px; margin: 20px auto; background: #1e293b; padding: 16px; border-radius: 10px; text-align: center; }
   </style>
 </head>
 <body>
@@ -21,45 +22,34 @@
     <h1>Calculatics</h1>
     <span id="last-updated">Loading...</span>
   </header>
-  <div id="matches"></div>
+  <div id="matches"><div class="msg">Loading matches...</div></div>
 
   <script>
     async function loadMatches() {
-      const res = await fetch(`forecasts.json?t=${Date.now()}`);
-      const data = await res.json();
-      if (!data.matches) {
-        document.getElementById('last-updated').textContent = 'Waiting for first data sync...';
-        return;
-      }
-      document.getElementById('last-updated').textContent = 
-        'Updated: ' + new Date(data.updated_at).toLocaleTimeString();
-
       const container = document.getElementById('matches');
-      container.innerHTML = data.matches.map(m => {
-        const isLive = m.status === 'IN_PLAY' || m.status === 'PAUSED';
-        const score = m.score.home !== null ? `${m.score.home} - ${m.score.away}` : 'vs';
-        return `
-          <div class="card">
-            <div class="meta">
-              <span>${m.competition}</span>
-              <span class="${isLive ? 'live' : ''}">${isLive ? '● LIVE' : m.status}</span>
-            </div>
-            <div class="teams">
-              <span>${m.homeTeam}</span>
-              <span>${score}</span>
-              <span>${m.awayTeam}</span>
-            </div>
-            <div class="forecast-bar">
-              <span>1: <strong>${m.forecast.home_prob}%</strong></span>
-              <span>X: <strong>${m.forecast.draw_prob}%</strong></span>
-              <span>2: <strong>${m.forecast.away_prob}%</strong></span>
-              <span style="margin-left:auto;">Tip: <span class="tip">${m.forecast.tip}</span></span>
-            </div>
-          </div>
-        `;
-      }).join('');
-    }
+      try {
+        const res = await fetch('forecasts.json?t=' + Date.now());
+        if (!res.ok) throw new Error('Could not load forecasts.json - Status: ' + res.status);
+        const data = await res.json();
+        document.getElementById('last-updated').textContent = data.updated_at ? 'Updated: ' + new Date(data.updated_at).toLocaleString() : 'Updated';
 
+        if (!data.matches || data.matches.length === 0) {
+          container.innerHTML = '<div class="msg">No matches scheduled right now. Check back soon.</div>';
+          return;
+        }
+
+        container.innerHTML = data.matches.map(m => {
+          const isLive = m.status === 'IN_PLAY' || m.status === 'PAUSED';
+          const score = (m.score && m.score.home !== null) ? m.score.home + ' - ' + m.score.away : 'vs';
+          const f = m.forecast || { home_prob: 0, draw_prob: 0, away_prob: 0, tip: '-' };
+          const dateStr = m.utcDate ? new Date(m.utcDate).toLocaleString() : m.status;
+          return '<div class="card"><div class="meta"><span>' + m.competition + '</span><span class="' + (isLive ? 'live' : '') + '">' + (isLive ? '● LIVE' : dateStr) + '</span></div><div class="teams"><span>' + m.homeTeam + '</span><span>' + score + '</span><span>' + m.awayTeam + '</span></div><div class="forecast-bar"><span>1: <strong>' + f.home_prob + '%</strong></span><span>X: <strong>' + f.draw_prob + '%</strong></span><span>2: <strong>' + f.away_prob + '%</strong></span><span style="margin-left:auto;">Tip: <span class="tip">' + f.tip + '</span></span></div></div>';
+        }).join('');
+      } catch (err) {
+        document.getElementById('last-updated').textContent = 'Error loading data';
+        container.innerHTML = '<div class="msg">Error: ' + err.message + '<br><br>Please refresh the page.</div>';
+      }
+    }
     loadMatches();
     setInterval(loadMatches, 60000);
   </script>
