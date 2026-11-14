@@ -6,15 +6,14 @@
 <title>Calculatics. — Calculated. Not Guessed.</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;background:#EAF2FF;color:#0F1B2D;padding-bottom:90px}
-a{color:inherit;text-decoration:none}
+body{font-family:system-ui,sans-serif;background:#EAF2FF;color:#0F1B2D;padding-bottom:90px}
 .top{background:#0B5CFF;color:#fff;padding:14px 14px 12px;position:sticky;top:0;z-index:20}
 .topRow{display:flex;justify-content:space-between;align-items:center}
-.logo{font-size:26px;font-weight:900;letter-spacing:-.5px}
-.logo span{color:#fff}.logo i{font-style:normal;color:#FFD60A}
+.logo{font-size:26px;font-weight:900}
 .slogan{font-size:11px;opacity:.9;letter-spacing:1px;text-transform:uppercase;margin-top:2px}
 .iconBtn{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:18px;border:none;color:#fff}
-.search{margin-top:12px;background:#fff;border-radius:999px;padding:10px 14px;color:#6B7A90;font-size:14px;display:flex;gap:8px;align-items:center}
+.search{margin-top:12px;background:#fff;border-radius:999px;overflow:hidden}
+.search input{width:100%;border:none;outline:none;padding:12px 14px;font-size:14px;background:#fff}
 .dateBar{display:flex;gap:8px;overflow:auto;padding:12px 12px 2px}
 .dateBtn{min-width:78px;background:#fff;border:1px solid #D9E6FF;border-radius:14px;padding:10px 8px;text-align:center;cursor:pointer;flex-shrink:0}
 .dateBtn b{display:block;font-size:14px}.dateBtn small{color:#6B7A90}
@@ -34,18 +33,14 @@ a{color:inherit;text-decoration:none}
 </style>
 </head>
 <body>
-
 <header class="top">
 <div class="topRow">
-<div><div class="logo">Calculatics<span>.</span><i> 📈</i></div>
-<div class="slogan">Calculated. Not Guessed.</div></div>
-<div style="display:flex;gap:8px">
-<button class="iconBtn" onclick="showPage('live')">●</button>
-<button class="iconBtn" onclick="showPage('settings')">⚙️</button>
-</div></div>
-<div class="search" onclick="showPage('search')">🔍 Search team, league, match...</div>
+<div><div class="logo">Calculatics. 📈</div><div class="slogan">Calculated. Not Guessed.</div></div>
+<div style="display:flex;gap:8px"><button class="iconBtn" onclick="showPage('live')">●</button><button class="iconBtn" onclick="showPage('settings')">⚙️</button></div>
+</div>
+<div class="search"><input id="searchInput" oninput="doSearch(this.value)" placeholder="🔍 Search team, league, match..."></div>
+<div id="searchResult" style="padding:0 2px"></div>
 </header>
-
 <div class="dateBar" id="dateBar">
 <button class="dateBtn" onclick="setDate(this,'Yesterday')"><small>Yesterday</small><b>13 Nov</b></button>
 <button class="dateBtn active" onclick="setDate(this,'Today')"><small>Today</small><b>14 Nov</b></button>
@@ -53,7 +48,6 @@ a{color:inherit;text-decoration:none}
 <button class="dateBtn" onclick="setDate(this,'Mon')"><small>Mon</small><b>16 Nov</b></button>
 <button class="dateBtn" onclick="setDate(this,'Tue')"><small>Tue</small><b>17 Nov</b></button>
 </div>
-
 <div class="sec"><div class="secTitle">Categories <span>See all →</span></div>
 <div class="cats">
 <div class="cat" onclick="openCat('Home / Away')"><div class="catIcon" style="background:#E6F4EA">📈</div><b>Home / Away</b><small>1X2 Picks</small></div>
@@ -63,7 +57,6 @@ a{color:inherit;text-decoration:none}
 <div class="cat" onclick="openCat('BTTS')"><div class="catIcon" style="background:#FCE8F3">🏠</div><b>BTTS</b><small>GG / NG</small></div>
 <div class="cat" onclick="openCat('Extra Picks')"><div class="catIcon" style="background:#E6F0F5">➕</div><b>Extra Picks</b><small>25 Markets</small></div>
 </div></div>
-
 <div class="filters" id="filters">
 <button class="fBtn active" onclick="setFilter(this,'All')">All</button>
 <button class="fBtn" onclick="setFilter(this,'Live')"><span class="liveDot">●</span> Live</button>
@@ -73,17 +66,15 @@ a{color:inherit;text-decoration:none}
 <button class="fBtn" onclick="setFilter(this,'GG')">GG</button>
 <button class="fBtn" onclick="setFilter(this,'Over 2.5')">Over 2.5</button>
 <button class="fBtn" onclick="setFilter(this,'Under 2.5')">Under 2.5</button>
-</div>
-<div class="sec"><div class="secTitle">Top Picks Today <span id="pickCount">2 matches</span></div>
+  </div>
+  <div class="sec"><div class="secTitle">Top Picks Today <span id="pickCount">2 matches</span></div>
 <div id="matchList"></div>
 <div id="emptyMsg" style="display:none;background:#fff;border:1px solid #D9E6FF;border-radius:16px;padding:18px;text-align:center;color:#6B7A90">No matches for this filter yet. Try All.</div>
 </div>
-
 <div class="sec"><div class="secTitle">Leagues <span>All Games →</span></div>
 <div id="leagueList" style="display:flex;flex-direction:column;gap:10px"></div>
 </div>
 
-<!-- MATCH DETAIL PAGE -->
 <div id="detailPage" style="display:none;position:fixed;inset:0;background:#EAF2FF;z-index:50;overflow:auto;padding-bottom:90px">
 <div style="background:#0B5CFF;color:#fff;padding:14px">
 <div style="display:flex;justify-content:space-between;align-items:center">
@@ -96,7 +87,6 @@ a{color:inherit;text-decoration:none}
 <div style="text-align:center"><div style="font-size:30px;font-weight:900" id="dScore">VS</div><div id="dStatus" style="font-size:12px">Kickoff</div></div>
 <div style="text-align:center;flex:1"><div style="font-size:34px">🛡️</div><b id="dAway">Away</b><div style="font-size:11px;opacity:.9" id="dAwayForm">W D W L W</div></div>
 </div></div></div>
-
 <div style="display:flex;gap:8px;padding:12px;overflow:auto" id="detailTabs">
 <button class="fBtn active" onclick="setTab(this,'details')">Details</button>
 <button class="fBtn" onclick="setTab(this,'h2h')">H2H</button>
@@ -105,11 +95,9 @@ a{color:inherit;text-decoration:none}
 <button class="fBtn" onclick="setTab(this,'table')">Table</button>
 <button class="fBtn" onclick="setTab(this,'markets')">25 Markets</button>
 </div>
-
 <div style="padding:0 12px" id="detailContent"></div>
 </div>
 
-<!-- BOTTOM MENU -->
 <nav style="position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #D9E6FF;display:flex;justify-content:space-around;padding:10px 0;z-index:40">
 <button onclick="showPage('home')" style="border:none;background:none;text-align:center;font-size:11px">🏠<br>Home</button>
 <button onclick="showPage('predictions')" style="border:none;background:none;text-align:center;font-size:11px">🔥<br>Predictions</button>
@@ -121,20 +109,33 @@ a{color:inherit;text-decoration:none}
 <script>
 let MATCHES=[
 {id:1,league:"Brazil Serie A",home:"Mirassol",away:"Mineiro",time:"20:00",score:"VS",status:"Today",p1:46,px:26,p2:28,tip:"1",odds:"1.85",pick:"Home Win",h2h:"1 Win - 1 Draw - 1 Win",formH:"W W D W L",formA:"L D W L W",scorersH:"Mirassol Top Scorer - 9 goals",scorersA:"Mineiro Top Scorer - 7 goals"},
-{id:2,league:"Brazil Serie B",home:"Chapecoense",away:"Vasco da Gama",time:"22:30",score:"VS",status:"Today",p1:38,px:28,p2:34,tip:"GG",odds:"1.90",pick:"BTTS Yes",h2h:"2 Wins - 1 Draw - 2 Wins",formH:"W D L W W",formA:"W W D L W",scorersH:"Chapecoense Top Scorer - 8 goals",scorersA:"Vasco Top Scorer - 10 goals"}
+{id:2,league:"Brazil Serie B",home:"【entity-Chapecoense¦canonical_name=Chapecoense】",away:"【entity-Vasco da Gama¦canonical_name=Vasco da Gama】",time:"22:30",score:"VS",status:"Today",p1:38,px:28,p2:34,tip:"GG",odds:"1.90",pick:"BTTS Yes",h2h:"2 Wins - 1 Draw - 2 Wins",formH:"W D L W W",formA:"W W D L W",scorersH:"【entity-Chapecoense¦canonical_name=Chapecoense】 Top Scorer - 8 goals",scorersA:"【entity-Vasco¦canonical_name=Vasco da Gama】 Top Scorer - 10 goals"}
 ];
-let curFilter='All', curDate='Today', curMatch=MATCHES[0];
+let curFilter='All',curDate='Today',curMatch=MATCHES[0];
 function setDate(b,v){document.querySelectorAll('.dateBtn').forEach(x=>x.classList.remove('active'));b.classList.add('active');curDate=v;render();}
 function setFilter(b,v){document.querySelectorAll('#filters .fBtn').forEach(x=>x.classList.remove('active'));b.classList.add('active');curFilter=v;render();}
-function openCat(n){alert("Calculatics. Category: "+n+" — Showing Top Picks for "+n);}
-function showPage(p){if(p==='live'){setFilter(document.querySelectorAll('#filters .fBtn')[1],'Live');}else if(p==='home'){setFilter(document.querySelectorAll('#filters .fBtn')[0],'All');}else{alert("Calculatics. Page: "+p+" — Coming in v3, connected to Leagues + Live.");}window.scrollTo({top:0,behavior:'smooth'});}
+function openCat(n){
+let map={'Home / Away':'1','Daily 2 Odds':'All','Daily Bonus':'All','Over / Under':'Over 2.5','BTTS':'GG','Extra Picks':'All'};
+curFilter=map[n]||'All';
+document.querySelectorAll('#filters .fBtn').forEach(x=>{let t=x.innerText.trim();x.classList.toggle('active', (curFilter==='All'&&t==='All')||t.includes(curFilter));});
+render();
+document.getElementById('matchList').scrollIntoView({behavior:'smooth'});
+}
+function showPage(p){if(p==='live'){let btn=document.querySelectorAll('#filters .fBtn')[1];setFilter(btn,'Live');}else if(p==='home'){let btn=document.querySelectorAll('#filters .fBtn')[0];setFilter(btn,'All');}else if(p==='leagues'){document.getElementById('leagueList').scrollIntoView({behavior:'smooth'});}else{alert("Calculatics: "+p+" page is ready in v3.");}window.scrollTo({top:0,behavior:'smooth'});}
+function doSearch(q){
+q=q.toLowerCase().trim();
+let box=document.getElementById('searchResult');
+if(!q){box.innerHTML='';render();return;}
+let res=MATCHES.filter(m=>(m.home+m.away+m.league).toLowerCase().includes(q));
+box.innerHTML=`<div style="background:#fff;border-radius:12px;padding:10px;margin-top:8px;font-size:13px">${res.length?res.map(m=>`<div onclick="openMatch(${m.id})" style="padding:10px 0;border-bottom:1px solid #EAF2FF">🔍 ${m.home} vs ${m.away} — ${m.league} → Tap to open</div>`).join(''):'No match for "'+q+'"'}</div>`;
+document.getElementById('matchList').innerHTML=res.map(m=>`<div onclick="openMatch(${m.id})" style="background:#fff;border:1px solid #D9E6FF;border-radius:16px;padding:12px;margin-bottom:10px"><b>${m.home} vs ${m.away}</b><div style="font-size:12px;color:#6B7A90">${m.league} • Tap to open →</div></div>`).join('');
+}
 function render(){
 let list=MATCHES.filter(m=>{
 if(curFilter==='Live') return m.status==='LIVE';
 if(curFilter==='1') return m.tip==='1';
 if(curFilter==='2') return m.tip==='2';
 if(curFilter==='GG') return m.pick.includes('BTTS');
-if(curFilter==='Over 2.5') return true;
 return true;});
 document.getElementById('pickCount').innerText=list.length+" matches";
 document.getElementById('emptyMsg').style.display=list.length?"none":"block";
@@ -145,9 +146,7 @@ document.getElementById('matchList').innerHTML=list.map(m=>`
 <div style="display:flex;gap:6px;font-size:11px;color:#6B7A90"><span>1: ${m.p1}%</span><span>X: ${m.px}%</span><span>2: ${m.p2}%</span><span style="margin-left:auto;color:#0B5CFF">View Details →</span></div>
 <div style="display:flex;gap:8px;margin-top:10px"><span style="background:#0B5CFF;color:#fff;padding:8px 12px;border-radius:999px;font-size:12px;font-weight:700">Pick: ${m.pick}</span><span style="background:#22C55E;color:#fff;padding:8px 12px;border-radius:999px;font-size:12px;font-weight:800;margin-left:auto">${m.odds}</span></div>
 </div>`).join('');
-document.getElementById('leagueList').innerHTML=[
-["Brazil: Serie A","2"],["Brazil: Serie B","1"],["World: Nations League","8"]
-].map(l=>`<div onclick="alert('League: '+l[0])" style="background:#fff;border:1px solid #D9E6FF;border-radius:14px;padding:12px;display:flex;justify-content:space-between;align-items:center;cursor:pointer"><span>🏆 ${l[0]}</span><span>${l[1]} →</span></div>`).join('');
+document.getElementById('leagueList').innerHTML=[["Brazil: Serie A","2"],["Brazil: Serie B","1"],["World: Nations League","8"]].map(l=>`<div onclick="alert('League: '+l[0])" style="background:#fff;border:1px solid #D9E6FF;border-radius:14px;padding:12px;display:flex;justify-content:space-between;align-items:center;cursor:pointer"><span>🏆 ${l[0]}</span><span>${l[1]} →</span></div>`).join('');
 }
 function openMatch(id){
 curMatch=MATCHES.find(m=>m.id===id)||MATCHES[0];
@@ -165,16 +164,15 @@ setTab(document.querySelectorAll('#detailTabs .fBtn')[0],'details');
 function closeDetail(){document.getElementById('detailPage').style.display='none';}
 function setTab(b,tab){
 document.querySelectorAll('#detailTabs .fBtn').forEach(x=>x.classList.remove('active'));b.classList.add('active');
-let m=curMatch, html='';
-if(tab==='details'){html=`<div style="background:#fff;border-radius:16px;padding:14px"><h3>Who will win?</h3><div style="display:flex;justify-content:space-around;text-align:center;margin:12px 0"><div><div style="font-size:28px">🛡️</div><b>Home</b><div>${m.p1}% • 1.85</div></div><div><div style="font-size:28px">X</div><b>Draw</b><div>${m.px}% • 3.40</div></div><div><div style="font-size:28px">🛡️</div><b>Away</b><div>${m.p2}% • 4.20</div></div></div><p style="color:#6B7A90;font-size:13px">Calculatics reason: ${m.home} form ${m.formH} at home is stronger. Pick: <b>${m.pick}</b> — Calculated, not guessed.</p></div>`;}
-if(tab==='h2h'){html=`<div style="background:#fff;border-radius:16px;padding:14px"><h3>Head to Head</h3><p style="margin-top:8px">${m.h2h}</p><p style="color:#6B7A90;font-size:13px;margin-top:8px">Last 5 meetings: ${m.home} 2-1, Draw 1-1, ${m.away} 0-1, ${m.home} 1-0, Draw 2-2</p></div>`;}
-if(tab==='form'){html=`<div style="background:#fff;border-radius:16px;padding:14px"><h3>Recent Form</h3><p style="margin-top:8px"><b>${m.home}:</b> ${m.formH}</p><p><b>${m.away}:</b> ${m.formA}</p><p style="color:#6B7A90;font-size:13px;margin-top:8px">Last 5: Goals, Clean Sheets, Corners, Cards — full team stats in v3 engine.</p></div>`;}
-if(tab==='players'){html=`<div style="background:#fff;border-radius:16px;padding:14px"><h3>Players • Scorers • Form</h3><p style="margin-top:8px">⭐ ${m.scorersH}</p><p>⭐ ${m.scorersA}</p><p style="color:#6B7A90;font-size:13px;margin-top:8px">Tap a player in v3 to see goals, assists, last 5 ratings, injuries / missing players.</p></div>`;}
-if(tab==='table'){html=`<div style="background:#fff;border-radius:16px;padding:14px"><h3>Table Positions</h3><p style="margin-top:8px">Group / League Table — P • Goal • +/- • PTS</p><p style="color:#6B7A90;font-size:13px">Full table connects to live standings in next step.</p></div>`;}
+let m=curMatch,html='';
+if(tab==='details'){html=`<div style="background:#fff;border-radius:16px;padding:14px"><h3>Who will win?</h3><div style="display:flex;justify-content:space-around;text-align:center;margin:12px 0"><div><b>Home</b><div>${m.p1}% • 1.85</div></div><div><b>Draw</b><div>${m.px}% • 3.40</div></div><div><b>Away</b><div>${m.p2}% • 4.20</div></div></div><p style="color:#6B7A90;font-size:13px">Calculatics reason: ${m.home} form ${m.formH} at home is stronger. Pick: <b>${m.pick}</b></p></div>`;}
+if(tab==='h2h'){html=`<div style="background:#fff;border-radius:16px;padding:14px"><h3>Head to Head</h3><p style="margin-top:8px">${m.h2h}</p><p style="color:#6B7A90;font-size:13px;margin-top:8px">Last 5: ${m.home} 2-1, Draw 1-1, ${m.away} 0-1, ${m.home} 1-0, Draw 2-2</p></div>`;}
+if(tab==='form'){html=`<div style="background:#fff;border-radius:16px;padding:14px"><h3>Recent Form</h3><p style="margin-top:8px"><b>${m.home}:</b> ${m.formH}</p><p><b>${m.away}:</b> ${m.formA}</p></div>`;}
+if(tab==='players'){html=`<div style="background:#fff;border-radius:16px;padding:14px"><h3>Players • Scorers</h3><p style="margin-top:8px">⭐ ${m.scorersH}</p><p>⭐ ${m.scorersA}</p><p style="color:#6B7A90;font-size:13px;margin-top:8px">Tap a player in v3 to see goals, assists, last 5 ratings.</p></div>`;}
+if(tab==='table'){html=`<div style="background:#fff;border-radius:16px;padding:14px"><h3>Table Positions</h3><p style="margin-top:8px">P • Goal • +/- • PTS — Full table in next step.</p></div>`;}
 if(tab==='markets'){html=`<div style="background:#fff;border-radius:16px;padding:14px"><h3>25 Markets — Top 10 Best Picks</h3>${["1X2: "+m.pick+" — "+m.odds,"Double Chance 1X — 1.25","Over 1.5 Goals — 1.30","Over 2.5 Goals — 1.90","BTTS Yes — 1.90","Home to Win a Half — 1.55","Over 8.5 Corners — 1.85","Over 3.5 Cards — 1.70","Draw No Bet Home — 1.40","HT-FT: 1 / 1 — 2.80"].map(x=>`<div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #EAF2FF"><span>${x.split(' — ')[0]}</span><b>${x.split(' — ')[1]}</b></div>`).join('')}</div>`;}
 document.getElementById('detailContent').innerHTML=html;
 }
-fetch('forecasts.json').then(r=>r.json()).then(d=>{if(d.matches&&d.matches.length){/* keep demo for now, real engine in next step */}}).catch(()=>{});
 render();
 </script>
 </body>
