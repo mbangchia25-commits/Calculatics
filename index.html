@@ -3,23 +3,99 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Calculatics — 25 Markets Deep Predictions</title>
+<title>Calculatics — 25 Markets</title>
 <style>
-*{box-sizing:border-box}body{font-family:system-ui,sans-serif;background:#eaf2ff;color:#0f172a;margin:0;padding:0 12px 30px}
-header{background:#0b5cff;color:#fff;padding:18px 16px 14px;position:sticky;top:0;z-index:10}
-.top{max-width:1050px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:10px}
-.logo{font-size:28px;font-weight:900}.sub{font-size:12px;opacity:.9}
-#last-updated{font-size:12px;background:#fff;color:#0b5cff;padding:6px 10px;border-radius:999px;font-weight:700;white-space:nowrap}
+body{font-family:system-ui,sans-serif;background:#eaf2ff;color:#0f172a;margin:0;padding:0 12px 30px}
+header{background:#0b5cff;color:#fff;padding:18px 16px;position:sticky;top:0}
+.top{max-width:1050px;margin:0 auto;display:flex;justify-content:space-between}
+.logo{font-size:28px;font-weight:900}.sub{font-size:12px}
+#last-updated{font-size:12px;background:#fff;color:#0b5cff;padding:6px 10px;border-radius:999px;font-weight:700}
 .wrap{max-width:1050px;margin:14px auto}
-.filters{display:flex;gap:8px;overflow:auto;padding-bottom:8px}
-.filters button{white-space:nowrap;border:1px solid #cbd5e1;background:#fff;padding:8px 14px;border-radius:999px;font-weight:700;cursor:pointer}
+.filters{display:flex;gap:8px;overflow:auto}
+.filters button{white-space:nowrap;border:1px solid #cbd5e1;background:#fff;padding:8px 14px;border-radius:999px;font-weight:700}
 .filters button.active{background:#0b5cff;color:#fff}
-.card{background:#fff;border-radius:16px;padding:16px;margin-bottom:16px;box-shadow:0 4px 16px rgba(15,23,42,.08)}
-.meta{display:flex;justify-content:space-between;gap:10px;font-size:12px;color:#64748b;font-weight:600}
-.live-badge{background:#ef4444;color:#fff;padding:4px 10px;border-radius:999px;font-weight:900;font-size:12px;display:none}
-.live-badge.show{display:inline-block;animation:pulse 1.2s infinite}
-@keyframes pulse{0%{opacity:1}50%{opacity:.6}100%{opacity:1}}
-.teams{display:flex;justify-content:space-between;align-items:center;margin:12px 0 6px;gap:10px}
-.teams b{font-size:20px}.score{font-size:22px;font-weight:900;background:#0b5cff;color:#fff;padding:8px 14px;border-radius:12px;min-width:78px;text-align:center}
+.card{background:#fff;border-radius:16px;padding:16px;margin-bottom:16px}
+.meta{display:flex;justify-content:space-between;font-size:12px;color:#64748b;font-weight:600}
+.live-badge{background:#ef4444;color:#fff;padding:4px 10px;border-radius:999px;font-weight:900;display:none}
+.live-badge.show{display:inline-block}
+.teams{display:flex;justify-content:space-between;align-items:center;margin:12px 0}
+.teams b{font-size:20px}.score{font-size:22px;font-weight:900;background:#0b5cff;color:#fff;padding:8px 14px;border-radius:12px}
 .score.upcoming{background:#eaf2ff;color:#0b5cff}
-.form{display:flex;gap:6px;flex-wrap:wrap;font-size:12px;color:#475569;margin:8px 0;align-items:center
+.form{display:flex;gap:6px;flex-wrap:wrap;font-size:12px}
+.form i{font-style:normal;width:24px;height:24px;display:grid;place-items:center;border-radius:50%;color:#fff;font-weight:800}
+.W{background:#16a34a}.D{background:#f59e0b}.L{background:#ef4444}
+.why{background:#f0f7ff;border-left:4px solid #0b5cff;padding:10px;border-radius:8px;font-size:13px;margin:10px 0}
+.bestbox{background:#f0fdf4;border:2px solid #16a34a;border-radius:12px;padding:12px;margin:10px 0}
+.bestbox h3{margin:0 0 8px;color:#15803d;font-size:14px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}.chip{background:#16a34a;color:#fff;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:700}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:640px){.grid{grid-template-columns:1fr}}
+.market{border:1px solid #e2e8f0;border-radius:12px;padding:12px}
+.market h4{margin:0 0 8px;font-size:13px;display:flex;justify-content:space-between}
+.tag{font-size:11px;padding:3px 8px;border-radius:999px;color:#fff;font-weight:800}
+.tag-blue{background:#0b5cff}.tag-green{background:#16a34a}.tag-amber{background:#f59e0b}.tag-purple{background:#7c3aed}.tag-teal{background:#0d9488}.tag-pink{background:#db2777}.tag-dark{background:#0f172a}.tag-orange{background:#ea580c}.tag-red{background:#ef4444}
+.opts{display:flex;gap:6px;flex-wrap:wrap}.opt{flex:1;min-width:78px;text-align:center;border-radius:10px;padding:8px 4px;background:#f8fafc;border:1px solid #e2e8f0}
+.opt.best{border:2px solid #16a34a;background:#f0fdf4}.opt b{display:block;font-size:16px}.opt span{font-size:11px;color:#64748b}
+.msg{background:#fff;padding:18px;border-radius:12px;text-align:center}
+</style>
+</head>
+<body>
+<header><div class="top"><div><div class="logo">Calculatics.</div><div class="sub">25 Markets • Form • Live</div></div><span id="last-updated">Loading...</span></div></header>
+<div class="wrap">
+<div class="filters"><button class="active" onclick="filterLeague('ALL',this)">All Leagues</button><button onclick="filterLeague('LIVE',this)">🔴 Live Now</button><button onclick="filterLeague('UPCOMING',this)">Upcoming</button></div>
+<div id="matches"><div class="msg">Loading matches...</div></div>
+</div>
+<script>
+let ALL=[];
+function fh(a){return a.map(r=>'<i class="'+r+'">'+r+'</i>').join('')}
+function opt(l,p,b){return '<div class="opt '+(b?'best':'')+'"><b>'+p+'%</b><span>'+l+'</span></div>'}
+function render(list){
+const c=document.getElementById('matches');
+if(!list.length){c.innerHTML='<div class="msg">No matches.</div>';return}
+c.innerHTML=list.map(m=>{
+const isLive=m.status==='IN_PLAY'||m.status==='PAUSED';
+const score=(m.score&&m.score.home!==null)?m.score.home+' - '+m.score.away:'VS';
+const f=m.forecast||{home_prob:46,draw_prob:26,away_prob:28};
+const d={o05:88,o15:78,o25:58,o35:32,o45:18,u25:42,btts:54,bttsO:38,hwO:32,awU:22,h05:72,h15:52,h25:28,a05:62,a15:44,dc1x:72,dc12:78,dcx2:56,dnbH:58,dnbA:42,whH:62,whA:38,wbH:22,wbA:12,fh05:68,sh15:58,co85:56,co105:38,ca35:58,ca55:28,odd:52,csH:28,csA:18,tuH:28,tuA:18,first:58};
+const hf=m.homeForm||['W','W','D','L','W']; const af=m.awayForm||['L','D','W','L','D'];
+const best=['1X Double Chance','Over 1.5','Over 0.5','BTTS Yes','Home Over 0.5','1st Half Over 0.5','Corners Over 8.5','Cards Over 3.5','Home Win Either Half','Draw No Bet Home'];
+return '<div class="card"><div class="meta"><span>'+m.competition+'</span><span>'+new Date(m.utcDate).toLocaleString()+' <span class="live-badge '+(isLive?'show':'')+'">● LIVE</span></span></div>'
++'<div class="teams"><b>'+m.homeTeam+'</b><div class="score '+(isLive?'':'upcoming')+'">'+score+'</div><b style="text-align:right">'+m.awayTeam+'</b></div>'
++'<div class="form"><span>HOME:</span>'+fh(hf)+'<span style="margin-left:10px">AWAY:</span>'+fh(af)+'</div>'
++'<div class="why"><b>Why Calculatics:</b> '+m.homeTeam+' strong at home, '+m.awayTeam+' leaks away goals. Expect goals, corners and cards.</div>'
++'<div class="bestbox"><h3>⭐ TOP 10 BEST PICKS</h3><div class="chips">'+best.map(b=>'<span class="chip">'+b+'</span>').join('')+'</div></div>'
++'<div class="grid">'
++'<div class="market"><h4>1. 1X2 <span class="tag tag-blue">MAIN</span></h4><div class="opts">'+opt('1 Home',f.home_prob,true)+opt('X',f.draw_prob,false)+opt('2 Away',f.away_prob,false)+'</div></div>'
++'<div class="market"><h4>2. Double Chance <span class="tag tag-green">SAFE</span></h4><div class="opts">'+opt('1X',d.dc1x,true)+opt('12',d.dc12,true)+opt('X2',d.dcx2,false)+'</div></div>'
++'<div class="market"><h4>3. Draw No Bet <span class="tag tag-teal">REFUND</span></h4><div class="opts">'+opt('Home',d.dnbH,true)+opt('Away',d.dnbA,false)+'</div></div>'
++'<div class="market"><h4>4. Over/Under 0.5 <span class="tag tag-amber">GOALS</span></h4><div class="opts">'+opt('Over',d.o05,true)+opt('Under',100-d.o05,false)+'</div></div>'
++'<div class="market"><h4>5. Over/Under 1.5 <span class="tag tag-amber">GOALS</span></h4><div class="opts">'+opt('Over',d.o15,true)+opt('Under',100-d.o15,false)+'</div></div>'
++'<div class="market"><h4>6. Over/Under 2.5 <span class="tag tag-amber">GOALS</span></h4><div class="opts">'+opt('Over',d.o25,true)+opt('Under',d.u25,false)+'</div></div>'
++'<div class="market"><h4>7. Over/Under 3.5 <span class="tag tag-amber">GOALS</span></h4><div class="opts">'+opt('Over',d.o35,false)+opt('Under',100-d.o35,true)+'</div></div>'
++'<div class="market"><h4>8. Over/Under 4.5 <span class="tag tag-amber">GOALS</span></h4><div class="opts">'+opt('Over',d.o45,false)+opt('Under',100-d.o45,true)+'</div></div>'
++'<div class="market"><h4>9. BTTS <span class="tag tag-pink">BTTS</span></h4><div class="opts">'+opt('Yes',d.btts,true)+opt('No',100-d.btts,false)+'</div></div>'
++'<div class="market"><h4>10. BTTS + Over 2.5 <span class="tag tag-pink">COMBO</span></h4><div class="opts">'+opt('Yes',d.bttsO,false)+opt('No',100-d.bttsO,true)+'</div></div>'
++'<div class="market"><h4>11. Home Win + Over 1.5 <span class="tag tag-blue">COMBO</span></h4><div class="opts">'+opt('Yes',d.hwO,false)+opt('No',100-d.hwO,true)+'</div></div>'
++'<div class="market"><h4>12. Away Win + Under 3.5 <span class="tag tag-dark">COMBO</span></h4><div class="opts">'+opt('Yes',d.awU,false)+opt('No',100-d.awU,true)+'</div></div>'
++'<div class="market"><h4>13. Home Goals <span class="tag tag-blue">HOME</span></h4><div class="opts">'+opt('Over 0.5',d.h05,true)+opt('Over 1.5',d.h15,false)+opt('Over 2.5',d.h25,false)+'</div></div>'
++'<div class="market"><h4>14. Away Goals <span class="tag tag-dark">AWAY</span></h4><div class="opts">'+opt('Over 0.5',d.a05,true)+opt('Over 1.5',d.a15,false)+'</div></div>'
++'<div class="market"><h4>15. Win Either Half <span class="tag tag-green">HALF</span></h4><div class="opts">'+opt('Home',d.whH,true)+opt('Away',d.whA,false)+'</div></div>'
++'<div class="market"><h4>16. Win Both Halves <span class="tag tag-green">HALF</span></h4><div class="opts">'+opt('Home',d.wbH,false)+opt('Away',d.wbA,false)+'</div></div>'
++'<div class="market"><h4>17. 1st Half Over 0.5 <span class="tag tag-teal">1ST HALF</span></h4><div class="opts">'+opt('Over',d.fh05,true)+opt('Under',100-d.fh05,false)+'</div></div>'
++'<div class="market"><h4>18. 1st Half 1X2 <span class="tag tag-teal">1ST HALF</span></h4><div class="opts">'+opt('1',42,false)+opt('X',32,false)+opt('2',26,false)+'</div></div>'
++'<div class="market"><h4>19. 2nd Half Over 1.5 <span class="tag tag-teal">2ND HALF</span></h4><div class="opts">'+opt('Over',d.sh15,true)+opt('Under',100-d.sh15,false)+'</div></div>'
++'<div class="market"><h4>20. Corners <span class="tag tag-purple">CORNERS</span></h4><div class="opts">'+opt('Over 8.5',d.co85,true)+opt('Over 10.5',d.co105,false)+'</div></div>'
++'<div class="market"><h4>21. Cards <span class="tag tag-purple">CARDS</span></h4><div class="opts">'+opt('Over 3.5',d.ca35,true)+opt('Over 5.5',d.ca55,false)+'</div></div>'
++'<div class="market"><h4>22. Odd / Even <span class="tag tag-orange">ODD/EVEN</span></h4><div class="opts">'+opt('Odd',d.odd,false)+opt('Even',100-d.odd,false)+'</div></div>'
++'<div class="market"><h4>23. Clean Sheet <span class="tag tag-green">CLEAN</span></h4><div class="opts">'+opt('Home CS',d.csH,false)+opt('Away CS',d.csA,false)+'</div></div>'
++'<div class="market"><h4>24. Two Up <span class="tag tag-pink">TWO UP</span></h4><div class="opts">'+opt('Home 2 Up',d.tuH,false)+opt('Away 2 Up',d.tuA,false)+'</div></div>'
++'<div class="market"><h4>25. Scores First / One Up <span class="tag tag-red">FIRST GOAL</span></h4><div class="opts">'+opt('Home First',d.first,true)+opt('Away First',100-d.first,false)+'</div></div>'
++'</div></div>';
+}).join('');
+}
+function filterLeague(t,b){document.querySelectorAll('.filters button').forEach(x=>x.classList.remove('active'));b.classList.add('active');if(t==='ALL')render(ALL);else if(t==='LIVE')render(ALL.filter(m=>m.status==='IN_PLAY'||m.status==='PAUSED'));else render(ALL.filter(m=>m.status==='TIMED'||m.status==='SCHEDULED'))}
+async function load(){try{const r=await fetch('forecasts.json?t='+Date.now());const data=await r.json();document.getElementById('last-updated').textContent='Updated: '+new Date(data.updated_at).toLocaleString();ALL=data.matches||[];render(ALL)}catch(e){document.getElementById('matches').innerHTML='<div class="msg">Error: '+e.message+'</div>'}}
+load();setInterval(load,60000);
+</script>
+</body>
+</html>
