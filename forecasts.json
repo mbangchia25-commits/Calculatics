@@ -1,41 +1,4 @@
 {
-  "updated_at": "2026-11-14T20:28:43.171649+00:00",
-  "matches": [
-    {
-      "id": 555085,
-      "competition": "Campeonato Brasileiro S\u00e9rie A",
-      "utcDate": "2026-11-14T21:30:00Z",
-      "status": "TIMED",
-      "homeTeam": "Mirassol",
-      "awayTeam": "Mineiro",
-      "score": {
-        "home": null,
-        "away": null
-      },
-      "forecast": {
-        "home_prob": 46,
-        "draw_prob": 26,
-        "away_prob": 28,
-        "tip": "1"
-      }
-    },
-    {
-      "id": 554942,
-      "competition": "Campeonato Brasileiro S\u00e9rie A",
-      "utcDate": "2026-11-14T23:30:00Z",
-      "status": "TIMED",
-      "homeTeam": "Chapecoense",
-      "awayTeam": "Vasco da Gama",
-      "score": {
-        "home": null,
-        "away": null
-      },
-      "forecast": {
-        "home_prob": 46,
-        "draw_prob": 26,
-        "away_prob": 28,
-        "tip": "1"
-      }
-    }
-  ]
+  "updated_at": "2026-11-15T00:40:13.224078+00:00",
+  "matches": []
 }
