@@ -8,13 +8,11 @@
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:system-ui,sans-serif;background:#F2F5FA;color:#0F1B2D;padding-bottom:110px}
 .top{background:#0B5CFF;color:#fff;padding:14px 14px 10px;position:sticky;top:0;z-index:20}
+.topPred{background:#C81E1E;color:#fff;padding:14px 14px 10px;position:sticky;top:0;z-index:20}
+.topGreen{background:#2E9E4A;color:#fff;padding:14px 14px 10px;position:sticky;top:0;z-index:20}
 .logo{font-size:26px;font-weight:900}.slogan{font-size:11px;opacity:.9;letter-spacing:1px;text-transform:uppercase}
 .search{margin-top:10px;background:#fff;border-radius:999px;overflow:hidden}
 .search input{width:100%;border:none;outline:none;padding:11px 14px;font-size:15px}
-.srcBar{display:flex;gap:6px;flex-wrap:wrap;padding:8px 12px 0;font-size:11px}
-.srcBadge{background:#fff;border:1px solid #D9E6FF;border-radius:999px;padding:4px 8px;font-weight:700}
-.srcBadge.on{background:#22C55E;color:#fff;border-color:#22C55E}
-.srcBadge.off{background:#FFECEC;color:#999;border-color:#eee}
 .catTitle{font-size:22px;font-weight:800;text-align:center;padding:14px 0 8px}
 .catGrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:0 14px}
 .catCard{border-radius:18px;padding:22px 10px 18px;text-align:center;cursor:pointer;border:3px solid #E6EBF2;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.06)}
@@ -26,18 +24,24 @@ body{font-family:system-ui,sans-serif;background:#F2F5FA;color:#0F1B2D;padding-b
 .tabsTop{display:flex;gap:8px;overflow:auto;padding:6px 12px;background:#fff;border-bottom:1px solid #E6EBF2}
 .tBtn{padding:9px 14px;border-radius:999px;background:#F2F5FA;border:1px solid #E6EBF2;font-size:13px;font-weight:700;white-space:nowrap;cursor:pointer}
 .tBtn.active{background:#0B5CFF;color:#fff;border-color:#0B5CFF}
-.contHead{background:#0B5CFF;color:#fff;padding:10px 12px;font-weight:800;font-size:14px;margin:14px 12px 0;border-radius:12px 12px 0 0}
-.matchCard{background:#EAF2FF;border-radius:0 0 18px 18px;margin:0 12px 12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06)}
-.leagueBar{background:#CDE4FF;padding:12px;display:flex;justify-content:space-between;align-items:center;font-weight:800;font-size:14px}
-.matchBody{padding:14px 14px 10px;display:flex;justify-content:space-between;align-items:center;text-align:center}
-.team{flex:1}.team div{font-size:28px}.team b{font-size:13px;display:block;margin-top:6px}
-.mid{flex:1}.mid b{font-size:24px}.mid small{display:block;color:#6B7A90;font-size:12px;margin-top:4px}
-.pickRow{text-align:center;padding:0 0 12px;font-size:14px;color:#444}.pickRow b{color:#000}
-.sureCard{background:#0F1B2D;color:#fff;border-radius:14px;margin:0 12px 12px;overflow:hidden}
-.sureTop{background:#1A2A44;padding:12px;display:flex;justify-content:space-between;font-size:13px}
+.tBtnRed.active{background:#C81E1E;color:#fff;border-color:#C81E1E}
+.predHeader{display:flex;justify-content:space-between;padding:10px 12px;font-size:12px;color:#333;font-weight:700;background:#fff;border-bottom:1px solid #eee}
+.predRow{background:#fff;border-radius:12px;margin:0 12px 10px;padding:12px;display:flex;gap:10px;align-items:center;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+.predTeams{flex:1.4}.predTeams b{color:#C81E1E;font-size:14px;display:block}.predTeams small{color:#999}
+.prob{font-size:14px;white-space:nowrap}.prob b{color:#000}
+.predCircle{width:32px;height:32px;border-radius:50%;background:#FFB300;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:16px}
+.coef{background:#fff;border:1px solid #eee;border-radius:8px;padding:6px 8px;font-weight:700;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+.liveBadge{border:1px solid #FF2D2D;color:#FF2D2D;border-radius:999px;padding:4px 8px;font-size:12px;font-weight:800}
+.sureCard{background:#1A1A2E;color:#fff;border-radius:14px;margin:0 12px 12px;overflow:hidden}
+.sureTop{background:#12122A;padding:12px;display:flex;justify-content:space-between;font-size:13px}
 .sureBody{padding:14px;display:flex;justify-content:space-between;align-items:center}
 .surePick{background:#0B5CFF;color:#fff;padding:10px 14px;border-radius:10px;font-size:13px;font-weight:700}
-.sureOdds{background:#22C55E;color:#fff;padding:10px 14px;border-radius:10px;font-weight:800}
+.sureOdds{background:#7ED321;color:#000;padding:10px 14px;border-radius:10px;font-weight:800}
+.topPredCard{background:#fff;border-radius:18px;margin:0 12px 14px;padding:12px;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+.topPredLeague{background:#F2F2F2;border-radius:12px;padding:10px;display:flex;gap:8px;align-items:center;font-weight:700;font-size:13px}
+.tipBox{border:1px solid #D9E6FF;border-radius:12px;padding:10px;text-align:center;color:#666;font-size:13px;margin-top:10px}
+.freeVip{background:#1A0A2E;color:#fff;padding:14px}
+.freeVipCard{background:#F2F0F5;color:#1A0A2E;border-radius:12px;padding:14px;display:flex;gap:10px;align-items:center;font-weight:700;margin-bottom:10px;cursor:pointer}
 .bottom{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:2px solid #0B5CFF;display:flex;justify-content:space-around;padding:10px 0 12px;z-index:40}
 .bottom button{border:none;background:none;text-align:center;font-size:11px;font-weight:700;color:#6B7A90}.bottom button.active{color:#0B5CFF}
 .page{display:none}.page.active{display:block}
@@ -47,11 +51,10 @@ body{font-family:system-ui,sans-serif;background:#F2F5FA;color:#0F1B2D;padding-b
 </style>
 </head>
 <body>
-<header class="top">
+<header class="top" id="mainHeader">
 <div style="display:flex;justify-content:space-between;align-items:center"><div><div class="logo">Calculatics.</div><div class="slogan">Calculated. Not Guessed.</div></div><div style="font-size:12px;text-align:right" id="topCount">Loading...</div></div>
 <div class="search"><input id="searchInput" oninput="doSearch(this.value)" placeholder="Search team, league, country..."></div>
 </header>
-<div class="srcBar" id="srcBar"><span class="srcBadge" id="srcESPN">ESPN • ...</span><span class="srcBadge" id="srcSofa">SofaScore • ...</span><span class="srcBadge" id="srcDB">TheSportsDB • ...</span></div>
 <div class="dateRow" id="dateRow"></div>
 <div id="catSection">
 <div class="catTitle">Categories</div>
@@ -64,18 +67,30 @@ body{font-family:system-ui,sans-serif;background:#F2F5FA;color:#0F1B2D;padding-b
 <div class="catCard" onclick="openCat('Extra Picks')" style="background:#EAF2FF;border-color:#BFD8FF"><div class="catIcon">➕</div><b style="color:#5A7A8A">Extra Picks</b></div>
 </div>
 </div>
-<div class="tabsTop" id="statusTabs" style="display:none">
-<button class="tBtn active" onclick="setStatus(this,'All')">All</button>
-<button class="tBtn" onclick="setStatus(this,'Upcoming')">Upcoming</button>
-<button class="tBtn" onclick="setStatus(this,'Finished')">Finished</button>
-<button class="tBtn" onclick="setStatus(this,'Live')">Live</button>
+<div id="page-home" class="page active">
+<div style="padding:14px"><h2>Free</h2><div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px">
+<div class="freeVipCard" onclick="goPage('top')">📅 Daily Sure Tips</div><div class="freeVipCard" onclick="goPage('pred')">⚽ Football Tips</div><div class="freeVipCard" onclick="openCat('Over/Under')">➗ Over-Under</div><div class="freeVipCard" onclick="goPage('top')">🎟️ Single Tips</div><div class="freeVipCard" onclick="goPage('top')">📅 Daily 20+ Odds</div><div class="freeVipCard" onclick="goPage('top')">🎁 Bonus-Surprise</div>
+</div><h2 style="margin-top:16px">VIP</h2><div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px">
+<div class="freeVipCard" onclick="goPage('pred')">🎯 Correct Score VIP</div><div class="freeVipCard" onclick="goPage('pred')">⏱️ HT-FT VIP</div><div class="freeVipCard" onclick="goPage('pred')">📅 Multi 50+ Odds VIP</div><div class="freeVipCard" onclick="goPage('pred')">📅 Multi 10+ Odds VIP</div><div class="freeVipCard" onclick="goPage('pred')">⭐ Special VIP</div><div class="freeVipCard" onclick="goPage('pred')">🔀 Fixed VIP</div>
+</div></div>
+<div id="homeList"></div>
 </div>
 
-<div id="page-all" class="page active"><div id="allList" style="padding-top:6px"></div></div>
-<div id="page-top" class="page"><div id="topList" style="padding-top:10px"></div></div>
+<div id="page-pred" class="page">
+<div class="tabsTop"><button class="tBtn tBtnRed active" onclick="setPredTab(this,'1X2')">1X2</button><button class="tBtn tBtnRed" onclick="setPredTab(this,'Over')">Under/Over 2.5</button><button class="tBtn tBtnRed" onclick="setPredTab(this,'BTTS')">Both to score</button><button class="tBtn tBtnRed" onclick="setPredTab(this,'HT')">Half Time</button></div>
+<div class="tabsTop"><button class="tBtn active" onclick="setStatus(this,'All')">All</button><button class="tBtn" onclick="setStatus(this,'Upcoming')">Upcoming</button><button class="tBtn" onclick="setStatus(this,'Finished')">Finished</button><button class="tBtn" onclick="setStatus(this,'League')">By League</button></div>
+<div class="predHeader"><span>Home team<br>Away team</span><span>Probability<br>in %</span><span>Pred.</span><span>Coef</span><span>Score</span></div>
+<div id="predList"></div>
+</div>
+
+<div id="page-top" class="page">
+<div style="padding:12px;text-align:center;color:#666">Daily Sure Tips • 15.11.2026</div>
+<div id="topList"></div>
+<div style="padding:12px"><h3 style="margin-bottom:10px">Top Predictions</h3><div id="topPredList"></div></div>
+</div>
+
 <div id="page-live" class="page"><div id="liveList" style="padding-top:10px"></div></div>
-<div id="page-fav" class="page"><div id="favList" style="padding:14px;background:#fff">Tap ♡ on any match to save it here.</div></div>
-<div id="page-more" class="page"><div style="padding:14px"><div style="background:#fff;border-radius:14px;padding:14px"><h3>Calculatics — All Countries</h3><p style="color:#666;font-size:13px;margin-top:6px">Sources: 【entity-ESPN¦canonical_name=ESPN】 + 【entity-SofaScore¦canonical_name=SofaScore】 (via proxy) + TheSportsDB.<br>No country left behind. Search any country in the search bar — e.g. "Cameroon", "Japan", "Egypt".<br>Top Leagues first, then All Countries.</p></div></div></div>
+<div id="page-fav" class="page"><div id="favList" style="padding:14px;background:#fff">Tap ⭐ on any match to save it here.</div></div>
 
 <div id="detailPage" style="display:none;position:fixed;inset:0;background:#F2F5FA;z-index:50;overflow:auto;padding-bottom:110px">
 <div style="background:#0B5CFF;color:#fff;padding:14px"><div style="display:flex;justify-content:space-between;align-items:center"><button onclick="closeDetail()" style="background:rgba(255,255,255,.2);border:none;color:#fff;width:38px;height:38px;border-radius:50%;font-size:18px">←</button><b id="dLeague">League</b><button onclick="toggleFav()" style="background:none;border:none;font-size:22px">♡</button></div>
@@ -83,102 +98,47 @@ body{font-family:system-ui,sans-serif;background:#F2F5FA;color:#0F1B2D;padding-b
 <div style="display:flex;gap:8px;padding:12px;overflow:auto"><button class="tBtn active" onclick="setDTab(this,'live')">Live + Stats</button><button class="tBtn" onclick="setDTab(this,'events')">Events</button><button class="tBtn" onclick="setDTab(this,'form')">Form + History</button><button class="tBtn" onclick="setDTab(this,'details')">Details</button><button class="tBtn" onclick="setDTab(this,'markets')">Markets</button></div><div style="padding:0 12px" id="detailContent"></div><div style="padding:0 12px;font-size:11px;color:#666" id="detailSrc"></div></div>
 
 <nav class="bottom">
-<button class="active" onclick="goPage('all',this)">🏠<br>All Tips</button>
+<button class="active" onclick="goPage('home',this)">🏠<br>Home</button>
+<button onclick="goPage('pred',this)">📈<br>Predictions</button>
 <button onclick="goPage('top',this)">🔥<br>Top Tips</button>
-<button onclick="goPage('live',this)">📺<br>Live Games</button>
+<button onclick="goPage('live',this)">📺<br>Live</button>
 <button onclick="goPage('fav',this)">⭐<br>Favorites</button>
-<button onclick="goPage('more',this)">▦<br>More Apps</button>
 </nav>
 
 <script>
-let ALL=[],curDate=new Date(),curView="all",curCat="All",statusFilter="All",favs=[],curMatch=null,expanded={};
-let SRC={espn:0,sofa:0,db:0};
-let TOP_LEAGUES=["Premier League","La Liga","Serie A","Bundesliga","Ligue 1","Eredivisie","Primeira Liga","Super Lig","Pro League","Champions League","Europa League","Nations League","Serie A","Serie B","Championship","Segunda","Liga MX","MLS","Elite One"];
-let ESPN_LEAGUES=[
-{id:"eng.1",name:"England - Premier League"},{id:"esp.1",name:"Spain - La Liga"},{id:"ita.1",name:"Italy - Serie A"},{id:"ger.1",name:"Germany - Bundesliga"},{id:"fra.1",name:"France - Ligue 1"},{id:"ned.1",name:"Netherlands - Eredivisie"},{id:"por.1",name:"Portugal - Primeira Liga"},{id:"bel.1",name:"Belgium - Pro League"},{id:"tur.1",name:"Turkey - Super Lig"},{id:"eng.2",name:"England - Championship"},{id:"esp.2",name:"Spain - Segunda"},{id:"ita.2",name:"Italy - Serie B"},{id:"ned.2",name:"Netherlands - Eerste Divisie"},{id:"uefa.champions",name:"Europe - Champions League"},{id:"uefa.europa",name:"Europe - Europa League"},{id:"uefa.nations",name:"Europe - Nations League"},{id:"bra.1",name:"Brazil - Serie A"},{id:"bra.2",name:"Brazil - Serie B"},{id:"arg.1",name:"Argentina - Primera"},{id:"mex.1",name:"Mexico - Liga MX"},{id:"usa.1",name:"USA - MLS"},{id:"fifa.worldq",name:"World - World Cup Qualifiers"},{id:"cmr.1",name:"Cameroon - Elite One"},{id:"egy.1",name:"Egypt - Premier League"},{id:"rsa.1",name:"South Africa - Premier"},{id:"sau.1",name:"Saudi - Pro League"},{id:"jpn.1",name:"Japan - J1 League"},{id:"kor.1",name:"Korea - K League"}
-];
+const API_KEY="1b0198aa1219aa0d134d66855c97a6a5";
+const API_BASE="https://v3.football.api-sports.io";
+let ALL=[],curDate=new Date(),curView="home",curCat="All",statusFilter="All",predTab="1X2",favs=[],curMatch=null,expanded={};
+let TOP_LEAGUES=["Premier League","La Liga","Serie A","Bundesliga","Ligue 1","Eredivisie","Primeira Liga","Super Lig","Pro League","Champions League","Europa League","Nations League","Serie B","Championship","Segunda","Liga MX","MLS","Elite One"];
 function fmtDate(d){return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,'0')+"-"+String(d.getDate()).padStart(2,'0');}
-function fmtESPN(d){return d.getFullYear()+String(d.getMonth()+1).padStart(2,'0')+String(d.getDate()).padStart(2,'0');}
 function buildDates(){let html=""; for(let i=-2;i<=3;i++){ let d=new Date(); d.setDate(d.getDate()+i); let label=i===0?"Today":i===-1?"Yesterday":i===1?"Tomorrow":d.toLocaleDateString([],{weekday:'short'}); let active=i===0?"active":""; html+=`<button class="datePill ${active}" onclick="setDate(${i},this)"><b>${label}</b><small>${d.getDate()} ${d.toLocaleDateString([],{month:'short'})}</small></button>`; } document.getElementById('dateRow').innerHTML=html;}
-function setDate(off,btn){ curDate=new Date(); curDate.setDate(curDate.getDate()+off); document.querySelectorAll('.datePill').forEach(x=>x.classList.remove('active')); btn.classList.add('active'); loadAll(); }
+function setDate(off,btn){ curDate=new Date(); curDate.setDate(curDate.getDate()+off); document.querySelectorAll('.datePill').forEach(x=>x.classList.remove('active')); btn.classList.add('active'); loadAll(true); }
 function makePick(home,away){let r=Math.random(); if(r<0.35) return {label:"1",text:home+" to win at Full time",prob:[48,28,24],odds:"1.53"}; if(r<0.55) return {label:"2",text:away+" to win at Full time",prob:[28,28,44],odds:"1.85"}; if(r<0.7) return {label:"X",text:"Draw at Full time",prob:[33,38,29],odds:"3.70"}; if(r<0.85) return {label:"GG-NO",text:"GG-NO",prob:[42,30,28],odds:"1.90"}; return {label:"Over 2.5",text:"Over+ 2,5 Goals",prob:[45,28,27],odds:"1.40"};}
-function keyOf(home,away){return (home+"|"+away).toLowerCase().replace(/[^a-z|]/g,'');}
-function updateSrcBar(){
-document.getElementById('srcESPN').innerText="ESPN • "+SRC.espn; document.getElementById('srcESPN').className="srcBadge "+(SRC.espn>0?"on":"off");
-document.getElementById('srcSofa').innerText="SofaScore • "+SRC.sofa; document.getElementById('srcSofa').className="srcBadge "+(SRC.sofa>0?"on":"off");
-document.getElementById('srcDB').innerText="TheSportsDB • "+SRC.db; document.getElementById('srcDB').className="srcBadge "+(SRC.db>0?"on":"off");
-}
-async function loadESPN(){
-let dateStr=fmtESPN(curDate); let list=[];
-for(let lg of ESPN_LEAGUES){
-try{
-let r=await fetch("https://site.api.espn.com/apis/site/v2/sports/soccer/"+lg.id+"/scoreboard?dates="+dateStr);
-let j=await r.json();
-if(j.events) j.events.forEach(ev=>{
-let c=ev.competitions[0]; let home=c.competitors.find(x=>x.homeAway==="home"); let away=c.competitors.find(x=>x.homeAway==="away");
-let st=c.status.type.state; let p=makePick(home.team.displayName,away.team.displayName);
-list.push({id:"espn-"+ev.id,espnId:ev.id,leagueId:lg.id,league:lg.name,home:home.team.displayName,away:away.team.displayName,homeId:home.id,awayId:away.id,time:new Date(ev.date).toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'}),score:st==="pre"?"VS":(home.score+" - "+away.score),status:st==="in"?"LIVE • "+(c.status.displayClock||""):st==="post"?"Full time":"Upcoming",live:st==="in",finished:st==="post",pick:p.label,pickText:p.text,prob:p.prob,odds:p.odds,src:"ESPN"});
-});
-}catch(e){}
-}
+async function apiFetch(path){ let r=await fetch(API_BASE+path,{headers:{"x-apisports-key":API_KEY}}); let j=await r.json(); if(j.errors && Object.keys(j.errors).length) throw new Error("quota"); return j; }
+async function loadAPIFootball(){
+let dateStr=fmtDate(curDate);
+let cacheKey="calc_"+dateStr; let cached=localStorage.getItem(cacheKey);
+if(cached){ try{ let o=JSON.parse(cached); if(Date.now()-o.t<600000) return o.data; }catch(e){} }
+let j=await apiFetch("/fixtures?date="+dateStr);
+let list=(j.response||[]).map(f=>{ let s=f.fixture.status.short; let isLive=["1H","2H","ET","P","LIVE","HT"].includes(s); let fin=["FT","AET","PEN"].includes(s); let p=makePick(f.teams.home.name,f.teams.away.name); return {id:"api-"+f.fixture.id,apiId:f.fixture.id,league:(f.league.country||"World")+" - "+(f.league.name||"Football"),leagueIdApi:f.league.id,home:f.teams.home.name,away:f.teams.away.name,homeIdApi:f.teams.home.id,awayIdApi:f.teams.away.id,time:new Date(f.fixture.date).toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'}),score:s==="NS"?"VS":(f.goals.home??0)+" - "+(f.goals.away??0),status:isLive?"LIVE • "+(f.fixture.status.elapsed||"")+"'":fin?"Full time":s==="NS"?"Upcoming":f.fixture.status.long,live:isLive,finished:fin,pick:p.label,pickText:p.text,prob:p.prob,odds:p.odds,src:"API-Football",elapsed:f.fixture.status.elapsed,htScore:f.score?.halftime?.home!=null?f.score.halftime.home+" - "+f.score.halftime.away:"-"}; });
+try{ localStorage.setItem(cacheKey,JSON.stringify({t:Date.now(),data:[STRIPPED] }catch(e){}
 return list;
 }
-async function loadSofa(){
-let dateStr=fmtDate(curDate); let list=[];
-try{
-let url="https://www.sofascore.com/api/v1/sport/football/scheduled-events/"+dateStr;
-let r=await fetch("https://api.allorigins.win/raw?url="+encodeURIComponent(url));
-let j=await r.json();
-(j.events||[]).forEach(ev=>{
-let p=makePick(ev.homeTeam?.name||"Home",ev.awayTeam?.name||"Away");
-let isLive=ev.status?.code===1;
-list.push({id:"sofa-"+ev.id,sofaId:ev.id,league:(ev.tournament?.category?.name||"World")+" - "+(ev.tournament?.name||"Football"),home:ev.homeTeam?.name,away:ev.awayTeam?.name,time:new Date(ev.startTimestamp*1000).toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'}),score:ev.status?.code===0?"VS":(ev.homeScore?.current??0)+" - "+(ev.awayScore?.current??0),status:isLive?ev.status?.description||"LIVE":ev.status?.code===3?"Full time":"Upcoming",live:isLive,finished:ev.status?.code===3,pick:p.label,pickText:p.text,prob:p.prob,odds:p.odds,src:"SofaScore"});
-});
-}catch(e){}
-// Live via proxy too — this is the fast one that catches corners in seconds
-try{
-let r2=await fetch("https://api.allorigins.win/raw?url="+encodeURIComponent("https://www.sofascore.com/api/v1/sport/football/events/live"));
-let j2=await r2.json();
-(j2.events||[]).forEach(ev=>{
-let ex=list.find(m=>m.sofaId===ev.id);
-if(ex){ ex.score=(ev.homeScore?.current??0)+" - "+(ev.awayScore?.current??0); ex.status=ev.status?.description||"LIVE"; ex.live=true; }
-else { let p=makePick(ev.homeTeam?.name||"Home",ev.awayTeam?.name||"Away"); list.push({id:"sofa-"+ev.id,sofaId:ev.id,league:(ev.tournament?.category?.name||"World")+" - "+(ev.tournament?.name||"Football"),home:ev.homeTeam?.name,away:ev.awayTeam?.name,time:new Date(ev.startTimestamp*1000).toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'}),score:(ev.homeScore?.current??0)+" - "+(ev.awayScore?.current??0),status:ev.status?.description||"LIVE",live:true,finished:false,pick:p.label,pickText:p.text,prob:p.prob,odds:p.odds,src:"SofaScore"}); }
-});
-}catch(e){}
-return list;
-}
-async function loadDB(){
-let dateStr=fmtDate(curDate); let list=[];
-try{
-let r=await fetch("https://www.thesportsdb.com/api/v1/json/3/eventsday.php?d="+dateStr+"&s=Soccer");
-let j=await r.json();
-(j.events||[]).forEach(ev=>{
-let p=makePick(ev.strHomeTeam||"Home",ev.strAwayTeam||"Away");
-let isLive=ev.strStatus && ev.strStatus!=="Not Started" && ev.strStatus!=="FT" && ev.strStatus!=="Match Finished";
-list.push({id:"db-"+ev.idEvent,dbId:ev.idEvent,league:(ev.strCountry||"World")+" - "+(ev.strLeague||"Football"),home:ev.strHomeTeam,away:ev.strAwayTeam,time:(ev.strTime||"").slice(0,5)||" - ",score:ev.intHomeScore==null?"VS":ev.intHomeScore+" - "+ev.intAwayScore,status:isLive?ev.strStatus:ev.strStatus==="FT"||ev.strStatus==="Match Finished"?"Full time":"Upcoming",live:!!isLive,finished:ev.strStatus==="FT"||ev.strStatus==="Match Finished",pick:p.label,pickText:p.text,prob:p.prob,odds:p.odds,src:"TheSportsDB"});
-});
-}catch(e){}
+async function loadESPNBackup(){
+let dateStr=curDate.getFullYear()+String(curDate.getMonth()+1).padStart(2,'0')+String(curDate.getDate()).padStart(2,'0'); let list=[];
+let leagues=[{id:"eng.1",name:"England - Premier League"},{id:"esp.1",name:"Spain - La Liga"},{id:"ita.1",name:"Italy - Serie A"},{id:"ger.1",name:"Germany - Bundesliga"},{id:"fra.1",name:"France - Ligue 1"},{id:"bra.1",name:"Brazil - Serie A"},{id:"mex.1",name:"Mexico - Liga MX"},{id:"uefa.nations",name:"Europe - Nations League"}];
+for(let lg of leagues){ try{ let r=await fetch("https://site.api.espn.com/apis/site/v2/sports/soccer/"+lg.id+"/scoreboard?dates="+dateStr); let j=await r.json(); if(j.events) j.events.forEach(ev=>{ let c=ev.competitions[0]; let home=c.competitors.find(x=>x.homeAway==="home"); let away=c.competitors.find(x=>x.homeAway==="away"); let st=c.status.type.state; let p=makePick(home.team.displayName,away.team.displayName); list.push({id:"【entity-espn¦canonical_name=ESPN】-"+ev.id,espnId:ev.id,leagueId:lg.id,league:lg.name,home:home.team.displayName,away:away.team.displayName,homeId:home.id,awayId:away.id,time:new Date(ev.date).toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'}),score:st==="pre"?"VS":(home.score+" - "+away.score),status:st==="in"?"LIVE":st==="post"?"Full time":"Upcoming",live:st==="in",finished:st==="post",pick:p.label,pickText:p.text,prob:p.prob,odds:p.odds,src:"【entity-ESPN¦canonical_name=ESPN】",htScore:"-"}); }); }catch(e){} }
 return list;
 }
 async function loadAll(){
-document.getElementById('topCount').innerText="Loading from 3 sources...";
-let [a,b,c]=await Promise.all([loadESPN(),loadSofa(),loadDB()]);
-SRC={espn:a.length,sofa:b.length,db:c.length}; updateSrcBar();
-// Merge: fastest / most complete wins. Deduplicate by home+away.
-let map=new Map();
-[...b,...a,...c].forEach(m=>{
-let k=keyOf(m.home,m.away);
-if(!map.has(k)) map.set(k,m);
-else { let ex=map.get(k); if(m.live && !ex.live){ ex.live=true; ex.score=m.score; ex.status=m.status; } if(m.sofaId && !ex.sofaId) ex.sofaId=m.sofaId; if(m.espnId && !ex.espnId){ ex.espnId=m.espnId; ex.leagueId=m.leagueId; ex.homeId=m.homeId; ex.awayId=m.awayId; } ex.src=ex.src+" + "+m.src; }
-});
-let all=[...map.values()];
-all.sort((x,y)=>{ if(x.live&&!y.live) return -1; if(!x.live&&y.live) return 1; return x.time.localeCompare(y.time); });
-ALL=all;
-document.getElementById('topCount').innerText=ALL.filter(m=>m.live).length+" live • "+ALL.length+" games";
-render();
+document.getElementById('topCount').innerText="Loading...";
+let main=[]; try{ main=await loadAPIFootball(); }catch(e){ main=[]; }
+let all=[...main];
+if(main.length===0){ let b=await loadESPNBackup(); let seen=new Set(all.map(m=>(m.home+"|"+m.away).toLowerCase())); b.forEach(m=>{ let k=(m.home+"|"+m.away).toLowerCase(); if(!seen.has(k)){ all.push(m); seen.add(k); } }); }
+all.sort((a,b)=>{ if(a.live&&!b.live) return -1; if(!a.live&&b.live) return 1; return a.time.localeCompare(b.time); });
+ALL=all; document.getElementById('topCount').innerText=ALL.filter(m=>m.live).length+" live • "+ALL.length+" games"; render();
 }
-setInterval(()=>{ loadAll(); },8000);
-function isTop(m){ return TOP_LEAGUES.some(t=>m.league.toLowerCase().includes(t.toLowerCase())); }
+setInterval(()=>{ loadAll(); },60000);
 function filtered(){
 let list=[...ALL];
 if(curCat!=="All"){
@@ -190,73 +150,64 @@ if(curCat==="BTTS") list=list.filter(m=>m.pick==="GG-NO");
 }
 if(statusFilter==="Upcoming") list=list.filter(m=>!m.live&&!m.finished);
 if(statusFilter==="Finished") list=list.filter(m=>m.finished);
-if(statusFilter==="Live") list=list.filter(m=>m.live);
 if(curView==="live") list=list.filter(m=>m.live);
 return list;
 }
-function cardHTML(m){
-let mid=m.live?`<b style="color:#FF2D2D">${m.score}</b><small>${m.status}</small>`:m.finished?`<b>${m.score}</b><small>Full time</small>`:`<b>${m.time}</b><small>Upcoming</small>`;
-let exp=expanded[m.id];
-return `<div class="matchCard"><div class="leagueBar"><span>🏆 ${m.league}</span><span style="font-size:11px;color:#0B5CFF">${m.src}</span></div><div class="matchBody" onclick="toggleExpand('${m.id}')"><div class="team"><div>🛡️</div><b>${m.home}</b></div><div class="mid">${mid}</div><div class="team"><div>🛡️</div><b>${m.away}</b></div></div><div class="pickRow">Pick: <b>${m.pick}</b> • ${m.odds}</div>${exp?`<div style="padding:0 14px 12px"><div style="background:#fff;border-radius:10px;padding:10px;text-align:left"><b>Tip: ${m.pick}</b> — ${m.pickText}<br><span style="color:#0B5CFF;cursor:pointer" onclick="openMatch('${m.id}')">View Details →</span></div></div>`:``}</div>`;
+function predHTML(m){
+let scoreTxt=m.finished?m.score:m.live?m.score:"-";
+let minute=m.live?`<span class="liveBadge">${m.elapsed||""}'</span>`:m.finished?`<span class="liveBadge">${m.elapsed||"FT"}</span>`:"";
+return `<div class="predRow" onclick="openMatch('${m.id}')"><div style="font-size:12px;color:#999">⭐<br>${m.league.split(" - ")[0].slice(0,3).toUpperCase()}</div><div class="predTeams"><b>${m.home}</b><b>${m.away}</b><small>${m.time} • ${fmtDate(curDate)}</small></div><div class="prob"><b>${m.prob[0]}</b> ${m.prob[1]} ${m.prob[2]}<br><small>${m.pick}</small></div><div class="predCircle">${m.pick[0]}</div><div class="coef">${m.odds}</div><div style="text-align:center"><span style="border:1px solid #C81E1E;color:#C81E1E;border-radius:8px;padding:6px 8px;font-weight:800">${scoreTxt}</span><div style="font-size:11px;color:#999;margin-top:4px">(${m.htScore})</div>${minute}</div></div>`;
 }
-function sureHTML(m){ return `<div class="sureCard"><div class="sureTop"><span>🏳️ ${m.league}</span><span>${m.time}</span></div><div class="sureBody"><b>${m.home}</b><b>${m.score}</b><b>${m.away}</b></div><div style="display:flex;justify-content:space-between;padding:0 14px 14px"><span class="surePick">${m.pickText}</span><span class="sureOdds">${m.odds}</span></div></div>`; }
+function sureHTML(m){
+return `<div class="sureCard"><div class="sureTop"><span>🏳️ ${m.league}</span><span>${m.time}</span></div><div class="sureBody"><b>${m.home}</b><b>${m.score}</b><b>${m.away}</b></div><div style="display:flex;justify-content:space-between;padding:0 14px 14px"><span class="surePick">${m.pickText}</span><span class="sureOdds">${m.odds}</span></div></div>`;
+}
+function topPredHTML(m){
+return `<div class="topPredCard"><div class="topPredLeague"><span>🛡️</span><span>${m.league}</span></div><div style="display:flex;justify-content:space-between;align-items:center;margin:12px 0"><span style="font-size:24px">⭐</span><div style="flex:1;text-align:center"><b>${m.home}  ${m.score==="VS"?"- : -":m.score}  ${m.away}</b><div style="font-size:12px;color:#666">Half-Time ${m.htScore} • ${m.live?"LIVE":m.finished?"FT":m.time}</div><div style="margin-top:8px">Tip: <b>${m.pick}</b> &nbsp; Odds: <b>${m.odds}</b></div></div><span style="color:#0B5CFF;font-size:13px;cursor:pointer" onclick="openMatch('${m.id}')">View Details ›</span></div><div class="tipBox">ⓘ ${m.pickText}</div></div>`;
+}
+function liveHTML(m){
+return `<div class="topPredCard" onclick="openMatch('${m.id}')"><div class="topPredLeague"><span>🏆 ${m.league}</span><span style="margin-left:auto;color:#FF2D2D">● ${m.status}</span></div><div style="display:flex;justify-content:space-between;align-items:center;margin:12px 0"><b>${m.home}</b><b style="font-size:22px">${m.score}</b><b>${m.away}</b></div><div style="text-align:center">Pick: <b>${m.pick}</b> • ${m.odds}</div></div>`;
+}
 function render(){
 let list=filtered();
-if(curView==="top"){ document.getElementById('topList').innerHTML=list.slice(0,15).map(sureHTML).join('')||'<div style="padding:16px;background:#fff;margin:0 12px;border-radius:12px">No top tips.</div>'; return; }
-if(curView==="live"){ document.getElementById('liveList').innerHTML=list.length?list.map(cardHTML).join(''):'<div style="padding:16px;background:#fff;margin:0 12px;border-radius:12px">No live match right now.</div>'; return; }
-let top=list.filter(isTop); let rest=list.filter(m=>!isTop(m));
-let html="";
-if(top.length) html+=`<div class="contHead">⭐ Top Leagues — Europe • South America • North America • Africa • Asia</div>`+top.map(cardHTML).join('');
-if(rest.length) html+=`<div class="contHead">🌍 All Countries — League A / League B — No Country Left Behind (${rest.length})</div>`+rest.slice(0,150).map(cardHTML).join('');
-if(!list.length) html=`<div style="padding:16px;background:#fff;margin:0 12px;border-radius:12px">No games for this filter. Try Today / Yesterday. Sources: ESPN ${SRC.espn} • SofaScore ${SRC.sofa} • TheSportsDB ${SRC.db}</div>`;
-document.getElementById('allList').innerHTML=html;
+if(curView==="pred"){ document.getElementById('predList').innerHTML=list.map(predHTML).join('')||'<div style="padding:16px">No predictions for this filter.</div>'; return; }
+if(curView==="top"){ document.getElementById('topList').innerHTML=list.slice(0,6).map(sureHTML).join('')||'<div style="padding:16px">No top tips.</div>'; document.getElementById('topPredList').innerHTML=list.slice(0,10).map(topPredHTML).join(''); return; }
+if(curView==="live"){ document.getElementById('liveList').innerHTML=list.length?list.map(liveHTML).join(''):'<div style="padding:16px;background:#fff;margin:0 12px;border-radius:12px">No live match right now.</div>'; return; }
+if(curView==="home"){ document.getElementById('homeList').innerHTML=list.slice(0,10).map(topPredHTML).join(''); return; }
 }
-function toggleExpand(id){ expanded[id]=!expanded[id]; render(); }
-function openCat(cat){ curCat=cat; curView="all"; document.getElementById('catSection').style.display='none'; document.getElementById('statusTabs').style.display='flex'; goPage('all'); render(); document.getElementById('topCount').innerText="Category: "+cat; }
-function setStatus(b,s){ document.querySelectorAll('#statusTabs .tBtn').forEach(x=>x.classList.remove('active')); b.classList.add('active'); statusFilter=s; render(); }
+function openCat(cat){ curCat=cat; curView="pred"; document.getElementById('catSection').style.display='none'; goPage('pred'); render(); document.getElementById('topCount').innerText="Category: "+cat; }
+function setPredTab(b,t){ document.querySelectorAll('#page-pred .tabsTop .tBtn').forEach(x=>x.classList.remove('active')); b.classList.add('active'); predTab=t; render(); }
+function setStatus(b,s){ document.querySelectorAll('.tabsTop .tBtn').forEach(x=>x.classList.remove('active')); b.classList.add('active'); statusFilter=s; render(); }
 function goPage(v,btn){
 curView=v; document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));
-let id=v==="all"?"page-all":v==="top"?"page-top":v==="live"?"page-live":v==="fav"?"page-fav":"page-more"; document.getElementById(id).classList.add('active');
+let id=v==="home"?"page-home":v==="pred"?"page-pred":v==="top"?"page-top":v==="live"?"page-live":"page-fav"; document.getElementById(id).classList.add('active');
 document.querySelectorAll('.bottom button').forEach(x=>x.classList.remove('active')); if(btn) btn.classList.add('active');
-if(v==="all"){ document.getElementById('catSection').style.display='block'; document.getElementById('statusTabs').style.display='none'; curCat="All"; statusFilter="All"; }
-if(v==="fav"){ renderFav(); }
+let h=document.getElementById('mainHeader'); if(v==="pred") h.className="topPred"; else if(v==="top") h.className="topGreen"; else h.className="top";
+if(v==="home"){ document.getElementById('catSection').style.display='block'; curCat="All"; statusFilter="All"; }
+else document.getElementById('catSection').style.display='none';
+if(v==="fav") renderFav();
 render();
 }
-function renderFav(){ document.getElementById('favList').innerHTML=favs.length?favs.map(id=>{let m=ALL.find(x=>x.id==id); return m?`<div style="padding:10px 0;border-bottom:1px solid #eee" onclick="openMatch('${m.id}')">⭐ ${m.home} vs ${m.away} — Pick: ${m.pick}</div>`:""}).join(''):'Tap ♡ on any match to save it here.'; }
+function renderFav(){ document.getElementById('favList').innerHTML=favs.length?favs.map(id=>{let m=ALL.find(x=>x.id==id); return m?`<div style="padding:10px 0;border-bottom:1px solid #eee" onclick="openMatch('${m.id}')">⭐ ${m.home} vs ${m.away} — Pick: ${m.pick}</div>`:""}).join(''):'Tap ⭐ on any match to save it here.'; }
 function toggleFavId(id){ if(!favs.includes(id)) favs.push(id); else favs=favs.filter(x=>x!==id); renderFav(); }
 function toggleFav(){ if(curMatch) toggleFavId(curMatch.id); }
-function doSearch(q){ q=q.toLowerCase().trim(); if(!q){ render(); return; } let res=ALL.filter(m=>(m.home+" "+m.away+" "+m.league).toLowerCase().includes(q)); document.getElementById('allList').innerHTML=res.length?res.map(cardHTML).join(''):'<div style="padding:16px;background:#fff;margin:0 12px;border-radius:12px">No match for "'+q+'" — try another country / team.</div>'; document.getElementById('topCount').innerText=res.length+" found"; }
-function openMatch(id){ curMatch=ALL.find(m=>m.id==id); if(!curMatch) return; document.getElementById('dLeague').innerText=curMatch.league; document.getElementById('dHome').innerText=curMatch.home; document.getElementById('dAway').innerText=curMatch.away; document.getElementById('dScore').innerText=curMatch.score; document.getElementById('dMeta').innerText=curMatch.time; document.getElementById('dStatus').innerText=curMatch.status; document.getElementById('detailSrc').innerText="Sources for this match: "+curMatch.src; document.getElementById('detailPage').style.display='block'; setDTab(document.querySelectorAll('#detailPage .tBtn')[0],'live'); }
+function doSearch(q){ q=q.toLowerCase().trim(); if(!q){ render(); return; } let res=ALL.filter(m=>(m.home+" "+m.away+" "+m.league).toLowerCase().includes(q)); document.getElementById('predList').innerHTML=res.length?res.map(predHTML).join(''):'<div style="padding:16px">No match for "'+q+'"</div>'; document.getElementById('topCount').innerText=res.length+" found"; goPage('pred'); }
+function openMatch(id){ curMatch=ALL.find(m=>m.id==id); if(!curMatch) return; document.getElementById('dLeague').innerText=curMatch.league; document.getElementById('dHome').innerText=curMatch.home; document.getElementById('dAway').innerText=curMatch.away; document.getElementById('dScore').innerText=curMatch.score; document.getElementById('dMeta').innerText=curMatch.time; document.getElementById('dStatus').innerText=curMatch.status; document.getElementById('detailSrc').innerText="Source: "+curMatch.src; document.getElementById('detailPage').style.display='block'; setDTab(document.querySelectorAll('#detailPage .tBtn')[0],'live'); }
 function closeDetail(){ document.getElementById('detailPage').style.display='none'; }
-async function fetchESPNStats(m){
-if(!m.espnId) return null;
-try{ let r=await fetch("https://site.api.espn.com/apis/site/v2/sports/soccer/"+m.leagueId+"/summary?event="+m.espnId); return await r.json(); }catch(e){ return null; }
-}
-async function fetchSofaStats(m){
-if(!m.sofaId) return null;
-try{ let r=await fetch("https://api.allorigins.win/raw?url="+encodeURIComponent("https://www.sofascore.com/api/v1/event/"+m.sofaId+"/statistics")); let j=await r.json(); let all=j.statistics||[]; let p=all.find(x=>x.period==="ALL")||all[0]; if(!p) return null; let map={}; (p.groups||[]).forEach(g=>{ (g.statisticsItems||[]).forEach(it=>{ map[it.name]=[it.home,it.away]; }); }); return map; }catch(e){ return null; }
-}
-async function fetchDBHistory(team){
-try{ let r=await fetch("https://www.thesportsdb.com/api/v1/json/3/searchteams.php?t="+encodeURIComponent(team)); let j=await r.json(); let id=j.teams?.[0]?.idTeam; if(!id) return []; let r2=await fetch("https://www.thesportsdb.com/api/v1/json/3/eventslast.php?id="+id); let j2=await r2.json(); return (j2.results||[]).slice(0,5).map(ev=>`${ev.intHomeScore}-${ev.intAwayScore} ${ev.strHomeTeam} vs ${ev.strAwayTeam} • ${ev.dateEvent}`); }catch(e){ return []; }
-}
+async function fetchAPIDetail(path){ try{ let j=await apiFetch(path); return j.response||[]; }catch(e){ return []; } }
 async function setDTab(b,tab){
 document.querySelectorAll('#detailPage .tBtn').forEach(x=>x.classList.remove('active')); b.classList.add('active');
 let m=curMatch;
 if(tab==='live'){
-document.getElementById('detailContent').innerHTML=`<div class="detailBox">Loading statistics from fastest source...</div>`;
-// Fastest first: SofaScore, then ESPN — if SofaScore says 1 corner and ESPN says 0, we show 1
-let sofa=await fetchSofaStats(m);
-if(sofa){ let get=(n)=>sofa[n]||[0,0]; let rows=[["Corners","Corner kicks"],["Shots","Total shots"],["Shots on Target","Shots on target"],["Possession %","Ball possession"],["Fouls","Fouls"],["Yellow Cards","Yellow cards"]]; document.getElementById('detailContent').innerHTML=`<div class="detailBox"><h3>Statistics — Fast Source: SofaScore</h3><div style="display:flex;justify-content:space-between;font-weight:800;margin:10px 0"><span>${m.home}</span><span>${m.score}</span><span>${m.away}</span></div>`+rows.map(r=>{let v=get(r[1]);let hN=parseFloat(v[0])||0,aN=parseFloat(v[1])||0,tot=hN+aN||1;return `<div class="statRow"><b style="width:38px;text-align:right">${v[0]}</b><span style="flex:1;text-align:center">${r[0]}</span><b style="width:38px">${v[1]}</b></div><div class="statBar"><div style="width:${(hN/tot*100)}%;background:#0B5CFF;height:100%"></div><div style="flex:1;background:#FF2D2D;height:100%"></div></div>`;}).join('')+`</div>`; return; }
-let data=await fetchESPNStats(m);
-if(data && data.boxscore && data.boxscore.teams){ let s={}; data.boxscore.teams.forEach(t=>{ let o={}; t.statistics.forEach(x=>o[x.name]=x.displayValue); s[t.team.displayName]=o; }); let hk=Object.keys(s)[0],ak=Object.keys(s)[1]; let get=(t,n)=>{try{return s[t][n]||"0"}catch(e){return "0"}}; let rows=[["Corners","cornerKicks"],["Shots","totalShots"],["Shots on Target","shotsOnTarget"],["Possession %","possessionPct"],["Fouls","fouls"]]; document.getElementById('detailContent').innerHTML=`<div class="detailBox"><h3>Statistics — Source: ESPN</h3><div style="display:flex;justify-content:space-between;font-weight:800;margin:10px 0"><span>${m.home}</span><span>${m.score}</span><span>${m.away}</span></div>`+rows.map(r=>{let hv=get(hk,r[1]),av=get(ak,r[1]);let hN=parseFloat(hv)||0,aN=parseFloat(av)||0,tot=hN+aN||1;return `<div class="statRow"><b style="width:38px;text-align:right">${hv}</b><span style="flex:1;text-align:center">${r[0]}</span><b style="width:38px">${av}</b></div><div class="statBar"><div style="width:${(hN/tot*100)}%;background:#0B5CFF;height:100%"></div><div style="flex:1;background:#FF2D2D;height:100%"></div></div>`;}).join('')+`</div>`; return; }
-document.getElementById('detailContent').innerHTML=`<div class="detailBox"><p>Statistics appear when the match starts. See Form + History for past data.</p></div>`; return;
+document.getElementById('detailContent').innerHTML=`<div class="detailBox">Loading statistics from API-Football...</div>`;
+if(m.apiId){ let stats=await fetchAPIDetail("/fixtures/statistics?fixture="+m.apiId); if(stats.length===2){ let get=(idx,name)=>{ let t=stats[idx].statistics.find(s=>s.type===name); return t?t.value||0:0; }; let rows=[["Corners","Corner Kicks"],["Shots","Total Shots"],["Shots on Target","Shots on Goal"],["Possession %","Ball Possession"],["Fouls","Fouls"],["Yellow Cards","Yellow Cards"],["Red Cards","Red Cards"]]; document.getElementById('detailContent').innerHTML=`<div class="detailBox"><h3>Statistics — API-Football (Real)</h3><div style="display:flex;justify-content:space-between;font-weight:800;margin:10px 0"><span>${m.home}</span><span>${m.score}</span><span>${m.away}</span></div>`+rows.map(r=>{let hv=get(0,r[1]),av=get(1,r[1]);let hN=parseFloat(String(hv).replace("%",""))||0,aN=parseFloat(String(av).replace("%",""))||0,tot=hN+aN||1;return `<div class="statRow"><b style="width:38px;text-align:right">${hv}</b><span style="flex:1;text-align:center">${r[0]}</span><b style="width:38px">${av}</b></div><div class="statBar"><div style="width:${(hN/tot*100)}%;background:#0B5CFF;height:100%"></div><div style="flex:1;background:#FF2D2D;height:100%"></div></div>`;}).join('')+`</div>`; return; } }
+document.getElementById('detailContent').innerHTML=`<div class="detailBox"><p>Statistics appear when the match starts.</p></div>`; return;
 }
-if(tab==='events'){ document.getElementById('detailContent').innerHTML=`<div class="detailBox"><div id="evBox">Loading events...</div></div>`; let data=await fetchESPNStats(m); let evs=data?.keyEvents||[]; if(m.sofaId){ try{ let r=await fetch("https://api.allorigins.win/raw?url="+encodeURIComponent("https://www.sofascore.com/api/v1/event/"+m.sofaId+"/incidents")); let j=await r.json(); let inc=j.incidents||[]; if(inc.length){ document.getElementById('evBox').innerHTML=inc.map(e=>`<div style="padding:10px 0;border-bottom:1px solid #eee"><b>${e.time}' ${e.incidentType}</b><div>${e.player?.name||""} ${e.team?.name||""}</div></div>`).join(''); return; } }catch(e){} } document.getElementById('evBox').innerHTML=evs.length?evs.map(e=>`<div style="padding:10px 0;border-bottom:1px solid #eee"><b>${e.clock?.displayValue||""} ${e.type?.text||""}</b><div>${e.text||""}</div></div>`).join(''):'<p>No events yet.</p>'; return; }
-if(tab==='form'){ document.getElementById('detailContent').innerHTML=`<div class="detailBox"><h3>History — Last 5 (Open Source: TheSportsDB)</h3><div id="formBox">Loading history...</div></div>`; let fh=await fetchDBHistory(m.home); let fa=await fetchDBHistory(m.away); let fmt=(arr)=>arr.length?arr.map(x=>`<div style="padding:8px 0;border-bottom:1px solid #eee">${x}</div>`).join(''):'<p style="color:#666">No history found for this team — try another team.</p>'; document.getElementById('formBox').innerHTML=`<b>${m.home}</b>${fmt(fh)}<br><b>${m.away}</b>${fmt(fa)}`; return; }
-if(tab==='details'){ document.getElementById('detailContent').innerHTML=`<div class="detailBox"><h3>Who will win?</h3><p>Home ${m.prob[0]}% • Draw ${m.prob[1]}% • Away ${m.prob[2]}%</p><p style="margin-top:8px">Pick: <b>${m.pick}</b> — ${m.pickText}</p><p style="color:#666;font-size:13px;margin-top:8px">Sources: ${m.src}</p></div>`; return; }
-if(tab==='markets'){ let mk=[["1X2: "+m.pick,m.odds],["Double Chance 1X","1.25"],["Over 2.5","1.90"],["BTTS Yes","1.90"],["Over 8.5 Corners","1.85"],["Over 3.5 Cards","1.70"]]; document.getElementById('detailContent').innerHTML=`<div class="detailBox"><h3>Markets</h3>`+mk.map(x=>`<div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #eee"><span>${x[0]}</span><b>${x[1]}</b></div>`).join('')+`</div>`; return; }
+if(tab==='events'){ document.getElementById('detailContent').innerHTML=`<div class="detailBox"><div id="evBox">Loading events...</div></div>`; if(m.apiId){ let evs=await fetchAPIDetail("/fixtures/events?fixture="+m.apiId); document.getElementById('evBox').innerHTML=evs.length?evs.map(e=>`<div style="padding:10px 0;border-bottom:1px solid #eee"><b>${e.time.elapsed}' ${e.type} — ${e.detail}</b><div>${e.player?.name||""} ${e.team?.name||""}</div></div>`).join(''):'<p>No events yet.</p>'; return; } document.getElementById('evBox').innerHTML='<p>No events yet.</p>'; return; }
+if(tab==='form'){ document.getElementById('detailContent').innerHTML=`<div class="detailBox"><h3>History — Last 5 (API-Football)</h3><div id="formBox">Loading history...</div></div>`; if(m.apiId){ let h=await fetchAPIDetail("/fixtures?team="+m.homeIdApi+"&last=5"); let a=await fetchAPIDetail("/fixtures?team="+m.awayIdApi+"&last=5"); let fmt=(arr)=>arr.length?arr.map(f=>`<div style="padding:8px 0;border-bottom:1px solid #eee">${f.teams.home.name} ${f.goals.home}-${f.goals.away} ${f.teams.away.name} • ${f.fixture.date.slice(0,10)}</div>`).join(''):'<p>No history.</p>'; document.getElementById('formBox').innerHTML=`<b>${m.home}</b>${fmt(h)}<br><b>${m.away}</b>${fmt(a)}`; return; } document.getElementById('formBox').innerHTML='<p>No history.</p>'; return; }
+if(tab==='details'){ document.getElementById('detailContent').innerHTML=`<div class="detailBox"><h3>Who will win?</h3><p>Home ${m.prob[0]}% • Draw ${m.prob[1]}% • Away ${m.prob[2]}%</p><p style="margin-top:8px">Pick: <b>${m.pick}</b> — ${m.pickText}</p></div>`; return; }
+if(tab==='markets'){ let mk=[["1X2: "+m.pick,m.odds],["Double Chance 1X","1.25"],["Over 2.5","1.90"],["BTTS Yes","1.90"],["Over 8.5 Corners","1.85"]]; document.getElementById('detailContent').innerHTML=`<div class="detailBox"><h3>Markets</h3>`+mk.map(x=>`<div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #eee"><span>${x[0]}</span><b>${x[1]}</b></div>`).join('')+`</div>`; return; }
 }
 buildDates(); loadAll();
 </script>
 </body>
-  </html>
+</html>
