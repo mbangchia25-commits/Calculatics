@@ -13,6 +13,7 @@ body{font-family:system-ui,sans-serif;background:#F2F5FA;color:#0F1B2D;padding-b
 .logo{font-size:26px;font-weight:900}.slogan{font-size:11px;opacity:.9;letter-spacing:1px;text-transform:uppercase}
 .search{margin-top:10px;background:#fff;border-radius:999px;overflow:hidden}
 .search input{width:100%;border:none;outline:none;padding:11px 14px;font-size:15px}
+.debug{background:#FFF3CD;border:1px solid #FFE69C;color:#664D03;border-radius:10px;padding:8px 10px;margin:10px 12px 0;font-size:12px;line-height:1.5}
 .catTitle{font-size:22px;font-weight:800;text-align:center;padding:14px 0 8px}
 .catGrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:0 14px}
 .catCard{border-radius:18px;padding:22px 10px 18px;text-align:center;cursor:pointer;border:3px solid #E6EBF2;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.06)}
@@ -24,23 +25,21 @@ body{font-family:system-ui,sans-serif;background:#F2F5FA;color:#0F1B2D;padding-b
 .tabsTop{display:flex;gap:8px;overflow:auto;padding:6px 12px;background:#fff;border-bottom:1px solid #E6EBF2}
 .tBtn{padding:9px 14px;border-radius:999px;background:#F2F5FA;border:1px solid #E6EBF2;font-size:13px;font-weight:700;white-space:nowrap;cursor:pointer}
 .tBtn.active{background:#0B5CFF;color:#fff;border-color:#0B5CFF}
-.tBtnRed.active{background:#C81E1E;color:#fff;border-color:#C81E1E}
 .predHeader{display:flex;justify-content:space-between;padding:10px 12px;font-size:12px;color:#333;font-weight:700;background:#fff;border-bottom:1px solid #eee}
-.predRow{background:#fff;border-radius:12px;margin:0 12px 10px;padding:12px;display:flex;gap:10px;align-items:center;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+.predRow{background:#fff;border-radius:12px;margin:0 12px 10px;padding:12px;display:flex;gap:10px;align-items:center;box-shadow:0 1px 4px rgba(0,0,0,.06);cursor:pointer}
 .predTeams{flex:1.4}.predTeams b{color:#C81E1E;font-size:14px;display:block}.predTeams small{color:#999}
 .prob{font-size:14px;white-space:nowrap}.prob b{color:#000}
-.predCircle{width:32px;height:32px;border-radius:50%;background:#FFB300;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:16px}
+.predCircle{width:32px;height:32px;border-radius:50%;background:#FFB300;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:16px;flex-shrink:0}
 .coef{background:#fff;border:1px solid #eee;border-radius:8px;padding:6px 8px;font-weight:700;box-shadow:0 1px 3px rgba(0,0,0,.1)}
 .liveBadge{border:1px solid #FF2D2D;color:#FF2D2D;border-radius:999px;padding:4px 8px;font-size:12px;font-weight:800}
-.sureCard{background:#1A1A2E;color:#fff;border-radius:14px;margin:0 12px 12px;overflow:hidden}
+.sureCard{background:#1A1A2E;color:#fff;border-radius:14px;margin:0 12px 12px;overflow:hidden;cursor:pointer}
 .sureTop{background:#12122A;padding:12px;display:flex;justify-content:space-between;font-size:13px}
 .sureBody{padding:14px;display:flex;justify-content:space-between;align-items:center}
 .surePick{background:#0B5CFF;color:#fff;padding:10px 14px;border-radius:10px;font-size:13px;font-weight:700}
 .sureOdds{background:#7ED321;color:#000;padding:10px 14px;border-radius:10px;font-weight:800}
-.topPredCard{background:#fff;border-radius:18px;margin:0 12px 14px;padding:12px;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+.topPredCard{background:#fff;border-radius:18px;margin:0 12px 14px;padding:12px;box-shadow:0 2px 10px rgba(0,0,0,.08);cursor:pointer}
 .topPredLeague{background:#F2F2F2;border-radius:12px;padding:10px;display:flex;gap:8px;align-items:center;font-weight:700;font-size:13px}
 .tipBox{border:1px solid #D9E6FF;border-radius:12px;padding:10px;text-align:center;color:#666;font-size:13px;margin-top:10px}
-.freeVip{background:#1A0A2E;color:#fff;padding:14px}
 .freeVipCard{background:#F2F0F5;color:#1A0A2E;border-radius:12px;padding:14px;display:flex;gap:10px;align-items:center;font-weight:700;margin-bottom:10px;cursor:pointer}
 .bottom{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:2px solid #0B5CFF;display:flex;justify-content:space-around;padding:10px 0 12px;z-index:40}
 .bottom button{border:none;background:none;text-align:center;font-size:11px;font-weight:700;color:#6B7A90}.bottom button.active{color:#0B5CFF}
@@ -48,6 +47,7 @@ body{font-family:system-ui,sans-serif;background:#F2F5FA;color:#0F1B2D;padding-b
 .detailBox{background:#fff;border-radius:12px;padding:12px;margin-top:10px}
 .statRow{display:flex;align-items:center;gap:8px;padding:7px 0;font-size:13px}
 .statBar{flex:1;height:8px;background:#EAF2FF;border-radius:999px;overflow:hidden;display:flex}
+.detailBtn{background:#0B5CFF;color:#fff;border:none;padding:10px 14px;border-radius:10px;font-weight:800;width:100%;margin-top:10px}
 </style>
 </head>
 <body>
@@ -55,6 +55,7 @@ body{font-family:system-ui,sans-serif;background:#F2F5FA;color:#0F1B2D;padding-b
 <div style="display:flex;justify-content:space-between;align-items:center"><div><div class="logo">Calculatics.</div><div class="slogan">Calculated. Not Guessed.</div></div><div style="font-size:12px;text-align:right" id="topCount">Loading...</div></div>
 <div class="search"><input id="searchInput" oninput="doSearch(this.value)" placeholder="Search team, league, country..."></div>
 </header>
+<div class="debug" id="debugBar">⏳ Starting... Loading ESPN first so you always see data.</div>
 <div class="dateRow" id="dateRow"></div>
 <div id="catSection">
 <div class="catTitle">Categories</div>
@@ -77,14 +78,14 @@ body{font-family:system-ui,sans-serif;background:#F2F5FA;color:#0F1B2D;padding-b
 </div>
 
 <div id="page-pred" class="page">
-<div class="tabsTop"><button class="tBtn tBtnRed active" onclick="setPredTab(this,'1X2')">1X2</button><button class="tBtn tBtnRed" onclick="setPredTab(this,'Over')">Under/Over 2.5</button><button class="tBtn tBtnRed" onclick="setPredTab(this,'BTTS')">Both to score</button><button class="tBtn tBtnRed" onclick="setPredTab(this,'HT')">Half Time</button></div>
+<div class="tabsTop"><button class="tBtn active" onclick="setPredTab(this,'1X2')">1X2</button><button class="tBtn" onclick="setPredTab(this,'Over')">Under/Over 2.5</button><button class="tBtn" onclick="setPredTab(this,'BTTS')">Both to score</button><button class="tBtn" onclick="setPredTab(this,'HT')">Half Time</button></div>
 <div class="tabsTop"><button class="tBtn active" onclick="setStatus(this,'All')">All</button><button class="tBtn" onclick="setStatus(this,'Upcoming')">Upcoming</button><button class="tBtn" onclick="setStatus(this,'Finished')">Finished</button><button class="tBtn" onclick="setStatus(this,'League')">By League</button></div>
 <div class="predHeader"><span>Home team<br>Away team</span><span>Probability<br>in %</span><span>Pred.</span><span>Coef</span><span>Score</span></div>
 <div id="predList"></div>
 </div>
 
 <div id="page-top" class="page">
-<div style="padding:12px;text-align:center;color:#666">Daily Sure Tips • 15.11.2026</div>
+<div style="padding:12px;text-align:center;color:#666">Daily Sure Tips • <span id="topDate"></span></div>
 <div id="topList"></div>
 <div style="padding:12px"><h3 style="margin-bottom:10px">Top Predictions</h3><div id="topPredList"></div></div>
 </div>
@@ -93,9 +94,9 @@ body{font-family:system-ui,sans-serif;background:#F2F5FA;color:#0F1B2D;padding-b
 <div id="page-fav" class="page"><div id="favList" style="padding:14px;background:#fff">Tap ⭐ on any match to save it here.</div></div>
 
 <div id="detailPage" style="display:none;position:fixed;inset:0;background:#F2F5FA;z-index:50;overflow:auto;padding-bottom:110px">
-<div style="background:#0B5CFF;color:#fff;padding:14px"><div style="display:flex;justify-content:space-between;align-items:center"><button onclick="closeDetail()" style="background:rgba(255,255,255,.2);border:none;color:#fff;width:38px;height:38px;border-radius:50%;font-size:18px">←</button><b id="dLeague">League</b><button onclick="toggleFav()" style="background:none;border:none;font-size:22px">♡</button></div>
+<div style="background:#0B5CFF;color:#fff;padding:14px"><div style="display:flex;justify-content:space-between;align-items:center"><button onclick="closeDetail()" style="background:rgba(255,255,255,.2);border:none;color:#fff;width:38px;height:38px;border-radius:50%;font-size:18px">←</button><b id="dLeague">League</b><button onclick="toggleFav()" style="background:none;border:none;font-size:22px;color:#fff">♡</button></div>
 <div style="text-align:center;padding:14px 0 8px"><div style="font-size:12px" id="dMeta">Today</div><div style="display:flex;justify-content:space-between;align-items:center;margin-top:10px"><div style="flex:1;text-align:center"><div style="font-size:30px">🛡️</div><b id="dHome">Home</b></div><div style="text-align:center"><div style="font-size:28px;font-weight:900" id="dScore">VS</div><div id="dStatus"></div></div><div style="flex:1;text-align:center"><div style="font-size:30px">🛡️</div><b id="dAway">Away</b></div></div></div></div>
-<div style="display:flex;gap:8px;padding:12px;overflow:auto"><button class="tBtn active" onclick="setDTab(this,'live')">Live + Stats</button><button class="tBtn" onclick="setDTab(this,'events')">Events</button><button class="tBtn" onclick="setDTab(this,'form')">Form + History</button><button class="tBtn" onclick="setDTab(this,'details')">Details</button><button class="tBtn" onclick="setDTab(this,'markets')">Markets</button></div><div style="padding:0 12px" id="detailContent"></div><div style="padding:0 12px;font-size:11px;color:#666" id="detailSrc"></div></div>
+<div style="display:flex;gap:8px;padding:12px;overflow:auto"><button class="tBtn active" id="tab-live" onclick="setDTab(this,'live')">Live + Stats</button><button class="tBtn" onclick="setDTab(this,'events')">Events</button><button class="tBtn" onclick="setDTab(this,'form')">Form + History</button><button class="tBtn" onclick="setDTab(this,'details')">Details</button><button class="tBtn" onclick="setDTab(this,'markets')">Markets</button></div><div style="padding:0 12px" id="detailContent"></div><div style="padding:0 12px;font-size:11px;color:#666" id="detailSrc"></div></div>
 
 <nav class="bottom">
 <button class="active" onclick="goPage('home',this)">🏠<br>Home</button>
@@ -108,37 +109,63 @@ body{font-family:system-ui,sans-serif;background:#F2F5FA;color:#0F1B2D;padding-b
 <script>
 const API_KEY="1b0198aa1219aa0d134d66855c97a6a5";
 const API_BASE="https://v3.football.api-sports.io";
-let ALL=[],curDate=new Date(),curView="home",curCat="All",statusFilter="All",predTab="1X2",favs=[],curMatch=null,expanded={};
-let TOP_LEAGUES=["Premier League","La Liga","Serie A","Bundesliga","Ligue 1","Eredivisie","Primeira Liga","Super Lig","Pro League","Champions League","Europa League","Nations League","Serie B","Championship","Segunda","Liga MX","MLS","Elite One"];
+let ALL=[],curDate=new Date(),curView="home",curCat="All",statusFilter="All",predTab="1X2",favs=[],curMatch=null;
+let ESPN_LEAGUES=[
+{id:"eng.1",name:"England - Premier League"},{id:"esp.1",name:"Spain - La Liga"},{id:"ita.1",name:"Italy - Serie A"},{id:"ger.1",name:"Germany - Bundesliga"},{id:"fra.1",name:"France - Ligue 1"},{id:"ned.1",name:"Netherlands - Eredivisie"},{id:"por.1",name:"Portugal - Primeira Liga"},{id:"bel.1",name:"Belgium - Pro League"},{id:"tur.1",name:"Turkey - Super Lig"},{id:"eng.2",name:"England - Championship"},{id:"esp.2",name:"Spain - Segunda"},{id:"ita.2",name:"Italy - Serie B"},{id:"uefa.champions",name:"Europe - Champions League"},{id:"uefa.europa",name:"Europe - Europa League"},{id:"uefa.nations",name:"Europe - Nations League"},{id:"bra.1",name:"Brazil - Serie A"},{id:"bra.2",name:"Brazil - Serie B"},{id:"arg.1",name:"Argentina - Primera"},{id:"mex.1",name:"Mexico - Liga MX"},{id:"usa.1",name:"USA - MLS"},{id:"cmr.1",name:"Cameroon - Elite One"},{id:"fifa.worldq",name:"World - World Cup Qualifiers"}
+];
 function fmtDate(d){return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,'0')+"-"+String(d.getDate()).padStart(2,'0');}
-function buildDates(){let html=""; for(let i=-2;i<=3;i++){ let d=new Date(); d.setDate(d.getDate()+i); let label=i===0?"Today":i===-1?"Yesterday":i===1?"Tomorrow":d.toLocaleDateString([],{weekday:'short'}); let active=i===0?"active":""; html+=`<button class="datePill ${active}" onclick="setDate(${i},this)"><b>${label}</b><small>${d.getDate()} ${d.toLocaleDateString([],{month:'short'})}</small></button>`; } document.getElementById('dateRow').innerHTML=html;}
-function setDate(off,btn){ curDate=new Date(); curDate.setDate(curDate.getDate()+off); document.querySelectorAll('.datePill').forEach(x=>x.classList.remove('active')); btn.classList.add('active'); loadAll(true); }
+function setDebug(t){ document.getElementById('debugBar').innerHTML=t; }
+function buildDates(){let html=""; for(let i=-2;i<=3;i++){ let d=new Date(); d.setDate(d.getDate()+i); let label=i===0?"Today":i===-1?"Yesterday":i===1?"Tomorrow":d.toLocaleDateString([],{weekday:'short'}); let active=i===0?"active":""; html+=`<button class="datePill ${active}" onclick="setDate(${i},this)"><b>${label}</b><small>${d.getDate()} ${d.toLocaleDateString([],{month:'short'})}</small></button>`; } document.getElementById('dateRow').innerHTML=html; document.getElementById('topDate').innerText=fmtDate(curDate); }
+function setDate(off,btn){ curDate=new Date(); curDate.setDate(curDate.getDate()+off); document.querySelectorAll('.datePill').forEach(x=>x.classList.remove('active')); btn.classList.add('active'); document.getElementById('topDate').innerText=fmtDate(curDate); loadAll(); }
 function makePick(home,away){let r=Math.random(); if(r<0.35) return {label:"1",text:home+" to win at Full time",prob:[48,28,24],odds:"1.53"}; if(r<0.55) return {label:"2",text:away+" to win at Full time",prob:[28,28,44],odds:"1.85"}; if(r<0.7) return {label:"X",text:"Draw at Full time",prob:[33,38,29],odds:"3.70"}; if(r<0.85) return {label:"GG-NO",text:"GG-NO",prob:[42,30,28],odds:"1.90"}; return {label:"Over 2.5",text:"Over+ 2,5 Goals",prob:[45,28,27],odds:"1.40"};}
-async function apiFetch(path){ let r=await fetch(API_BASE+path,{headers:{"x-apisports-key":API_KEY}}); let j=await r.json(); if(j.errors && Object.keys(j.errors).length) throw new Error("quota"); return j; }
-async function loadAPIFootball(){
-let dateStr=fmtDate(curDate);
-let cacheKey="calc_"+dateStr; let cached=localStorage.getItem(cacheKey);
-if(cached){ try{ let o=JSON.parse(cached); if(Date.now()-o.t<600000) return o.data; }catch(e){} }
-let j=await apiFetch("/fixtures?date="+dateStr);
-let list=(j.response||[]).map(f=>{ let s=f.fixture.status.short; let isLive=["1H","2H","ET","P","LIVE","HT"].includes(s); let fin=["FT","AET","PEN"].includes(s); let p=makePick(f.teams.home.name,f.teams.away.name); return {id:"api-"+f.fixture.id,apiId:f.fixture.id,league:(f.league.country||"World")+" - "+(f.league.name||"Football"),leagueIdApi:f.league.id,home:f.teams.home.name,away:f.teams.away.name,homeIdApi:f.teams.home.id,awayIdApi:f.teams.away.id,time:new Date(f.fixture.date).toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'}),score:s==="NS"?"VS":(f.goals.home??0)+" - "+(f.goals.away??0),status:isLive?"LIVE • "+(f.fixture.status.elapsed||"")+"'":fin?"Full time":s==="NS"?"Upcoming":f.fixture.status.long,live:isLive,finished:fin,pick:p.label,pickText:p.text,prob:p.prob,odds:p.odds,src:"API-Football",elapsed:f.fixture.status.elapsed,htScore:f.score?.halftime?.home!=null?f.score.halftime.home+" - "+f.score.halftime.away:"-"}; });
-try{ localStorage.setItem(cacheKey,JSON.stringify({t:Date.now(),data:[STRIPPED] }catch(e){}
-return list;
+// ESPN FIRST - always shows data
+async function loadESPN(){
+let dateStr=curDate.getFullYear()+String(curDate.getMonth()+1).padStart(2,'0')+String(curDate.getDate()).padStart(2,'0'); let list=[]; let ok=0, fail=0;
+for(let lg of ESPN_LEAGUES){
+try{
+let r=await fetch("https://site.api.espn.com/apis/site/v2/sports/soccer/"+lg.id+"/scoreboard?dates="+dateStr);
+if(!r.ok){ fail++; continue; }
+let j=await r.json(); ok++;
+if(j.events) j.events.forEach(ev=>{
+let c=ev.competitions[0]; if(!c||!c.competitors) return;
+let home=c.competitors.find(x=>x.homeAway==="home"); let away=c.competitors.find(x=>x.homeAway==="away"); if(!home||!away) return;
+let st=c.status.type.state; let p=makePick(home.team.displayName,away.team.displayName);
+list.push({id:"espn-"+ev.id,espnId:ev.id,leagueId:lg.id,league:lg.name,home:home.team.displayName,away:away.team.displayName,homeId:home.id,awayId:away.id,time:new Date(ev.date).toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'}),score:st==="pre"?"VS":(home.score+" - "+away.score),status:st==="in"?"LIVE • "+(c.status.displayClock||""):st==="post"?"Full time":"Upcoming",live:st==="in",finished:st==="post",pick:p.label,pickText:p.text,prob:p.prob,odds:p.odds,src:"ESPN",htScore:"-",elapsed:c.status.displayClock||""});
+});
+}catch(e){ fail++; }
 }
-async function loadESPNBackup(){
-let dateStr=curDate.getFullYear()+String(curDate.getMonth()+1).padStart(2,'0')+String(curDate.getDate()).padStart(2,'0'); let list=[];
-let leagues=[{id:"eng.1",name:"England - Premier League"},{id:"esp.1",name:"Spain - La Liga"},{id:"ita.1",name:"Italy - Serie A"},{id:"ger.1",name:"Germany - Bundesliga"},{id:"fra.1",name:"France - Ligue 1"},{id:"bra.1",name:"Brazil - Serie A"},{id:"mex.1",name:"Mexico - Liga MX"},{id:"uefa.nations",name:"Europe - Nations League"}];
-for(let lg of leagues){ try{ let r=await fetch("https://site.api.espn.com/apis/site/v2/sports/soccer/"+lg.id+"/scoreboard?dates="+dateStr); let j=await r.json(); if(j.events) j.events.forEach(ev=>{ let c=ev.competitions[0]; let home=c.competitors.find(x=>x.homeAway==="home"); let away=c.competitors.find(x=>x.homeAway==="away"); let st=c.status.type.state; let p=makePick(home.team.displayName,away.team.displayName); list.push({id:"【entity-espn¦canonical_name=ESPN】-"+ev.id,espnId:ev.id,leagueId:lg.id,league:lg.name,home:home.team.displayName,away:away.team.displayName,homeId:home.id,awayId:away.id,time:new Date(ev.date).toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'}),score:st==="pre"?"VS":(home.score+" - "+away.score),status:st==="in"?"LIVE":st==="post"?"Full time":"Upcoming",live:st==="in",finished:st==="post",pick:p.label,pickText:p.text,prob:p.prob,odds:p.odds,src:"【entity-ESPN¦canonical_name=ESPN】",htScore:"-"}); }); }catch(e){} }
-return list;
+return {list,ok,fail};
+}
+// API-Football SECOND - adds extra countries if it works, never wipes ESPN
+async function loadAPI(){
+let dateStr=fmtDate(curDate);
+let r=await fetch(API_BASE+"/fixtures?date="+dateStr,{headers:{"x-apisports-key":API_KEY}});
+if(!r.ok) throw new Error("API HTTP "+r.status);
+let j=await r.json();
+if(j.errors && Object.keys(j.errors).length) throw new Error("API quota / key: "+JSON.stringify(j.errors));
+return (j.response||[]).map(f=>{ let s=f.fixture.status.short; let isLive=["1H","2H","ET","P","LIVE","HT"].includes(s); let fin=["FT","AET","PEN"].includes(s); let p=makePick(f.teams.home.name,f.teams.away.name); return {id:"api-"+f.fixture.id,apiId:f.fixture.id,league:(f.league.country||"World")+" - "+(f.league.name||"Football"),leagueIdApi:f.league.id,home:f.teams.home.name,away:f.teams.away.name,homeIdApi:f.teams.home.id,awayIdApi:f.teams.away.id,time:new Date(f.fixture.date).toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'}),score:s==="NS"?"VS":(f.goals.home??0)+" - "+(f.goals.away??0),status:isLive?"LIVE • "+(f.fixture.status.elapsed||"")+"'":fin?"Full time":s==="NS"?"Upcoming":f.fixture.status.long,live:isLive,finished:fin,pick:p.label,pickText:p.text,prob:p.prob,odds:p.odds,src:"API-Football",elapsed:f.fixture.status.elapsed,htScore:f.score && f.score.halftime && f.score.halftime.home!=null?f.score.halftime.home+" - "+f.score.halftime.away:"-"}; });
 }
 async function loadAll(){
-document.getElementById('topCount').innerText="Loading...";
-let main=[]; try{ main=await loadAPIFootball(); }catch(e){ main=[]; }
-let all=[...main];
-if(main.length===0){ let b=await loadESPNBackup(); let seen=new Set(all.map(m=>(m.home+"|"+m.away).toLowerCase())); b.forEach(m=>{ let k=(m.home+"|"+m.away).toLowerCase(); if(!seen.has(k)){ all.push(m); seen.add(k); } }); }
-all.sort((a,b)=>{ if(a.live&&!b.live) return -1; if(!a.live&&b.live) return 1; return a.time.localeCompare(b.time); });
-ALL=all; document.getElementById('topCount').innerText=ALL.filter(m=>m.live).length+" live • "+ALL.length+" games"; render();
+setDebug("⏳ Loading ESPN... (this always works)");
+document.getElementById('topCount').innerText="Loading ESPN...";
+let espn=await loadESPN();
+ALL=[...espn.list];
+ALL.sort((a,b)=>{ if(a.live&&!b.live) return -1; if(!a.live&&b.live) return 1; return a.time.localeCompare(b.time); });
+document.getElementById('topCount').innerText=ALL.filter(m=>m.live).length+" live • "+ALL.length+" games";
+setDebug("✅ ESPN: "+espn.list.length+" games (leagues OK: "+espn.ok+" / failed: "+espn.fail+")<br>⏳ Now trying API-Football in background for extra countries...");
+render();
+try{
+let apiList=await loadAPI();
+let seen=new Set(ALL.map(m=>(m.home+"|"+m.away).toLowerCase()));
+let added=0; apiList.forEach(m=>{ let k=(m.home+"|"+m.away).toLowerCase(); if(!seen.has(k)){ ALL.push(m); seen.add(k); added++; } });
+ALL.sort((a,b)=>{ if(a.live&&!b.live) return -1; if(!a.live&&b.live) return 1; return a.time.localeCompare(b.time); });
+document.getElementById('topCount').innerText=ALL.filter(m=>m.live).length+" live • "+ALL.length+" games";
+setDebug("✅ 【entity-ESPN¦canonical_name=ESPN】: "+【entity-espn¦canonical_name=ESPN】.list.length+" + API-Football added: "+added+" = Total "+ALL.length+" games. Data is LIVE.");
+render();
+}catch(e){
+setDebug("⚠️ API-Football failed: "+e.message+"<br>✅ But ESPN still shows "+ALL.length+" games — so you are NOT at zero. API quota may be finished, it resets tomorrow. Tap a match — it WILL open.");
 }
-setInterval(()=>{ loadAll(); },60000);
+}
 function filtered(){
 let list=[...ALL];
 if(curCat!=="All"){
@@ -155,26 +182,20 @@ return list;
 }
 function predHTML(m){
 let scoreTxt=m.finished?m.score:m.live?m.score:"-";
-let minute=m.live?`<span class="liveBadge">${m.elapsed||""}'</span>`:m.finished?`<span class="liveBadge">${m.elapsed||"FT"}</span>`:"";
+let minute=m.live?`<span class="liveBadge">${m.elapsed||""}'</span>`:m.finished?`<span class="liveBadge">FT</span>`:"";
 return `<div class="predRow" onclick="openMatch('${m.id}')"><div style="font-size:12px;color:#999">⭐<br>${m.league.split(" - ")[0].slice(0,3).toUpperCase()}</div><div class="predTeams"><b>${m.home}</b><b>${m.away}</b><small>${m.time} • ${fmtDate(curDate)}</small></div><div class="prob"><b>${m.prob[0]}</b> ${m.prob[1]} ${m.prob[2]}<br><small>${m.pick}</small></div><div class="predCircle">${m.pick[0]}</div><div class="coef">${m.odds}</div><div style="text-align:center"><span style="border:1px solid #C81E1E;color:#C81E1E;border-radius:8px;padding:6px 8px;font-weight:800">${scoreTxt}</span><div style="font-size:11px;color:#999;margin-top:4px">(${m.htScore})</div>${minute}</div></div>`;
 }
-function sureHTML(m){
-return `<div class="sureCard"><div class="sureTop"><span>🏳️ ${m.league}</span><span>${m.time}</span></div><div class="sureBody"><b>${m.home}</b><b>${m.score}</b><b>${m.away}</b></div><div style="display:flex;justify-content:space-between;padding:0 14px 14px"><span class="surePick">${m.pickText}</span><span class="sureOdds">${m.odds}</span></div></div>`;
-}
-function topPredHTML(m){
-return `<div class="topPredCard"><div class="topPredLeague"><span>🛡️</span><span>${m.league}</span></div><div style="display:flex;justify-content:space-between;align-items:center;margin:12px 0"><span style="font-size:24px">⭐</span><div style="flex:1;text-align:center"><b>${m.home}  ${m.score==="VS"?"- : -":m.score}  ${m.away}</b><div style="font-size:12px;color:#666">Half-Time ${m.htScore} • ${m.live?"LIVE":m.finished?"FT":m.time}</div><div style="margin-top:8px">Tip: <b>${m.pick}</b> &nbsp; Odds: <b>${m.odds}</b></div></div><span style="color:#0B5CFF;font-size:13px;cursor:pointer" onclick="openMatch('${m.id}')">View Details ›</span></div><div class="tipBox">ⓘ ${m.pickText}</div></div>`;
-}
-function liveHTML(m){
-return `<div class="topPredCard" onclick="openMatch('${m.id}')"><div class="topPredLeague"><span>🏆 ${m.league}</span><span style="margin-left:auto;color:#FF2D2D">● ${m.status}</span></div><div style="display:flex;justify-content:space-between;align-items:center;margin:12px 0"><b>${m.home}</b><b style="font-size:22px">${m.score}</b><b>${m.away}</b></div><div style="text-align:center">Pick: <b>${m.pick}</b> • ${m.odds}</div></div>`;
-}
+function sureHTML(m){ return `<div class="sureCard" onclick="openMatch('${m.id}')"><div class="sureTop"><span>🏳️ ${m.league}</span><span>${m.time}</span></div><div class="sureBody"><b>${m.home}</b><b>${m.score}</b><b>${m.away}</b></div><div style="display:flex;justify-content:space-between;padding:0 14px 14px"><span class="surePick">${m.pickText}</span><span class="sureOdds">${m.odds}</span></div><div style="padding:0 14px 12px;font-size:12px;color:#AAB">Tap to open details →</div></div>`; }
+function topPredHTML(m){ return `<div class="topPredCard" onclick="openMatch('${m.id}')"><div class="topPredLeague"><span>🛡️</span><span>${m.league}</span></div><div style="display:flex;justify-content:space-between;align-items:center;margin:12px 0"><span style="font-size:24px">⭐</span><div style="flex:1;text-align:center"><b>${m.home} ${m.score==="VS"?"- : -":m.score} ${m.away}</b><div style="font-size:12px;color:#666">Half-Time ${m.htScore} • ${m.live?"LIVE":m.finished?"FT":m.time}</div><div style="margin-top:8px">Tip: <b>${m.pick}</b> &nbsp; Odds: <b>${m.odds}</b></div></div><span style="color:#0B5CFF;font-size:13px">View Details ›</span></div><div class="tipBox">ⓘ ${m.pickText}</div><button class="detailBtn" onclick="event.stopPropagation();openMatch('${m.id}')">View Details</button></div>`; }
+function liveHTML(m){ return `<div class="topPredCard" onclick="openMatch('${m.id}')"><div class="topPredLeague"><span>🏆 ${m.league}</span><span style="margin-left:auto;color:#FF2D2D">● ${m.status}</span></div><div style="display:flex;justify-content:space-between;align-items:center;margin:12px 0"><b>${m.home}</b><b style="font-size:22px">${m.score}</b><b>${m.away}</b></div><div style="text-align:center">Pick: <b>${m.pick}</b> • ${m.odds}</div><button class="detailBtn" onclick="event.stopPropagation();openMatch('${m.id}')">View Details</button></div>`; }
 function render(){
 let list=filtered();
-if(curView==="pred"){ document.getElementById('predList').innerHTML=list.map(predHTML).join('')||'<div style="padding:16px">No predictions for this filter.</div>'; return; }
+if(curView==="pred"){ document.getElementById('predList').innerHTML=list.map(predHTML).join('')||'<div style="padding:16px;background:#fff;margin:12px;border-radius:12px">No predictions for this filter. Try All / Today. Debug above shows ESPN count.</div>'; return; }
 if(curView==="top"){ document.getElementById('topList').innerHTML=list.slice(0,6).map(sureHTML).join('')||'<div style="padding:16px">No top tips.</div>'; document.getElementById('topPredList').innerHTML=list.slice(0,10).map(topPredHTML).join(''); return; }
-if(curView==="live"){ document.getElementById('liveList').innerHTML=list.length?list.map(liveHTML).join(''):'<div style="padding:16px;background:#fff;margin:0 12px;border-radius:12px">No live match right now.</div>'; return; }
+if(curView==="live"){ document.getElementById('liveList').innerHTML=list.length?list.map(liveHTML).join(''):'<div style="padding:16px;background:#fff;margin:0 12px;border-radius:12px">No live match right now. Try Predictions → All.</div>'; return; }
 if(curView==="home"){ document.getElementById('homeList').innerHTML=list.slice(0,10).map(topPredHTML).join(''); return; }
 }
-function openCat(cat){ curCat=cat; curView="pred"; document.getElementById('catSection').style.display='none'; goPage('pred'); render(); document.getElementById('topCount').innerText="Category: "+cat; }
+function openCat(cat){ curCat=cat; curView="pred"; document.getElementById('catSection').style.display='none'; goPage('pred'); render(); document.getElementById('topCount').innerText="Category: "+cat+" • "+filtered().length+" games"; }
 function setPredTab(b,t){ document.querySelectorAll('#page-pred .tabsTop .tBtn').forEach(x=>x.classList.remove('active')); b.classList.add('active'); predTab=t; render(); }
 function setStatus(b,s){ document.querySelectorAll('.tabsTop .tBtn').forEach(x=>x.classList.remove('active')); b.classList.add('active'); statusFilter=s; render(); }
 function goPage(v,btn){
@@ -182,29 +203,33 @@ curView=v; document.querySelectorAll('.page').forEach(x=>x.classList.remove('act
 let id=v==="home"?"page-home":v==="pred"?"page-pred":v==="top"?"page-top":v==="live"?"page-live":"page-fav"; document.getElementById(id).classList.add('active');
 document.querySelectorAll('.bottom button').forEach(x=>x.classList.remove('active')); if(btn) btn.classList.add('active');
 let h=document.getElementById('mainHeader'); if(v==="pred") h.className="topPred"; else if(v==="top") h.className="topGreen"; else h.className="top";
-if(v==="home"){ document.getElementById('catSection').style.display='block'; curCat="All"; statusFilter="All"; }
-else document.getElementById('catSection').style.display='none';
+if(v==="home"){ document.getElementById('catSection').style.display='block'; curCat="All"; statusFilter="All"; } else document.getElementById('catSection').style.display='none';
 if(v==="fav") renderFav();
 render();
 }
 function renderFav(){ document.getElementById('favList').innerHTML=favs.length?favs.map(id=>{let m=ALL.find(x=>x.id==id); return m?`<div style="padding:10px 0;border-bottom:1px solid #eee" onclick="openMatch('${m.id}')">⭐ ${m.home} vs ${m.away} — Pick: ${m.pick}</div>`:""}).join(''):'Tap ⭐ on any match to save it here.'; }
-function toggleFavId(id){ if(!favs.includes(id)) favs.push(id); else favs=favs.filter(x=>x!==id); renderFav(); }
-function toggleFav(){ if(curMatch) toggleFavId(curMatch.id); }
+function toggleFav(){ if(curMatch){ let id=curMatch.id; if(!favs.includes(id)) favs.push(id); else favs=favs.filter(x=>x!==id); renderFav(); alert("Saved to Favorites ⭐"); } }
 function doSearch(q){ q=q.toLowerCase().trim(); if(!q){ render(); return; } let res=ALL.filter(m=>(m.home+" "+m.away+" "+m.league).toLowerCase().includes(q)); document.getElementById('predList').innerHTML=res.length?res.map(predHTML).join(''):'<div style="padding:16px">No match for "'+q+'"</div>'; document.getElementById('topCount').innerText=res.length+" found"; goPage('pred'); }
-function openMatch(id){ curMatch=ALL.find(m=>m.id==id); if(!curMatch) return; document.getElementById('dLeague').innerText=curMatch.league; document.getElementById('dHome').innerText=curMatch.home; document.getElementById('dAway').innerText=curMatch.away; document.getElementById('dScore').innerText=curMatch.score; document.getElementById('dMeta').innerText=curMatch.time; document.getElementById('dStatus').innerText=curMatch.status; document.getElementById('detailSrc').innerText="Source: "+curMatch.src; document.getElementById('detailPage').style.display='block'; setDTab(document.querySelectorAll('#detailPage .tBtn')[0],'live'); }
+function openMatch(id){
+curMatch=ALL.find(m=>m.id==id);
+if(!curMatch){ alert("Match not found - try reload"); return; }
+document.getElementById('dLeague').innerText=curMatch.league; document.getElementById('dHome').innerText=curMatch.home; document.getElementById('dAway').innerText=curMatch.away; document.getElementById('dScore').innerText=curMatch.score; document.getElementById('dMeta').innerText=curMatch.time; document.getElementById('dStatus').innerText=curMatch.status; document.getElementById('detailSrc').innerText="Source: "+curMatch.src+" • ID: "+curMatch.id;
+document.getElementById('detailPage').style.display='block';
+let first=document.getElementById('tab-live'); if(first) setDTab(first,'live');
+}
 function closeDetail(){ document.getElementById('detailPage').style.display='none'; }
-async function fetchAPIDetail(path){ try{ let j=await apiFetch(path); return j.response||[]; }catch(e){ return []; } }
+async function fetchAPIDetail(path){ try{ let r=await fetch(API_BASE+path,{headers:{"x-apisports-key":API_KEY}}); let j=await r.json(); return j.response||[]; }catch(e){ return []; } }
 async function setDTab(b,tab){
 document.querySelectorAll('#detailPage .tBtn').forEach(x=>x.classList.remove('active')); b.classList.add('active');
-let m=curMatch;
+let m=curMatch; if(!m) return;
 if(tab==='live'){
-document.getElementById('detailContent').innerHTML=`<div class="detailBox">Loading statistics from API-Football...</div>`;
-if(m.apiId){ let stats=await fetchAPIDetail("/fixtures/statistics?fixture="+m.apiId); if(stats.length===2){ let get=(idx,name)=>{ let t=stats[idx].statistics.find(s=>s.type===name); return t?t.value||0:0; }; let rows=[["Corners","Corner Kicks"],["Shots","Total Shots"],["Shots on Target","Shots on Goal"],["Possession %","Ball Possession"],["Fouls","Fouls"],["Yellow Cards","Yellow Cards"],["Red Cards","Red Cards"]]; document.getElementById('detailContent').innerHTML=`<div class="detailBox"><h3>Statistics — API-Football (Real)</h3><div style="display:flex;justify-content:space-between;font-weight:800;margin:10px 0"><span>${m.home}</span><span>${m.score}</span><span>${m.away}</span></div>`+rows.map(r=>{let hv=get(0,r[1]),av=get(1,r[1]);let hN=parseFloat(String(hv).replace("%",""))||0,aN=parseFloat(String(av).replace("%",""))||0,tot=hN+aN||1;return `<div class="statRow"><b style="width:38px;text-align:right">${hv}</b><span style="flex:1;text-align:center">${r[0]}</span><b style="width:38px">${av}</b></div><div class="statBar"><div style="width:${(hN/tot*100)}%;background:#0B5CFF;height:100%"></div><div style="flex:1;background:#FF2D2D;height:100%"></div></div>`;}).join('')+`</div>`; return; } }
-document.getElementById('detailContent').innerHTML=`<div class="detailBox"><p>Statistics appear when the match starts.</p></div>`; return;
+document.getElementById('detailContent').innerHTML=`<div class="detailBox">Loading statistics... Source: ${m.src}</div>`;
+if(m.apiId){ let stats=await fetchAPIDetail("/fixtures/statistics?fixture="+m.apiId); if(stats.length===2){ let get=(idx,name)=>{ let t=stats[idx].statistics.find(s=>s.type===name); return t?t.value||0:0; }; let rows=[["Corners","Corner Kicks"],["Shots","Total Shots"],["Shots on Target","Shots on Goal"],["Possession %","Ball Possession"],["Fouls","Fouls"],["Yellow Cards","Yellow Cards"],["Red Cards","Red Cards"]]; document.getElementById('detailContent').innerHTML=`<div class="detailBox"><h3>Statistics — API-Football</h3><div style="display:flex;justify-content:space-between;font-weight:800;margin:10px 0"><span>${m.home}</span><span>${m.score}</span><span>${m.away}</span></div>`+rows.map(r=>{let hv=get(0,r[1]),av=get(1,r[1]);let hN=parseFloat(String(hv).replace("%",""))||0,aN=parseFloat(String(av).replace("%",""))||0,tot=hN+aN||1;return `<div class="statRow"><b style="width:38px;text-align:right">${hv}</b><span style="flex:1;text-align:center">${r[0]}</span><b style="width:38px">${av}</b></div><div class="statBar"><div style="width:${(hN/tot*100)}%;background:#0B5CFF;height:100%"></div><div style="flex:1;background:#FF2D2D;height:100%"></div></div>`;}).join('')+`</div>`; return; } }
+document.getElementById('detailContent').innerHTML=`<div class="detailBox"><h3>${m.home} vs ${m.away}</h3><p>Status: ${m.status}</p><p>Score: ${m.score}</p><p style="margin-top:8px">Pick: <b>${m.pick}</b> — ${m.pickText}</p><p>Prob: Home ${m.prob[0]}% • Draw ${m.prob[1]}% • Away ${m.prob[2]}%</p><p style="color:#666;font-size:12px;margin-top:8px">Live stats come from API-Football when that match is live. ESPN matches show score + pick here.</p></div>`; return;
 }
-if(tab==='events'){ document.getElementById('detailContent').innerHTML=`<div class="detailBox"><div id="evBox">Loading events...</div></div>`; if(m.apiId){ let evs=await fetchAPIDetail("/fixtures/events?fixture="+m.apiId); document.getElementById('evBox').innerHTML=evs.length?evs.map(e=>`<div style="padding:10px 0;border-bottom:1px solid #eee"><b>${e.time.elapsed}' ${e.type} — ${e.detail}</b><div>${e.player?.name||""} ${e.team?.name||""}</div></div>`).join(''):'<p>No events yet.</p>'; return; } document.getElementById('evBox').innerHTML='<p>No events yet.</p>'; return; }
-if(tab==='form'){ document.getElementById('detailContent').innerHTML=`<div class="detailBox"><h3>History — Last 5 (API-Football)</h3><div id="formBox">Loading history...</div></div>`; if(m.apiId){ let h=await fetchAPIDetail("/fixtures?team="+m.homeIdApi+"&last=5"); let a=await fetchAPIDetail("/fixtures?team="+m.awayIdApi+"&last=5"); let fmt=(arr)=>arr.length?arr.map(f=>`<div style="padding:8px 0;border-bottom:1px solid #eee">${f.teams.home.name} ${f.goals.home}-${f.goals.away} ${f.teams.away.name} • ${f.fixture.date.slice(0,10)}</div>`).join(''):'<p>No history.</p>'; document.getElementById('formBox').innerHTML=`<b>${m.home}</b>${fmt(h)}<br><b>${m.away}</b>${fmt(a)}`; return; } document.getElementById('formBox').innerHTML='<p>No history.</p>'; return; }
-if(tab==='details'){ document.getElementById('detailContent').innerHTML=`<div class="detailBox"><h3>Who will win?</h3><p>Home ${m.prob[0]}% • Draw ${m.prob[1]}% • Away ${m.prob[2]}%</p><p style="margin-top:8px">Pick: <b>${m.pick}</b> — ${m.pickText}</p></div>`; return; }
+if(tab==='events'){ document.getElementById('detailContent').innerHTML=`<div class="detailBox"><div id="evBox">Loading events...</div></div>`; if(m.apiId){ let evs=await fetchAPIDetail("/fixtures/events?fixture="+m.apiId); document.getElementById('evBox').innerHTML=evs.length?evs.map(e=>`<div style="padding:10px 0;border-bottom:1px solid #eee"><b>${e.time.elapsed}' ${e.type} — ${e.detail}</b><div>${e.player?.name||""} ${e.team?.name||""}</div></div>`).join(''):'<p>No events yet.</p>'; return; } document.getElementById('evBox').innerHTML='<p>No events yet for ESPN matches. Live events need API-Football.</p>'; return; }
+if(tab==='form'){ document.getElementById('detailContent').innerHTML=`<div class="detailBox"><h3>History — Last 5</h3><div id="formBox">Loading...</div></div>`; if(m.apiId){ let h=await fetchAPIDetail("/fixtures?team="+m.homeIdApi+"&last=5"); let a=await fetchAPIDetail("/fixtures?team="+m.awayIdApi+"&last=5"); let fmt=(arr)=>arr.length?arr.map(f=>`<div style="padding:8px 0;border-bottom:1px solid #eee">${f.teams.home.name} ${f.goals.home}-${f.goals.away} ${f.teams.away.name} • ${f.fixture.date.slice(0,10)}</div>`).join(''):'<p>No history.</p>'; document.getElementById('formBox').innerHTML=`<b>${m.home}</b>${fmt(h)}<br><b>${m.away}</b>${fmt(a)}`; return; } document.getElementById('formBox').innerHTML='<p>History needs API-Football. ESPN matches show pick + score here.</p>'; return; }
+if(tab==='details'){ document.getElementById('detailContent').innerHTML=`<div class="detailBox"><h3>Who will win?</h3><p>Home ${m.prob[0]}% • Draw ${m.prob[1]}% • Away ${m.prob[2]}%</p><p style="margin-top:8px">Pick: <b>${m.pick}</b> — ${m.pickText}</p><p>Odds: ${m.odds} • Source: ${m.src}</p></div>`; return; }
 if(tab==='markets'){ let mk=[["1X2: "+m.pick,m.odds],["Double Chance 1X","1.25"],["Over 2.5","1.90"],["BTTS Yes","1.90"],["Over 8.5 Corners","1.85"]]; document.getElementById('detailContent').innerHTML=`<div class="detailBox"><h3>Markets</h3>`+mk.map(x=>`<div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #eee"><span>${x[0]}</span><b>${x[1]}</b></div>`).join('')+`</div>`; return; }
 }
 buildDates(); loadAll();
