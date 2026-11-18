@@ -1,4 +1,77 @@
 {
-  "updated_at": "2026-11-17T20:44:49.844017+00:00",
-  "matches": []
+  "updated_at": "2026-11-18T00:52:58.791033+00:00",
+  "matches": [
+    {
+      "id": 555081,
+      "competition": "Campeonato Brasileiro S\u00e9rie A",
+      "utcDate": "2026-11-18T22:30:00Z",
+      "status": "TIMED",
+      "homeTeam": "Coritiba",
+      "awayTeam": "Santos",
+      "score": {
+        "home": null,
+        "away": null
+      },
+      "forecast": {
+        "home_prob": 46,
+        "draw_prob": 26,
+        "away_prob": 28,
+        "tip": "1"
+      }
+    },
+    {
+      "id": 555086,
+      "competition": "Campeonato Brasileiro S\u00e9rie A",
+      "utcDate": "2026-11-18T23:00:00Z",
+      "status": "TIMED",
+      "homeTeam": "Clube do Remo",
+      "awayTeam": "Chapecoense",
+      "score": {
+        "home": null,
+        "away": null
+      },
+      "forecast": {
+        "home_prob": 46,
+        "draw_prob": 26,
+        "away_prob": 28,
+        "tip": "1"
+      }
+    },
+    {
+      "id": 555082,
+      "competition": "Campeonato Brasileiro S\u00e9rie A",
+      "utcDate": "2026-11-18T23:30:00Z",
+      "status": "TIMED",
+      "homeTeam": "Cruzeiro",
+      "awayTeam": "Palmeiras",
+      "score": {
+        "home": null,
+        "away": null
+      },
+      "forecast": {
+        "home_prob": 46,
+        "draw_prob": 26,
+        "away_prob": 28,
+        "tip": "1"
+      }
+    },
+    {
+      "id": 555083,
+      "competition": "Campeonato Brasileiro S\u00e9rie A",
+      "utcDate": "2026-11-18T23:30:00Z",
+      "status": "TIMED",
+      "homeTeam": "Flamengo",
+      "awayTeam": "Paranaense",
+      "score": {
+        "home": null,
+        "away": null
+      },
+      "forecast": {
+        "home_prob": 46,
+        "draw_prob": 26,
+        "away_prob": 28,
+        "tip": "1"
+      }
+    }
+  ]
 }
