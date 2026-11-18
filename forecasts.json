@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-18T08:53:10.130469+00:00",
+  "updated_at": "2026-11-18T12:55:29.332795+00:00",
   "matches": [
     {
       "id": 555081,
@@ -38,12 +38,12 @@
       }
     },
     {
-      "id": 555082,
+      "id": 555083,
       "competition": "Campeonato Brasileiro S\u00e9rie A",
       "utcDate": "2026-11-18T23:30:00Z",
       "status": "TIMED",
-      "homeTeam": "Cruzeiro",
-      "awayTeam": "Palmeiras",
+      "homeTeam": "Flamengo",
+      "awayTeam": "Paranaense",
       "score": {
         "home": null,
         "away": null
@@ -56,12 +56,12 @@
       }
     },
     {
-      "id": 555083,
+      "id": 555082,
       "competition": "Campeonato Brasileiro S\u00e9rie A",
       "utcDate": "2026-11-18T23:30:00Z",
       "status": "TIMED",
-      "homeTeam": "Flamengo",
-      "awayTeam": "Paranaense",
+      "homeTeam": "Cruzeiro",
+      "awayTeam": "Palmeiras",
       "score": {
         "home": null,
         "away": null
