@@ -1,24 +1,6 @@
 {
-  "updated_at": "2026-11-19T16:55:25.385387+00:00",
+  "updated_at": "2026-11-19T20:45:15.017129+00:00",
   "matches": [
-    {
-      "id": 555080,
-      "competition": "Campeonato Brasileiro S\u00e9rie A",
-      "utcDate": "2026-11-19T00:30:00Z",
-      "status": "FINISHED",
-      "homeTeam": "Corinthians",
-      "awayTeam": "Botafogo",
-      "score": {
-        "home": 4,
-        "away": 0
-      },
-      "forecast": {
-        "home_prob": 46,
-        "draw_prob": 26,
-        "away_prob": 28,
-        "tip": "1"
-      }
-    },
     {
       "id": 555084,
       "competition": "Campeonato Brasileiro S\u00e9rie A",
@@ -38,15 +20,15 @@
       }
     },
     {
-      "id": 555088,
+      "id": 555080,
       "competition": "Campeonato Brasileiro S\u00e9rie A",
-      "utcDate": "2026-11-19T22:30:00Z",
-      "status": "TIMED",
-      "homeTeam": "Vasco da Gama",
-      "awayTeam": "Internacional",
+      "utcDate": "2026-11-19T00:30:00Z",
+      "status": "FINISHED",
+      "homeTeam": "Corinthians",
+      "awayTeam": "Botafogo",
       "score": {
-        "home": null,
-        "away": null
+        "home": 4,
+        "away": 0
       },
       "forecast": {
         "home_prob": 46,
@@ -62,6 +44,24 @@
       "status": "TIMED",
       "homeTeam": "Vit\u00f3ria",
       "awayTeam": "Bragantino",
+      "score": {
+        "home": null,
+        "away": null
+      },
+      "forecast": {
+        "home_prob": 46,
+        "draw_prob": 26,
+        "away_prob": 28,
+        "tip": "1"
+      }
+    },
+    {
+      "id": 555088,
+      "competition": "Campeonato Brasileiro S\u00e9rie A",
+      "utcDate": "2026-11-19T22:30:00Z",
+      "status": "TIMED",
+      "homeTeam": "Vasco da Gama",
+      "awayTeam": "Internacional",
       "score": {
         "home": null,
         "away": null
