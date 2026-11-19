@@ -1,16 +1,16 @@
 {
-  "updated_at": "2026-11-19T00:53:31.764134+00:00",
+  "updated_at": "2026-11-19T04:54:12.205130+00:00",
   "matches": [
     {
       "id": 555084,
       "competition": "Campeonato Brasileiro S\u00e9rie A",
       "utcDate": "2026-11-19T00:30:00Z",
-      "status": "TIMED",
+      "status": "FINISHED",
       "homeTeam": "Gr\u00eamio",
       "awayTeam": "Bahia",
       "score": {
-        "home": null,
-        "away": null
+        "home": 0,
+        "away": 0
       },
       "forecast": {
         "home_prob": 46,
@@ -23,12 +23,12 @@
       "id": 555080,
       "competition": "Campeonato Brasileiro S\u00e9rie A",
       "utcDate": "2026-11-19T00:30:00Z",
-      "status": "TIMED",
+      "status": "FINISHED",
       "homeTeam": "Corinthians",
       "awayTeam": "Botafogo",
       "score": {
-        "home": null,
-        "away": null
+        "home": 4,
+        "away": 0
       },
       "forecast": {
         "home_prob": 46,
