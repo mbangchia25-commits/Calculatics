@@ -1,13 +1,13 @@
 {
-  "updated_at": "2026-11-18T20:45:59.438577+00:00",
+  "updated_at": "2026-11-19T00:53:31.764134+00:00",
   "matches": [
     {
-      "id": 555081,
+      "id": 555084,
       "competition": "Campeonato Brasileiro S\u00e9rie A",
-      "utcDate": "2026-11-18T22:30:00Z",
+      "utcDate": "2026-11-19T00:30:00Z",
       "status": "TIMED",
-      "homeTeam": "Coritiba",
-      "awayTeam": "Santos",
+      "homeTeam": "Gr\u00eamio",
+      "awayTeam": "Bahia",
       "score": {
         "home": null,
         "away": null
@@ -20,12 +20,12 @@
       }
     },
     {
-      "id": 555086,
+      "id": 555080,
       "competition": "Campeonato Brasileiro S\u00e9rie A",
-      "utcDate": "2026-11-18T23:00:00Z",
+      "utcDate": "2026-11-19T00:30:00Z",
       "status": "TIMED",
-      "homeTeam": "Clube do Remo",
-      "awayTeam": "Chapecoense",
+      "homeTeam": "Corinthians",
+      "awayTeam": "Botafogo",
       "score": {
         "home": null,
         "away": null
@@ -38,12 +38,12 @@
       }
     },
     {
-      "id": 555083,
+      "id": 555089,
       "competition": "Campeonato Brasileiro S\u00e9rie A",
-      "utcDate": "2026-11-18T23:30:00Z",
+      "utcDate": "2026-11-19T22:30:00Z",
       "status": "TIMED",
-      "homeTeam": "Flamengo",
-      "awayTeam": "Paranaense",
+      "homeTeam": "Vit\u00f3ria",
+      "awayTeam": "Bragantino",
       "score": {
         "home": null,
         "away": null
@@ -56,12 +56,12 @@
       }
     },
     {
-      "id": 555082,
+      "id": 555088,
       "competition": "Campeonato Brasileiro S\u00e9rie A",
-      "utcDate": "2026-11-18T23:30:00Z",
+      "utcDate": "2026-11-19T22:30:00Z",
       "status": "TIMED",
-      "homeTeam": "Cruzeiro",
-      "awayTeam": "Palmeiras",
+      "homeTeam": "Vasco da Gama",
+      "awayTeam": "Internacional",
       "score": {
         "home": null,
         "away": null
