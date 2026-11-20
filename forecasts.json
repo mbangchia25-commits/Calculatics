@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-11-20T16:51:14.751165+00:00",
+  "updated_at": "2026-11-20T20:41:25.211128+00:00",
   "matches": [
     {
       "id": 555087,
       "competition": "Campeonato Brasileiro S\u00e9rie A",
       "utcDate": "2026-11-20T00:30:00Z",
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "homeTeam": "S\u00e3o Paulo",
       "awayTeam": "Fluminense",
       "score": {
@@ -23,12 +23,12 @@
       "id": 565859,
       "competition": "Bundesliga",
       "utcDate": "2026-11-20T19:30:00Z",
-      "status": "TIMED",
+      "status": "IN_PLAY",
       "homeTeam": "Bayern",
       "awayTeam": "1. FC K\u00f6ln",
       "score": {
-        "home": null,
-        "away": null
+        "home": 1,
+        "away": 1
       },
       "forecast": {
         "home_prob": 46,
@@ -41,12 +41,12 @@
       "id": 559622,
       "competition": "Ligue 1",
       "utcDate": "2026-11-20T19:45:00Z",
-      "status": "TIMED",
+      "status": "IN_PLAY",
       "homeTeam": "Troyes",
       "awayTeam": "Le Havre",
       "score": {
-        "home": null,
-        "away": null
+        "home": 1,
+        "away": 1
       },
       "forecast": {
         "home_prob": 46,
@@ -59,12 +59,12 @@
       "id": 564748,
       "competition": "Primera Division",
       "utcDate": "2026-11-20T20:00:00Z",
-      "status": "TIMED",
+      "status": "IN_PLAY",
       "homeTeam": "Athletic",
       "awayTeam": "Espanyol",
       "score": {
-        "home": null,
-        "away": null
+        "home": 0,
+        "away": 0
       },
       "forecast": {
         "home_prob": 46,
