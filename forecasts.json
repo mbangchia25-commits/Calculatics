@@ -1,16 +1,16 @@
 {
-  "updated_at": "2026-11-20T00:45:50.582128+00:00",
+  "updated_at": "2026-11-20T04:52:18.205633+00:00",
   "matches": [
     {
       "id": 555087,
       "competition": "Campeonato Brasileiro S\u00e9rie A",
       "utcDate": "2026-11-20T00:30:00Z",
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "homeTeam": "S\u00e3o Paulo",
       "awayTeam": "Fluminense",
       "score": {
         "home": 0,
-        "away": 0
+        "away": 1
       },
       "forecast": {
         "home_prob": 46,
