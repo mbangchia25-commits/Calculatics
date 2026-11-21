@@ -1,42 +1,6 @@
 {
-  "updated_at": "2026-11-21T16:37:06.977851+00:00",
+  "updated_at": "2026-11-21T20:31:57.033544+00:00",
   "matches": [
-    {
-      "id": 561944,
-      "competition": "Championship",
-      "utcDate": "2026-11-21T12:30:00Z",
-      "status": "FINISHED",
-      "homeTeam": "Southampton",
-      "awayTeam": "Derby County",
-      "score": {
-        "home": 2,
-        "away": 0
-      },
-      "forecast": {
-        "home_prob": 46,
-        "draw_prob": 26,
-        "away_prob": 28,
-        "tip": "1"
-      }
-    },
-    {
-      "id": 560643,
-      "competition": "Premier League",
-      "utcDate": "2026-11-21T12:30:00Z",
-      "status": "FINISHED",
-      "homeTeam": "Man City",
-      "awayTeam": "Fulham",
-      "score": {
-        "home": 1,
-        "away": 1
-      },
-      "forecast": {
-        "home_prob": 46,
-        "draw_prob": 26,
-        "away_prob": 28,
-        "tip": "1"
-      }
-    },
     {
       "id": 561948,
       "competition": "Championship",
@@ -74,14 +38,32 @@
       }
     },
     {
-      "id": 564755,
-      "competition": "Primera Division",
-      "utcDate": "2026-11-21T13:00:00Z",
+      "id": 561944,
+      "competition": "Championship",
+      "utcDate": "2026-11-21T12:30:00Z",
       "status": "FINISHED",
-      "homeTeam": "Alav\u00e9s",
-      "awayTeam": "Deportivo",
+      "homeTeam": "Southampton",
+      "awayTeam": "Derby County",
       "score": {
-        "home": 3,
+        "home": 2,
+        "away": 0
+      },
+      "forecast": {
+        "home_prob": 46,
+        "draw_prob": 26,
+        "away_prob": 28,
+        "tip": "1"
+      }
+    },
+    {
+      "id": 560643,
+      "competition": "Premier League",
+      "utcDate": "2026-11-21T12:30:00Z",
+      "status": "FINISHED",
+      "homeTeam": "Man City",
+      "awayTeam": "Fulham",
+      "score": {
+        "home": 1,
         "away": 1
       },
       "forecast": {
@@ -92,15 +74,15 @@
       }
     },
     {
-      "id": 558525,
-      "competition": "Serie A",
-      "utcDate": "2026-11-21T14:00:00Z",
+      "id": 564755,
+      "competition": "Primera Division",
+      "utcDate": "2026-11-21T13:00:00Z",
       "status": "FINISHED",
-      "homeTeam": "Como 1907",
-      "awayTeam": "Cagliari",
+      "homeTeam": "Alav\u00e9s",
+      "awayTeam": "Deportivo",
       "score": {
-        "home": 2,
-        "away": 0
+        "home": 3,
+        "away": 1
       },
       "forecast": {
         "home_prob": 46,
@@ -128,33 +110,15 @@
       }
     },
     {
-      "id": 565865,
-      "competition": "Bundesliga",
-      "utcDate": "2026-11-21T14:30:00Z",
+      "id": 558525,
+      "competition": "Serie A",
+      "utcDate": "2026-11-21T14:00:00Z",
       "status": "FINISHED",
-      "homeTeam": "Frankfurt",
-      "awayTeam": "Hoffenheim",
+      "homeTeam": "Como 1907",
+      "awayTeam": "Cagliari",
       "score": {
-        "home": 1,
+        "home": 2,
         "away": 0
-      },
-      "forecast": {
-        "home_prob": 46,
-        "draw_prob": 26,
-        "away_prob": 28,
-        "tip": "1"
-      }
-    },
-    {
-      "id": 565858,
-      "competition": "Bundesliga",
-      "utcDate": "2026-11-21T14:30:00Z",
-      "status": "FINISHED",
-      "homeTeam": "Union Berlin",
-      "awayTeam": "RB Leipzig",
-      "score": {
-        "home": 1,
-        "away": 5
       },
       "forecast": {
         "home_prob": 46,
@@ -218,105 +182,33 @@
       }
     },
     {
-      "id": 561942,
-      "competition": "Championship",
-      "utcDate": "2026-11-21T15:00:00Z",
-      "status": "LIVE",
-      "homeTeam": "Swansea",
-      "awayTeam": "West Brom",
-      "score": {
-        "home": 2,
-        "away": 2
-      },
-      "forecast": {
-        "home_prob": 46,
-        "draw_prob": 26,
-        "away_prob": 28,
-        "tip": "1"
-      }
-    },
-    {
-      "id": 560647,
-      "competition": "Premier League",
-      "utcDate": "2026-11-21T15:00:00Z",
-      "status": "IN_PLAY",
-      "homeTeam": "Bournemouth",
-      "awayTeam": "Nottingham",
-      "score": {
-        "home": 2,
-        "away": 0
-      },
-      "forecast": {
-        "home_prob": 46,
-        "draw_prob": 26,
-        "away_prob": 28,
-        "tip": "1"
-      }
-    },
-    {
-      "id": 561949,
-      "competition": "Championship",
-      "utcDate": "2026-11-21T15:00:00Z",
-      "status": "LIVE",
-      "homeTeam": "Lincoln City",
-      "awayTeam": "Wrexham",
-      "score": {
-        "home": 0,
-        "away": 0
-      },
-      "forecast": {
-        "home_prob": 46,
-        "draw_prob": 26,
-        "away_prob": 28,
-        "tip": "1"
-      }
-    },
-    {
-      "id": 560650,
-      "competition": "Premier League",
-      "utcDate": "2026-11-21T15:00:00Z",
-      "status": "IN_PLAY",
-      "homeTeam": "Coventry City",
-      "awayTeam": "Crystal Palace",
-      "score": {
-        "home": 2,
-        "away": 2
-      },
-      "forecast": {
-        "home_prob": 46,
-        "draw_prob": 26,
-        "away_prob": 28,
-        "tip": "1"
-      }
-    },
-    {
-      "id": 561951,
-      "competition": "Championship",
-      "utcDate": "2026-11-21T15:00:00Z",
-      "status": "LIVE",
-      "homeTeam": "West Ham",
-      "awayTeam": "Preston NE",
-      "score": {
-        "home": 1,
-        "away": 1
-      },
-      "forecast": {
-        "home_prob": 46,
-        "draw_prob": 26,
-        "away_prob": 28,
-        "tip": "1"
-      }
-    },
-    {
-      "id": 561946,
-      "competition": "Championship",
-      "utcDate": "2026-11-21T15:00:00Z",
-      "status": "LIVE",
-      "homeTeam": "Stoke",
-      "awayTeam": "Birmingham",
+      "id": 565865,
+      "competition": "Bundesliga",
+      "utcDate": "2026-11-21T14:30:00Z",
+      "status": "FINISHED",
+      "homeTeam": "Frankfurt",
+      "awayTeam": "Hoffenheim",
       "score": {
         "home": 1,
         "away": 0
+      },
+      "forecast": {
+        "home_prob": 46,
+        "draw_prob": 26,
+        "away_prob": 28,
+        "tip": "1"
+      }
+    },
+    {
+      "id": 565858,
+      "competition": "Bundesliga",
+      "utcDate": "2026-11-21T14:30:00Z",
+      "status": "FINISHED",
+      "homeTeam": "Union Berlin",
+      "awayTeam": "RB Leipzig",
+      "score": {
+        "home": 1,
+        "away": 5
       },
       "forecast": {
         "home_prob": 46,
@@ -329,7 +221,7 @@
       "id": 561943,
       "competition": "Championship",
       "utcDate": "2026-11-21T15:00:00Z",
-      "status": "LIVE",
+      "status": "FINISHED",
       "homeTeam": "Middlesbrough",
       "awayTeam": "Bristol City",
       "score": {
@@ -347,7 +239,7 @@
       "id": 560648,
       "competition": "Premier League",
       "utcDate": "2026-11-21T15:00:00Z",
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "homeTeam": "Tottenham",
       "awayTeam": "Ipswich Town",
       "score": {
@@ -365,12 +257,12 @@
       "id": 560642,
       "competition": "Premier League",
       "utcDate": "2026-11-21T15:00:00Z",
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "homeTeam": "Chelsea",
       "awayTeam": "Leeds United",
       "score": {
         "home": 1,
-        "away": 3
+        "away": 4
       },
       "forecast": {
         "home_prob": 46,
@@ -383,7 +275,7 @@
       "id": 561945,
       "competition": "Championship",
       "utcDate": "2026-11-21T15:00:00Z",
-      "status": "LIVE",
+      "status": "FINISHED",
       "homeTeam": "Bolton",
       "awayTeam": "Portsmouth",
       "score": {
@@ -401,11 +293,11 @@
       "id": 561941,
       "competition": "Championship",
       "utcDate": "2026-11-21T15:00:00Z",
-      "status": "LIVE",
+      "status": "FINISHED",
       "homeTeam": "Sheffield Utd",
       "awayTeam": "Watford",
       "score": {
-        "home": 3,
+        "home": 4,
         "away": 0
       },
       "forecast": {
@@ -419,12 +311,12 @@
       "id": 561952,
       "competition": "Championship",
       "utcDate": "2026-11-21T15:00:00Z",
-      "status": "LIVE",
+      "status": "FINISHED",
       "homeTeam": "Wolverhampton",
       "awayTeam": "Charlton",
       "score": {
         "home": 2,
-        "away": 0
+        "away": 1
       },
       "forecast": {
         "home_prob": 46,
@@ -437,7 +329,7 @@
       "id": 560644,
       "competition": "Premier League",
       "utcDate": "2026-11-21T15:00:00Z",
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "homeTeam": "Aston Villa",
       "awayTeam": "Sunderland",
       "score": {
@@ -452,10 +344,118 @@
       }
     },
     {
+      "id": 561942,
+      "competition": "Championship",
+      "utcDate": "2026-11-21T15:00:00Z",
+      "status": "FINISHED",
+      "homeTeam": "Swansea",
+      "awayTeam": "West Brom",
+      "score": {
+        "home": 2,
+        "away": 2
+      },
+      "forecast": {
+        "home_prob": 46,
+        "draw_prob": 26,
+        "away_prob": 28,
+        "tip": "1"
+      }
+    },
+    {
+      "id": 560647,
+      "competition": "Premier League",
+      "utcDate": "2026-11-21T15:00:00Z",
+      "status": "FINISHED",
+      "homeTeam": "Bournemouth",
+      "awayTeam": "Nottingham",
+      "score": {
+        "home": 2,
+        "away": 0
+      },
+      "forecast": {
+        "home_prob": 46,
+        "draw_prob": 26,
+        "away_prob": 28,
+        "tip": "1"
+      }
+    },
+    {
+      "id": 561949,
+      "competition": "Championship",
+      "utcDate": "2026-11-21T15:00:00Z",
+      "status": "IN_PLAY",
+      "homeTeam": "Lincoln City",
+      "awayTeam": "Wrexham",
+      "score": {
+        "home": 0,
+        "away": 1
+      },
+      "forecast": {
+        "home_prob": 46,
+        "draw_prob": 26,
+        "away_prob": 28,
+        "tip": "1"
+      }
+    },
+    {
+      "id": 560650,
+      "competition": "Premier League",
+      "utcDate": "2026-11-21T15:00:00Z",
+      "status": "FINISHED",
+      "homeTeam": "Coventry City",
+      "awayTeam": "Crystal Palace",
+      "score": {
+        "home": 3,
+        "away": 2
+      },
+      "forecast": {
+        "home_prob": 46,
+        "draw_prob": 26,
+        "away_prob": 28,
+        "tip": "1"
+      }
+    },
+    {
+      "id": 561951,
+      "competition": "Championship",
+      "utcDate": "2026-11-21T15:00:00Z",
+      "status": "FINISHED",
+      "homeTeam": "West Ham",
+      "awayTeam": "Preston NE",
+      "score": {
+        "home": 1,
+        "away": 1
+      },
+      "forecast": {
+        "home_prob": 46,
+        "draw_prob": 26,
+        "away_prob": 28,
+        "tip": "1"
+      }
+    },
+    {
+      "id": 561946,
+      "competition": "Championship",
+      "utcDate": "2026-11-21T15:00:00Z",
+      "status": "FINISHED",
+      "homeTeam": "Stoke",
+      "awayTeam": "Birmingham",
+      "score": {
+        "home": 1,
+        "away": 0
+      },
+      "forecast": {
+        "home_prob": 46,
+        "draw_prob": 26,
+        "away_prob": 28,
+        "tip": "1"
+      }
+    },
+    {
       "id": 564751,
       "competition": "Primera Division",
       "utcDate": "2026-11-21T15:15:00Z",
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "homeTeam": "Rayo Vallecano",
       "awayTeam": "Valencia",
       "score": {
@@ -473,12 +473,12 @@
       "id": 558833,
       "competition": "Eredivisie",
       "utcDate": "2026-11-21T15:30:00Z",
-      "status": "PAUSED",
+      "status": "FINISHED",
       "homeTeam": "NEC",
       "awayTeam": "PSV",
       "score": {
-        "home": 0,
-        "away": 3
+        "home": 1,
+        "away": 4
       },
       "forecast": {
         "home_prob": 46,
@@ -491,12 +491,12 @@
       "id": 559628,
       "competition": "Ligue 1",
       "utcDate": "2026-11-21T16:15:00Z",
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "homeTeam": "Nice",
       "awayTeam": "PSG",
       "score": {
-        "home": 1,
-        "away": 0
+        "home": 2,
+        "away": 3
       },
       "forecast": {
         "home_prob": 46,
@@ -509,30 +509,12 @@
       "id": 558526,
       "competition": "Serie A",
       "utcDate": "2026-11-21T17:00:00Z",
-      "status": "TIMED",
+      "status": "FINISHED",
       "homeTeam": "Parma",
       "awayTeam": "Roma",
       "score": {
-        "home": null,
-        "away": null
-      },
-      "forecast": {
-        "home_prob": 46,
-        "draw_prob": 26,
-        "away_prob": 28,
-        "tip": "1"
-      }
-    },
-    {
-      "id": 565861,
-      "competition": "Bundesliga",
-      "utcDate": "2026-11-21T17:30:00Z",
-      "status": "TIMED",
-      "homeTeam": "Schalke",
-      "awayTeam": "Stuttgart",
-      "score": {
-        "home": null,
-        "away": null
+        "home": 1,
+        "away": 5
       },
       "forecast": {
         "home_prob": 46,
@@ -545,12 +527,12 @@
       "id": 564756,
       "competition": "Primera Division",
       "utcDate": "2026-11-21T17:30:00Z",
-      "status": "TIMED",
+      "status": "FINISHED",
       "homeTeam": "Sevilla FC",
       "awayTeam": "Real Betis",
       "score": {
-        "home": null,
-        "away": null
+        "home": 1,
+        "away": 1
       },
       "forecast": {
         "home_prob": 46,
@@ -563,12 +545,30 @@
       "id": 560651,
       "competition": "Premier League",
       "utcDate": "2026-11-21T17:30:00Z",
-      "status": "TIMED",
+      "status": "FINISHED",
       "homeTeam": "Newcastle",
       "awayTeam": "Arsenal",
       "score": {
-        "home": null,
-        "away": null
+        "home": 2,
+        "away": 2
+      },
+      "forecast": {
+        "home_prob": 46,
+        "draw_prob": 26,
+        "away_prob": 28,
+        "tip": "1"
+      }
+    },
+    {
+      "id": 565861,
+      "competition": "Bundesliga",
+      "utcDate": "2026-11-21T17:30:00Z",
+      "status": "FINISHED",
+      "homeTeam": "Schalke",
+      "awayTeam": "Stuttgart",
+      "score": {
+        "home": 0,
+        "away": 0
       },
       "forecast": {
         "home_prob": 46,
@@ -581,12 +581,12 @@
       "id": 558835,
       "competition": "Eredivisie",
       "utcDate": "2026-11-21T17:45:00Z",
-      "status": "TIMED",
+      "status": "FINISHED",
       "homeTeam": "Utrecht",
       "awayTeam": "Cambuur",
       "score": {
-        "home": null,
-        "away": null
+        "home": 2,
+        "away": 3
       },
       "forecast": {
         "home_prob": 46,
@@ -599,12 +599,12 @@
       "id": 558831,
       "competition": "Eredivisie",
       "utcDate": "2026-11-21T17:45:00Z",
-      "status": "TIMED",
+      "status": "FINISHED",
       "homeTeam": "Feyenoord",
       "awayTeam": "Excelsior",
       "score": {
-        "home": null,
-        "away": null
+        "home": 2,
+        "away": 3
       },
       "forecast": {
         "home_prob": 46,
@@ -617,84 +617,12 @@
       "id": 555098,
       "competition": "Campeonato Brasileiro S\u00e9rie A",
       "utcDate": "2026-11-21T19:30:00Z",
-      "status": "TIMED",
+      "status": "IN_PLAY",
       "homeTeam": "Palmeiras",
       "awayTeam": "Flamengo",
       "score": {
-        "home": null,
-        "away": null
-      },
-      "forecast": {
-        "home_prob": 46,
-        "draw_prob": 26,
-        "away_prob": 28,
-        "tip": "1"
-      }
-    },
-    {
-      "id": 559624,
-      "competition": "Ligue 1",
-      "utcDate": "2026-11-21T19:45:00Z",
-      "status": "TIMED",
-      "homeTeam": "Lille",
-      "awayTeam": "Olympique Lyon",
-      "score": {
-        "home": null,
-        "away": null
-      },
-      "forecast": {
-        "home_prob": 46,
-        "draw_prob": 26,
-        "away_prob": 28,
-        "tip": "1"
-      }
-    },
-    {
-      "id": 558527,
-      "competition": "Serie A",
-      "utcDate": "2026-11-21T19:45:00Z",
-      "status": "TIMED",
-      "homeTeam": "Napoli",
-      "awayTeam": "Torino",
-      "score": {
-        "home": null,
-        "away": null
-      },
-      "forecast": {
-        "home_prob": 46,
-        "draw_prob": 26,
-        "away_prob": 28,
-        "tip": "1"
-      }
-    },
-    {
-      "id": 559621,
-      "competition": "Ligue 1",
-      "utcDate": "2026-11-21T19:45:00Z",
-      "status": "TIMED",
-      "homeTeam": "Monaco",
-      "awayTeam": "Auxerre",
-      "score": {
-        "home": null,
-        "away": null
-      },
-      "forecast": {
-        "home_prob": 46,
-        "draw_prob": 26,
-        "away_prob": 28,
-        "tip": "1"
-      }
-    },
-    {
-      "id": 559627,
-      "competition": "Ligue 1",
-      "utcDate": "2026-11-21T19:45:00Z",
-      "status": "TIMED",
-      "homeTeam": "Strasbourg",
-      "awayTeam": "Brest",
-      "score": {
-        "home": null,
-        "away": null
+        "home": 1,
+        "away": 0
       },
       "forecast": {
         "home_prob": 46,
@@ -707,12 +635,12 @@
       "id": 559623,
       "competition": "Ligue 1",
       "utcDate": "2026-11-21T19:45:00Z",
-      "status": "TIMED",
+      "status": "IN_PLAY",
       "homeTeam": "RC Lens",
       "awayTeam": "Toulouse",
       "score": {
-        "home": null,
-        "away": null
+        "home": 0,
+        "away": 1
       },
       "forecast": {
         "home_prob": 46,
@@ -722,15 +650,15 @@
       }
     },
     {
-      "id": 558832,
-      "competition": "Eredivisie",
-      "utcDate": "2026-11-21T20:00:00Z",
-      "status": "TIMED",
-      "homeTeam": "Telstar",
-      "awayTeam": "Zwolle",
+      "id": 559627,
+      "competition": "Ligue 1",
+      "utcDate": "2026-11-21T19:45:00Z",
+      "status": "IN_PLAY",
+      "homeTeam": "Strasbourg",
+      "awayTeam": "Brest",
       "score": {
-        "home": null,
-        "away": null
+        "home": 0,
+        "away": 1
       },
       "forecast": {
         "home_prob": 46,
@@ -740,15 +668,51 @@
       }
     },
     {
-      "id": 558834,
-      "competition": "Eredivisie",
-      "utcDate": "2026-11-21T20:00:00Z",
-      "status": "TIMED",
-      "homeTeam": "Groningen",
-      "awayTeam": "Heerenveen",
+      "id": 559624,
+      "competition": "Ligue 1",
+      "utcDate": "2026-11-21T19:45:00Z",
+      "status": "IN_PLAY",
+      "homeTeam": "Lille",
+      "awayTeam": "Olympique Lyon",
       "score": {
-        "home": null,
-        "away": null
+        "home": 0,
+        "away": 1
+      },
+      "forecast": {
+        "home_prob": 46,
+        "draw_prob": 26,
+        "away_prob": 28,
+        "tip": "1"
+      }
+    },
+    {
+      "id": 558527,
+      "competition": "Serie A",
+      "utcDate": "2026-11-21T19:45:00Z",
+      "status": "IN_PLAY",
+      "homeTeam": "Napoli",
+      "awayTeam": "Torino",
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "forecast": {
+        "home_prob": 46,
+        "draw_prob": 26,
+        "away_prob": 28,
+        "tip": "1"
+      }
+    },
+    {
+      "id": 559621,
+      "competition": "Ligue 1",
+      "utcDate": "2026-11-21T19:45:00Z",
+      "status": "IN_PLAY",
+      "homeTeam": "Monaco",
+      "awayTeam": "Auxerre",
+      "score": {
+        "home": 0,
+        "away": 1
       },
       "forecast": {
         "home_prob": 46,
@@ -761,12 +725,48 @@
       "id": 564754,
       "competition": "Primera Division",
       "utcDate": "2026-11-21T20:00:00Z",
-      "status": "TIMED",
+      "status": "IN_PLAY",
       "homeTeam": "Real Madrid",
       "awayTeam": "Celta",
       "score": {
-        "home": null,
-        "away": null
+        "home": 0,
+        "away": 1
+      },
+      "forecast": {
+        "home_prob": 46,
+        "draw_prob": 26,
+        "away_prob": 28,
+        "tip": "1"
+      }
+    },
+    {
+      "id": 558832,
+      "competition": "Eredivisie",
+      "utcDate": "2026-11-21T20:00:00Z",
+      "status": "IN_PLAY",
+      "homeTeam": "Telstar",
+      "awayTeam": "Zwolle",
+      "score": {
+        "home": 1,
+        "away": 1
+      },
+      "forecast": {
+        "home_prob": 46,
+        "draw_prob": 26,
+        "away_prob": 28,
+        "tip": "1"
+      }
+    },
+    {
+      "id": 558834,
+      "competition": "Eredivisie",
+      "utcDate": "2026-11-21T20:00:00Z",
+      "status": "IN_PLAY",
+      "homeTeam": "Groningen",
+      "awayTeam": "Heerenveen",
+      "score": {
+        "home": 0,
+        "away": 0
       },
       "forecast": {
         "home_prob": 46,
