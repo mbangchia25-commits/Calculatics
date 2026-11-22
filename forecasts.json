@@ -1,16 +1,16 @@
 {
-  "updated_at": "2026-11-22T00:41:17.737727+00:00",
+  "updated_at": "2026-11-22T04:50:17.989998+00:00",
   "matches": [
     {
       "id": 555095,
       "competition": "Campeonato Brasileiro S\u00e9rie A",
       "utcDate": "2026-11-22T00:00:00Z",
-      "status": "TIMED",
+      "status": "IN_PLAY",
       "homeTeam": "Chapecoense",
       "awayTeam": "Cruzeiro",
       "score": {
-        "home": null,
-        "away": null
+        "home": 0,
+        "away": 0
       },
       "forecast": {
         "home_prob": 46,
@@ -128,24 +128,6 @@
       }
     },
     {
-      "id": 558524,
-      "competition": "Serie A",
-      "utcDate": "2026-11-22T14:00:00Z",
-      "status": "TIMED",
-      "homeTeam": "Sassuolo",
-      "awayTeam": "Genoa",
-      "score": {
-        "home": null,
-        "away": null
-      },
-      "forecast": {
-        "home_prob": 46,
-        "draw_prob": 26,
-        "away_prob": 28,
-        "tip": "1"
-      }
-    },
-    {
       "id": 559625,
       "competition": "Ligue 1",
       "utcDate": "2026-11-22T14:00:00Z",
@@ -188,6 +170,24 @@
       "status": "TIMED",
       "homeTeam": "Bologna",
       "awayTeam": "Udinese",
+      "score": {
+        "home": null,
+        "away": null
+      },
+      "forecast": {
+        "home_prob": 46,
+        "draw_prob": 26,
+        "away_prob": 28,
+        "tip": "1"
+      }
+    },
+    {
+      "id": 558524,
+      "competition": "Serie A",
+      "utcDate": "2026-11-22T14:00:00Z",
+      "status": "TIMED",
+      "homeTeam": "Sassuolo",
+      "awayTeam": "Genoa",
       "score": {
         "home": null,
         "away": null
