@@ -1,49 +1,13 @@
 {
-  "updated_at": "2026-11-22T12:40:46.503142+00:00",
+  "updated_at": "2026-11-22T16:37:49.901473+00:00",
   "matches": [
     {
       "id": 555095,
       "competition": "Campeonato Brasileiro S\u00e9rie A",
       "utcDate": "2026-11-22T00:00:00Z",
-      "status": "FINISHED",
+      "status": "IN_PLAY",
       "homeTeam": "Chapecoense",
       "awayTeam": "Cruzeiro",
-      "score": {
-        "home": 1,
-        "away": 2
-      },
-      "forecast": {
-        "home_prob": 46,
-        "draw_prob": 26,
-        "away_prob": 28,
-        "tip": "1"
-      }
-    },
-    {
-      "id": 558828,
-      "competition": "Eredivisie",
-      "utcDate": "2026-11-22T11:15:00Z",
-      "status": "IN_PLAY",
-      "homeTeam": "Twente",
-      "awayTeam": "Willem II",
-      "score": {
-        "home": 1,
-        "away": 1
-      },
-      "forecast": {
-        "home_prob": 46,
-        "draw_prob": 26,
-        "away_prob": 28,
-        "tip": "1"
-      }
-    },
-    {
-      "id": 558521,
-      "competition": "Serie A",
-      "utcDate": "2026-11-22T11:30:00Z",
-      "status": "IN_PLAY",
-      "homeTeam": "Juventus",
-      "awayTeam": "Venezia FC",
       "score": {
         "home": 0,
         "away": 0
@@ -56,15 +20,51 @@
       }
     },
     {
+      "id": 558828,
+      "competition": "Eredivisie",
+      "utcDate": "2026-11-22T11:15:00Z",
+      "status": "TIMED",
+      "homeTeam": "Twente",
+      "awayTeam": "Willem II",
+      "score": {
+        "home": null,
+        "away": null
+      },
+      "forecast": {
+        "home_prob": 46,
+        "draw_prob": 26,
+        "away_prob": 28,
+        "tip": "1"
+      }
+    },
+    {
+      "id": 558521,
+      "competition": "Serie A",
+      "utcDate": "2026-11-22T11:30:00Z",
+      "status": "TIMED",
+      "homeTeam": "Juventus",
+      "awayTeam": "Venezia FC",
+      "score": {
+        "home": null,
+        "away": null
+      },
+      "forecast": {
+        "home_prob": 46,
+        "draw_prob": 26,
+        "away_prob": 28,
+        "tip": "1"
+      }
+    },
+    {
       "id": 561947,
       "competition": "Championship",
       "utcDate": "2026-11-22T12:00:00Z",
-      "status": "IN_PLAY",
+      "status": "SCHEDULED",
       "homeTeam": "Burnley",
       "awayTeam": "Blackburn",
       "score": {
-        "home": 1,
-        "away": 1
+        "home": null,
+        "away": null
       },
       "forecast": {
         "home_prob": 46,
@@ -128,24 +128,6 @@
       }
     },
     {
-      "id": 558524,
-      "competition": "Serie A",
-      "utcDate": "2026-11-22T14:00:00Z",
-      "status": "TIMED",
-      "homeTeam": "Sassuolo",
-      "awayTeam": "Genoa",
-      "score": {
-        "home": null,
-        "away": null
-      },
-      "forecast": {
-        "home_prob": 46,
-        "draw_prob": 26,
-        "away_prob": 28,
-        "tip": "1"
-      }
-    },
-    {
       "id": 559625,
       "competition": "Ligue 1",
       "utcDate": "2026-11-22T14:00:00Z",
@@ -188,6 +170,24 @@
       "status": "TIMED",
       "homeTeam": "Bologna",
       "awayTeam": "Udinese",
+      "score": {
+        "home": null,
+        "away": null
+      },
+      "forecast": {
+        "home_prob": 46,
+        "draw_prob": 26,
+        "away_prob": 28,
+        "tip": "1"
+      }
+    },
+    {
+      "id": 558524,
+      "competition": "Serie A",
+      "utcDate": "2026-11-22T14:00:00Z",
+      "status": "TIMED",
+      "homeTeam": "Sassuolo",
+      "awayTeam": "Genoa",
       "score": {
         "home": null,
         "away": null
@@ -362,12 +362,12 @@
       }
     },
     {
-      "id": 559629,
-      "competition": "Ligue 1",
+      "id": 558520,
+      "competition": "Serie A",
       "utcDate": "2026-11-22T19:45:00Z",
       "status": "TIMED",
-      "homeTeam": "Marseille",
-      "awayTeam": "Le Mans",
+      "homeTeam": "Atalanta",
+      "awayTeam": "Inter",
       "score": {
         "home": null,
         "away": null
@@ -380,12 +380,12 @@
       }
     },
     {
-      "id": 558520,
-      "competition": "Serie A",
+      "id": 559629,
+      "competition": "Ligue 1",
       "utcDate": "2026-11-22T19:45:00Z",
       "status": "TIMED",
-      "homeTeam": "Atalanta",
-      "awayTeam": "Inter",
+      "homeTeam": "Marseille",
+      "awayTeam": "Le Mans",
       "score": {
         "home": null,
         "away": null
