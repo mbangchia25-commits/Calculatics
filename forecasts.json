@@ -1,34 +1,16 @@
 {
-  "updated_at": "2026-11-23T16:52:53.412176+00:00",
+  "updated_at": "2026-11-23T20:43:47.887747+00:00",
   "matches": [
     {
       "id": 558519,
       "competition": "Serie A",
       "utcDate": "2026-11-23T19:45:00Z",
-      "status": "TIMED",
+      "status": "IN_PLAY",
       "homeTeam": "Monza",
       "awayTeam": "Fiorentina",
       "score": {
-        "home": null,
-        "away": null
-      },
-      "forecast": {
-        "home_prob": 46,
-        "draw_prob": 26,
-        "away_prob": 28,
-        "tip": "1"
-      }
-    },
-    {
-      "id": 560649,
-      "competition": "Premier League",
-      "utcDate": "2026-11-23T20:00:00Z",
-      "status": "TIMED",
-      "homeTeam": "Brentford",
-      "awayTeam": "Everton",
-      "score": {
-        "home": null,
-        "away": null
+        "home": 1,
+        "away": 0
       },
       "forecast": {
         "home_prob": 46,
@@ -41,12 +23,30 @@
       "id": 564757,
       "competition": "Primera Division",
       "utcDate": "2026-11-23T20:00:00Z",
-      "status": "TIMED",
+      "status": "IN_PLAY",
       "homeTeam": "Levante",
       "awayTeam": "Elche",
       "score": {
-        "home": null,
-        "away": null
+        "home": 0,
+        "away": 0
+      },
+      "forecast": {
+        "home_prob": 46,
+        "draw_prob": 26,
+        "away_prob": 28,
+        "tip": "1"
+      }
+    },
+    {
+      "id": 560649,
+      "competition": "Premier League",
+      "utcDate": "2026-11-23T20:00:00Z",
+      "status": "IN_PLAY",
+      "homeTeam": "Brentford",
+      "awayTeam": "Everton",
+      "score": {
+        "home": 2,
+        "away": 0
       },
       "forecast": {
         "home_prob": 46,
