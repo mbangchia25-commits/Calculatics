@@ -1,34 +1,16 @@
 {
-  "updated_at": "2026-11-24T04:56:14.512407+00:00",
+  "updated_at": "2026-11-24T08:54:38.034416+00:00",
   "matches": [
     {
       "id": 555099,
       "competition": "Campeonato Brasileiro S\u00e9rie A",
       "utcDate": "2026-11-24T00:00:00Z",
-      "status": "FINISHED",
+      "status": "PAUSED",
       "homeTeam": "Santos",
       "awayTeam": "Gr\u00eamio",
       "score": {
         "home": 0,
-        "away": 2
-      },
-      "forecast": {
-        "home_prob": 46,
-        "draw_prob": 26,
-        "away_prob": 28,
-        "tip": "1"
-      }
-    },
-    {
-      "id": 575396,
-      "competition": "UEFA Champions League",
-      "utcDate": "2026-11-24T17:45:00Z",
-      "status": "TIMED",
-      "homeTeam": "Bod\u00f8/Glimt",
-      "awayTeam": "LASK",
-      "score": {
-        "home": null,
-        "away": null
+        "away": 1
       },
       "forecast": {
         "home_prob": 46,
@@ -56,48 +38,12 @@
       }
     },
     {
-      "id": 561953,
-      "competition": "Championship",
-      "utcDate": "2026-11-24T19:45:00Z",
-      "status": "SCHEDULED",
-      "homeTeam": "Cardiff",
-      "awayTeam": "Preston NE",
-      "score": {
-        "home": null,
-        "away": null
-      },
-      "forecast": {
-        "home_prob": 46,
-        "draw_prob": 26,
-        "away_prob": 28,
-        "tip": "1"
-      }
-    },
-    {
-      "id": 561959,
-      "competition": "Championship",
-      "utcDate": "2026-11-24T19:45:00Z",
-      "status": "SCHEDULED",
-      "homeTeam": "Bristol City",
-      "awayTeam": "Wrexham",
-      "score": {
-        "home": null,
-        "away": null
-      },
-      "forecast": {
-        "home_prob": 46,
-        "draw_prob": 26,
-        "away_prob": 28,
-        "tip": "1"
-      }
-    },
-    {
-      "id": 561955,
-      "competition": "Championship",
-      "utcDate": "2026-11-24T19:45:00Z",
-      "status": "SCHEDULED",
-      "homeTeam": "Portsmouth",
-      "awayTeam": "West Ham",
+      "id": 575396,
+      "competition": "UEFA Champions League",
+      "utcDate": "2026-11-24T17:45:00Z",
+      "status": "TIMED",
+      "homeTeam": "Bod\u00f8/Glimt",
+      "awayTeam": "LASK",
       "score": {
         "home": null,
         "away": null
@@ -182,66 +128,66 @@
       }
     },
     {
-      "id": 575402,
-      "competition": "UEFA Champions League",
-      "utcDate": "2026-11-24T20:00:00Z",
-      "status": "TIMED",
-      "homeTeam": "RB Leipzig",
-      "awayTeam": "RC Lens",
-      "score": {
-        "home": null,
-        "away": null
-      },
-      "forecast": {
-        "home_prob": 46,
-        "draw_prob": 26,
-        "away_prob": 28,
-        "tip": "1"
-      }
-    },
-    {
-      "id": 575398,
-      "competition": "UEFA Champions League",
-      "utcDate": "2026-11-24T20:00:00Z",
-      "status": "TIMED",
-      "homeTeam": "Man City",
-      "awayTeam": "Napoli",
-      "score": {
-        "home": null,
-        "away": null
-      },
-      "forecast": {
-        "home_prob": 46,
-        "draw_prob": 26,
-        "away_prob": 28,
-        "tip": "1"
-      }
-    },
-    {
-      "id": 575400,
-      "competition": "UEFA Champions League",
-      "utcDate": "2026-11-24T20:00:00Z",
-      "status": "TIMED",
-      "homeTeam": "Feyenoord",
-      "awayTeam": "Porto",
-      "score": {
-        "home": null,
-        "away": null
-      },
-      "forecast": {
-        "home_prob": 46,
-        "draw_prob": 26,
-        "away_prob": 28,
-        "tip": "1"
-      }
-    },
-    {
-      "id": 561957,
+      "id": 561953,
       "competition": "Championship",
-      "utcDate": "2026-11-24T20:00:00Z",
+      "utcDate": "2026-11-24T19:45:00Z",
       "status": "SCHEDULED",
-      "homeTeam": "Wolverhampton",
-      "awayTeam": "Derby County",
+      "homeTeam": "Cardiff",
+      "awayTeam": "Preston NE",
+      "score": {
+        "home": null,
+        "away": null
+      },
+      "forecast": {
+        "home_prob": 46,
+        "draw_prob": 26,
+        "away_prob": 28,
+        "tip": "1"
+      }
+    },
+    {
+      "id": 561959,
+      "competition": "Championship",
+      "utcDate": "2026-11-24T19:45:00Z",
+      "status": "SCHEDULED",
+      "homeTeam": "Bristol City",
+      "awayTeam": "Wrexham",
+      "score": {
+        "home": null,
+        "away": null
+      },
+      "forecast": {
+        "home_prob": 46,
+        "draw_prob": 26,
+        "away_prob": 28,
+        "tip": "1"
+      }
+    },
+    {
+      "id": 561955,
+      "competition": "Championship",
+      "utcDate": "2026-11-24T19:45:00Z",
+      "status": "SCHEDULED",
+      "homeTeam": "Portsmouth",
+      "awayTeam": "West Ham",
+      "score": {
+        "home": null,
+        "away": null
+      },
+      "forecast": {
+        "home_prob": 46,
+        "draw_prob": 26,
+        "away_prob": 28,
+        "tip": "1"
+      }
+    },
+    {
+      "id": 575401,
+      "competition": "UEFA Champions League",
+      "utcDate": "2026-11-24T20:00:00Z",
+      "status": "TIMED",
+      "homeTeam": "Sl. Bratislava",
+      "awayTeam": "Real Betis",
       "score": {
         "home": null,
         "away": null
@@ -308,12 +254,66 @@
       }
     },
     {
-      "id": 575401,
+      "id": 575402,
       "competition": "UEFA Champions League",
       "utcDate": "2026-11-24T20:00:00Z",
       "status": "TIMED",
-      "homeTeam": "Sl. Bratislava",
-      "awayTeam": "Real Betis",
+      "homeTeam": "RB Leipzig",
+      "awayTeam": "RC Lens",
+      "score": {
+        "home": null,
+        "away": null
+      },
+      "forecast": {
+        "home_prob": 46,
+        "draw_prob": 26,
+        "away_prob": 28,
+        "tip": "1"
+      }
+    },
+    {
+      "id": 575398,
+      "competition": "UEFA Champions League",
+      "utcDate": "2026-11-24T20:00:00Z",
+      "status": "TIMED",
+      "homeTeam": "Man City",
+      "awayTeam": "Napoli",
+      "score": {
+        "home": null,
+        "away": null
+      },
+      "forecast": {
+        "home_prob": 46,
+        "draw_prob": 26,
+        "away_prob": 28,
+        "tip": "1"
+      }
+    },
+    {
+      "id": 575400,
+      "competition": "UEFA Champions League",
+      "utcDate": "2026-11-24T20:00:00Z",
+      "status": "TIMED",
+      "homeTeam": "Feyenoord",
+      "awayTeam": "Porto",
+      "score": {
+        "home": null,
+        "away": null
+      },
+      "forecast": {
+        "home_prob": 46,
+        "draw_prob": 26,
+        "away_prob": 28,
+        "tip": "1"
+      }
+    },
+    {
+      "id": 561957,
+      "competition": "Championship",
+      "utcDate": "2026-11-24T20:00:00Z",
+      "status": "SCHEDULED",
+      "homeTeam": "Wolverhampton",
+      "awayTeam": "Derby County",
       "score": {
         "home": null,
         "away": null
