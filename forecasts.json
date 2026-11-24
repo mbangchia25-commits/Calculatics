@@ -1,34 +1,16 @@
 {
-  "updated_at": "2026-11-24T08:54:38.034416+00:00",
+  "updated_at": "2026-11-24T12:58:41.686585+00:00",
   "matches": [
     {
       "id": 555099,
       "competition": "Campeonato Brasileiro S\u00e9rie A",
       "utcDate": "2026-11-24T00:00:00Z",
-      "status": "PAUSED",
+      "status": "FINISHED",
       "homeTeam": "Santos",
       "awayTeam": "Gr\u00eamio",
       "score": {
         "home": 0,
-        "away": 1
-      },
-      "forecast": {
-        "home_prob": 46,
-        "draw_prob": 26,
-        "away_prob": 28,
-        "tip": "1"
-      }
-    },
-    {
-      "id": 575395,
-      "competition": "UEFA Champions League",
-      "utcDate": "2026-11-24T17:45:00Z",
-      "status": "TIMED",
-      "homeTeam": "Galatasaray",
-      "awayTeam": "Aston Villa",
-      "score": {
-        "home": null,
-        "away": null
+        "away": 2
       },
       "forecast": {
         "home_prob": 46,
@@ -56,12 +38,12 @@
       }
     },
     {
-      "id": 561958,
-      "competition": "Championship",
-      "utcDate": "2026-11-24T19:45:00Z",
-      "status": "SCHEDULED",
-      "homeTeam": "Charlton",
-      "awayTeam": "Lincoln City",
+      "id": 575395,
+      "competition": "UEFA Champions League",
+      "utcDate": "2026-11-24T17:45:00Z",
+      "status": "TIMED",
+      "homeTeam": "Galatasaray",
+      "awayTeam": "Aston Villa",
       "score": {
         "home": null,
         "away": null
@@ -74,48 +56,12 @@
       }
     },
     {
-      "id": 561954,
+      "id": 561955,
       "competition": "Championship",
       "utcDate": "2026-11-24T19:45:00Z",
       "status": "SCHEDULED",
-      "homeTeam": "Middlesbrough",
-      "awayTeam": "Swansea",
-      "score": {
-        "home": null,
-        "away": null
-      },
-      "forecast": {
-        "home_prob": 46,
-        "draw_prob": 26,
-        "away_prob": 28,
-        "tip": "1"
-      }
-    },
-    {
-      "id": 561960,
-      "competition": "Championship",
-      "utcDate": "2026-11-24T19:45:00Z",
-      "status": "SCHEDULED",
-      "homeTeam": "Norwich",
-      "awayTeam": "QPR",
-      "score": {
-        "home": null,
-        "away": null
-      },
-      "forecast": {
-        "home_prob": 46,
-        "draw_prob": 26,
-        "away_prob": 28,
-        "tip": "1"
-      }
-    },
-    {
-      "id": 561956,
-      "competition": "Championship",
-      "utcDate": "2026-11-24T19:45:00Z",
-      "status": "SCHEDULED",
-      "homeTeam": "Sheffield Utd",
-      "awayTeam": "Southampton",
+      "homeTeam": "Portsmouth",
+      "awayTeam": "West Ham",
       "score": {
         "home": null,
         "away": null
@@ -164,12 +110,12 @@
       }
     },
     {
-      "id": 561955,
+      "id": 561960,
       "competition": "Championship",
       "utcDate": "2026-11-24T19:45:00Z",
       "status": "SCHEDULED",
-      "homeTeam": "Portsmouth",
-      "awayTeam": "West Ham",
+      "homeTeam": "Norwich",
+      "awayTeam": "QPR",
       "score": {
         "home": null,
         "away": null
@@ -182,12 +128,12 @@
       }
     },
     {
-      "id": 575401,
-      "competition": "UEFA Champions League",
-      "utcDate": "2026-11-24T20:00:00Z",
-      "status": "TIMED",
-      "homeTeam": "Sl. Bratislava",
-      "awayTeam": "Real Betis",
+      "id": 561956,
+      "competition": "Championship",
+      "utcDate": "2026-11-24T19:45:00Z",
+      "status": "SCHEDULED",
+      "homeTeam": "Sheffield Utd",
+      "awayTeam": "Southampton",
       "score": {
         "home": null,
         "away": null
@@ -200,12 +146,12 @@
       }
     },
     {
-      "id": 575397,
-      "competition": "UEFA Champions League",
-      "utcDate": "2026-11-24T20:00:00Z",
-      "status": "TIMED",
-      "homeTeam": "Real Madrid",
-      "awayTeam": "PSV",
+      "id": 561958,
+      "competition": "Championship",
+      "utcDate": "2026-11-24T19:45:00Z",
+      "status": "SCHEDULED",
+      "homeTeam": "Charlton",
+      "awayTeam": "Lincoln City",
       "score": {
         "home": null,
         "away": null
@@ -218,48 +164,12 @@
       }
     },
     {
-      "id": 575403,
-      "competition": "UEFA Champions League",
-      "utcDate": "2026-11-24T20:00:00Z",
-      "status": "TIMED",
-      "homeTeam": "Como 1907",
-      "awayTeam": "PAE AEK",
-      "score": {
-        "home": null,
-        "away": null
-      },
-      "forecast": {
-        "home_prob": 46,
-        "draw_prob": 26,
-        "away_prob": 28,
-        "tip": "1"
-      }
-    },
-    {
-      "id": 575399,
-      "competition": "UEFA Champions League",
-      "utcDate": "2026-11-24T20:00:00Z",
-      "status": "TIMED",
-      "homeTeam": "Arsenal",
-      "awayTeam": "Dortmund",
-      "score": {
-        "home": null,
-        "away": null
-      },
-      "forecast": {
-        "home_prob": 46,
-        "draw_prob": 26,
-        "away_prob": 28,
-        "tip": "1"
-      }
-    },
-    {
-      "id": 575402,
-      "competition": "UEFA Champions League",
-      "utcDate": "2026-11-24T20:00:00Z",
-      "status": "TIMED",
-      "homeTeam": "RB Leipzig",
-      "awayTeam": "RC Lens",
+      "id": 561954,
+      "competition": "Championship",
+      "utcDate": "2026-11-24T19:45:00Z",
+      "status": "SCHEDULED",
+      "homeTeam": "Middlesbrough",
+      "awayTeam": "Swansea",
       "score": {
         "home": null,
         "away": null
@@ -314,6 +224,96 @@
       "status": "SCHEDULED",
       "homeTeam": "Wolverhampton",
       "awayTeam": "Derby County",
+      "score": {
+        "home": null,
+        "away": null
+      },
+      "forecast": {
+        "home_prob": 46,
+        "draw_prob": 26,
+        "away_prob": 28,
+        "tip": "1"
+      }
+    },
+    {
+      "id": 575402,
+      "competition": "UEFA Champions League",
+      "utcDate": "2026-11-24T20:00:00Z",
+      "status": "TIMED",
+      "homeTeam": "RB Leipzig",
+      "awayTeam": "RC Lens",
+      "score": {
+        "home": null,
+        "away": null
+      },
+      "forecast": {
+        "home_prob": 46,
+        "draw_prob": 26,
+        "away_prob": 28,
+        "tip": "1"
+      }
+    },
+    {
+      "id": 575403,
+      "competition": "UEFA Champions League",
+      "utcDate": "2026-11-24T20:00:00Z",
+      "status": "TIMED",
+      "homeTeam": "Como 1907",
+      "awayTeam": "PAE AEK",
+      "score": {
+        "home": null,
+        "away": null
+      },
+      "forecast": {
+        "home_prob": 46,
+        "draw_prob": 26,
+        "away_prob": 28,
+        "tip": "1"
+      }
+    },
+    {
+      "id": 575399,
+      "competition": "UEFA Champions League",
+      "utcDate": "2026-11-24T20:00:00Z",
+      "status": "TIMED",
+      "homeTeam": "Arsenal",
+      "awayTeam": "Dortmund",
+      "score": {
+        "home": null,
+        "away": null
+      },
+      "forecast": {
+        "home_prob": 46,
+        "draw_prob": 26,
+        "away_prob": 28,
+        "tip": "1"
+      }
+    },
+    {
+      "id": 575401,
+      "competition": "UEFA Champions League",
+      "utcDate": "2026-11-24T20:00:00Z",
+      "status": "TIMED",
+      "homeTeam": "Sl. Bratislava",
+      "awayTeam": "Real Betis",
+      "score": {
+        "home": null,
+        "away": null
+      },
+      "forecast": {
+        "home_prob": 46,
+        "draw_prob": 26,
+        "away_prob": 28,
+        "tip": "1"
+      }
+    },
+    {
+      "id": 575397,
+      "competition": "UEFA Champions League",
+      "utcDate": "2026-11-24T20:00:00Z",
+      "status": "TIMED",
+      "homeTeam": "Real Madrid",
+      "awayTeam": "PSV",
       "score": {
         "home": null,
         "away": null
