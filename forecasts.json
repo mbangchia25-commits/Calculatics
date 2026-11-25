@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-25T08:56:04.970581+00:00",
+  "updated_at": "2026-11-25T13:03:24.828453+00:00",
   "matches": [
     {
       "id": 575404,
@@ -38,24 +38,6 @@
       }
     },
     {
-      "id": 561961,
-      "competition": "Championship",
-      "utcDate": "2026-11-25T19:45:00Z",
-      "status": "SCHEDULED",
-      "homeTeam": "Watford",
-      "awayTeam": "Blackburn",
-      "score": {
-        "home": null,
-        "away": null
-      },
-      "forecast": {
-        "home_prob": 46,
-        "draw_prob": 26,
-        "away_prob": 28,
-        "tip": "1"
-      }
-    },
-    {
       "id": 561963,
       "competition": "Championship",
       "utcDate": "2026-11-25T19:45:00Z",
@@ -74,12 +56,12 @@
       }
     },
     {
-      "id": 561964,
+      "id": 561961,
       "competition": "Championship",
       "utcDate": "2026-11-25T19:45:00Z",
       "status": "SCHEDULED",
-      "homeTeam": "Burnley",
-      "awayTeam": "Birmingham",
+      "homeTeam": "Watford",
+      "awayTeam": "Blackburn",
       "score": {
         "home": null,
         "away": null
@@ -92,12 +74,12 @@
       }
     },
     {
-      "id": 575408,
-      "competition": "UEFA Champions League",
-      "utcDate": "2026-11-25T20:00:00Z",
-      "status": "TIMED",
-      "homeTeam": "PSG",
-      "awayTeam": "Roma",
+      "id": 561964,
+      "competition": "Championship",
+      "utcDate": "2026-11-25T19:45:00Z",
+      "status": "SCHEDULED",
+      "homeTeam": "Burnley",
+      "awayTeam": "Birmingham",
       "score": {
         "home": null,
         "away": null
@@ -164,12 +146,12 @@
       }
     },
     {
-      "id": 575409,
+      "id": 575408,
       "competition": "UEFA Champions League",
       "utcDate": "2026-11-25T20:00:00Z",
       "status": "TIMED",
-      "homeTeam": "Club Brugge",
-      "awayTeam": "Liverpool",
+      "homeTeam": "PSG",
+      "awayTeam": "Roma",
       "score": {
         "home": null,
         "away": null
@@ -224,6 +206,24 @@
       "status": "TIMED",
       "homeTeam": "Atleti",
       "awayTeam": "Viking",
+      "score": {
+        "home": null,
+        "away": null
+      },
+      "forecast": {
+        "home_prob": 46,
+        "draw_prob": 26,
+        "away_prob": 28,
+        "tip": "1"
+      }
+    },
+    {
+      "id": 575409,
+      "competition": "UEFA Champions League",
+      "utcDate": "2026-11-25T20:00:00Z",
+      "status": "TIMED",
+      "homeTeam": "Club Brugge",
+      "awayTeam": "Liverpool",
       "score": {
         "home": null,
         "away": null
