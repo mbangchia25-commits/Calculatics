@@ -1,34 +1,16 @@
 {
-  "updated_at": "2026-11-25T16:56:58.777353+00:00",
+  "updated_at": "2026-11-25T20:46:45.386910+00:00",
   "matches": [
-    {
-      "id": 575404,
-      "competition": "UEFA Champions League",
-      "utcDate": "2026-11-25T17:45:00Z",
-      "status": "TIMED",
-      "homeTeam": "Sabah FK",
-      "awayTeam": "Bar\u00e7a",
-      "score": {
-        "home": null,
-        "away": null
-      },
-      "forecast": {
-        "home_prob": 46,
-        "draw_prob": 26,
-        "away_prob": 28,
-        "tip": "1"
-      }
-    },
     {
       "id": 575405,
       "competition": "UEFA Champions League",
       "utcDate": "2026-11-25T17:45:00Z",
-      "status": "TIMED",
+      "status": "FINISHED",
       "homeTeam": "Slavia Praha",
       "awayTeam": "Villarreal",
       "score": {
-        "home": null,
-        "away": null
+        "home": 0,
+        "away": 1
       },
       "forecast": {
         "home_prob": 46,
@@ -38,33 +20,15 @@
       }
     },
     {
-      "id": 561963,
-      "competition": "Championship",
-      "utcDate": "2026-11-25T19:45:00Z",
-      "status": "SCHEDULED",
-      "homeTeam": "Bolton",
-      "awayTeam": "West Brom",
+      "id": 575404,
+      "competition": "UEFA Champions League",
+      "utcDate": "2026-11-25T17:45:00Z",
+      "status": "FINISHED",
+      "homeTeam": "Sabah FK",
+      "awayTeam": "Bar\u00e7a",
       "score": {
-        "home": null,
-        "away": null
-      },
-      "forecast": {
-        "home_prob": 46,
-        "draw_prob": 26,
-        "away_prob": 28,
-        "tip": "1"
-      }
-    },
-    {
-      "id": 561961,
-      "competition": "Championship",
-      "utcDate": "2026-11-25T19:45:00Z",
-      "status": "SCHEDULED",
-      "homeTeam": "Watford",
-      "awayTeam": "Blackburn",
-      "score": {
-        "home": null,
-        "away": null
+        "home": 1,
+        "away": 4
       },
       "forecast": {
         "home_prob": 46,
@@ -77,12 +41,12 @@
       "id": 561964,
       "competition": "Championship",
       "utcDate": "2026-11-25T19:45:00Z",
-      "status": "SCHEDULED",
+      "status": "IN_PLAY",
       "homeTeam": "Burnley",
       "awayTeam": "Birmingham",
       "score": {
-        "home": null,
-        "away": null
+        "home": 0,
+        "away": 1
       },
       "forecast": {
         "home_prob": 46,
@@ -92,15 +56,15 @@
       }
     },
     {
-      "id": 575410,
-      "competition": "UEFA Champions League",
-      "utcDate": "2026-11-25T20:00:00Z",
-      "status": "TIMED",
-      "homeTeam": "Lille",
-      "awayTeam": "Bayern",
+      "id": 561963,
+      "competition": "Championship",
+      "utcDate": "2026-11-25T19:45:00Z",
+      "status": "IN_PLAY",
+      "homeTeam": "Bolton",
+      "awayTeam": "West Brom",
       "score": {
-        "home": null,
-        "away": null
+        "home": 0,
+        "away": 1
       },
       "forecast": {
         "home_prob": 46,
@@ -110,51 +74,15 @@
       }
     },
     {
-      "id": 575406,
-      "competition": "UEFA Champions League",
-      "utcDate": "2026-11-25T20:00:00Z",
-      "status": "TIMED",
-      "homeTeam": "Inter",
-      "awayTeam": "Stuttgart",
+      "id": 561961,
+      "competition": "Championship",
+      "utcDate": "2026-11-25T19:45:00Z",
+      "status": "IN_PLAY",
+      "homeTeam": "Watford",
+      "awayTeam": "Blackburn",
       "score": {
-        "home": null,
-        "away": null
-      },
-      "forecast": {
-        "home_prob": 46,
-        "draw_prob": 26,
-        "away_prob": 28,
-        "tip": "1"
-      }
-    },
-    {
-      "id": 575412,
-      "competition": "UEFA Champions League",
-      "utcDate": "2026-11-25T20:00:00Z",
-      "status": "TIMED",
-      "homeTeam": "Shaktar",
-      "awayTeam": "Fenerbah\u00e7e",
-      "score": {
-        "home": null,
-        "away": null
-      },
-      "forecast": {
-        "home_prob": 46,
-        "draw_prob": 26,
-        "away_prob": 28,
-        "tip": "1"
-      }
-    },
-    {
-      "id": 575408,
-      "competition": "UEFA Champions League",
-      "utcDate": "2026-11-25T20:00:00Z",
-      "status": "TIMED",
-      "homeTeam": "PSG",
-      "awayTeam": "Roma",
-      "score": {
-        "home": null,
-        "away": null
+        "home": 0,
+        "away": 0
       },
       "forecast": {
         "home_prob": 46,
@@ -167,12 +95,12 @@
       "id": 561962,
       "competition": "Championship",
       "utcDate": "2026-11-25T20:00:00Z",
-      "status": "SCHEDULED",
+      "status": "IN_PLAY",
       "homeTeam": "Stoke",
       "awayTeam": "Millwall",
       "score": {
-        "home": null,
-        "away": null
+        "home": 2,
+        "away": 0
       },
       "forecast": {
         "home_prob": 46,
@@ -185,12 +113,12 @@
       "id": 575411,
       "competition": "UEFA Champions League",
       "utcDate": "2026-11-25T20:00:00Z",
-      "status": "TIMED",
+      "status": "IN_PLAY",
       "homeTeam": "Sporting CP",
       "awayTeam": "Man United",
       "score": {
-        "home": null,
-        "away": null
+        "home": 1,
+        "away": 0
       },
       "forecast": {
         "home_prob": 46,
@@ -203,12 +131,12 @@
       "id": 575407,
       "competition": "UEFA Champions League",
       "utcDate": "2026-11-25T20:00:00Z",
-      "status": "TIMED",
+      "status": "IN_PLAY",
       "homeTeam": "Atleti",
       "awayTeam": "Viking",
       "score": {
-        "home": null,
-        "away": null
+        "home": 2,
+        "away": 0
       },
       "forecast": {
         "home_prob": 46,
@@ -221,12 +149,84 @@
       "id": 575409,
       "competition": "UEFA Champions League",
       "utcDate": "2026-11-25T20:00:00Z",
-      "status": "TIMED",
+      "status": "IN_PLAY",
       "homeTeam": "Club Brugge",
       "awayTeam": "Liverpool",
       "score": {
-        "home": null,
-        "away": null
+        "home": 0,
+        "away": 1
+      },
+      "forecast": {
+        "home_prob": 46,
+        "draw_prob": 26,
+        "away_prob": 28,
+        "tip": "1"
+      }
+    },
+    {
+      "id": 575410,
+      "competition": "UEFA Champions League",
+      "utcDate": "2026-11-25T20:00:00Z",
+      "status": "IN_PLAY",
+      "homeTeam": "Lille",
+      "awayTeam": "Bayern",
+      "score": {
+        "home": 0,
+        "away": 1
+      },
+      "forecast": {
+        "home_prob": 46,
+        "draw_prob": 26,
+        "away_prob": 28,
+        "tip": "1"
+      }
+    },
+    {
+      "id": 575406,
+      "competition": "UEFA Champions League",
+      "utcDate": "2026-11-25T20:00:00Z",
+      "status": "IN_PLAY",
+      "homeTeam": "Inter",
+      "awayTeam": "Stuttgart",
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "forecast": {
+        "home_prob": 46,
+        "draw_prob": 26,
+        "away_prob": 28,
+        "tip": "1"
+      }
+    },
+    {
+      "id": 575412,
+      "competition": "UEFA Champions League",
+      "utcDate": "2026-11-25T20:00:00Z",
+      "status": "IN_PLAY",
+      "homeTeam": "Shaktar",
+      "awayTeam": "Fenerbah\u00e7e",
+      "score": {
+        "home": 0,
+        "away": 1
+      },
+      "forecast": {
+        "home_prob": 46,
+        "draw_prob": 26,
+        "away_prob": 28,
+        "tip": "1"
+      }
+    },
+    {
+      "id": 575408,
+      "competition": "UEFA Champions League",
+      "utcDate": "2026-11-25T20:00:00Z",
+      "status": "IN_PLAY",
+      "homeTeam": "PSG",
+      "awayTeam": "Roma",
+      "score": {
+        "home": 1,
+        "away": 1
       },
       "forecast": {
         "home_prob": 46,
