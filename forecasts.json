@@ -1,13 +1,175 @@
 {
-  "updated_at": "2026-11-26T20:45:38.707264+00:00",
+  "updated_at": "2026-11-27T00:56:56.911707+00:00",
   "matches": [
     {
-      "id": 555108,
-      "competition": "Campeonato Brasileiro S\u00e9rie A",
-      "utcDate": "2026-11-26T23:00:00Z",
+      "id": 558820,
+      "competition": "Eredivisie",
+      "utcDate": "2026-11-27T19:00:00Z",
       "status": "TIMED",
-      "homeTeam": "S\u00e3o Paulo",
-      "awayTeam": "Clube do Remo",
+      "homeTeam": "Groningen",
+      "awayTeam": "Willem II",
+      "score": {
+        "home": null,
+        "away": null
+      },
+      "forecast": {
+        "home_prob": 46,
+        "draw_prob": 26,
+        "away_prob": 28,
+        "tip": "1"
+      }
+    },
+    {
+      "id": 565869,
+      "competition": "Bundesliga",
+      "utcDate": "2026-11-27T19:30:00Z",
+      "status": "TIMED",
+      "homeTeam": "Bremen",
+      "awayTeam": "M'gladbach",
+      "score": {
+        "home": null,
+        "away": null
+      },
+      "forecast": {
+        "home_prob": 46,
+        "draw_prob": 26,
+        "away_prob": 28,
+        "tip": "1"
+      }
+    },
+    {
+      "id": 559616,
+      "competition": "Ligue 1",
+      "utcDate": "2026-11-27T19:45:00Z",
+      "status": "TIMED",
+      "homeTeam": "Brest",
+      "awayTeam": "Paris FC",
+      "score": {
+        "home": null,
+        "away": null
+      },
+      "forecast": {
+        "home_prob": 46,
+        "draw_prob": 26,
+        "away_prob": 28,
+        "tip": "1"
+      }
+    },
+    {
+      "id": 558515,
+      "competition": "Serie A",
+      "utcDate": "2026-11-27T19:45:00Z",
+      "status": "TIMED",
+      "homeTeam": "Venezia FC",
+      "awayTeam": "Bologna",
+      "score": {
+        "home": null,
+        "away": null
+      },
+      "forecast": {
+        "home_prob": 46,
+        "draw_prob": 26,
+        "away_prob": 28,
+        "tip": "1"
+      }
+    },
+    {
+      "id": 560658,
+      "competition": "Premier League",
+      "utcDate": "2026-11-27T20:00:00Z",
+      "status": "TIMED",
+      "homeTeam": "Nottingham",
+      "awayTeam": "Chelsea",
+      "score": {
+        "home": null,
+        "away": null
+      },
+      "forecast": {
+        "home_prob": 46,
+        "draw_prob": 26,
+        "away_prob": 28,
+        "tip": "1"
+      }
+    },
+    {
+      "id": 561968,
+      "competition": "Championship",
+      "utcDate": "2026-11-27T20:00:00Z",
+      "status": "SCHEDULED",
+      "homeTeam": "Southampton",
+      "awayTeam": "Middlesbrough",
+      "score": {
+        "home": null,
+        "away": null
+      },
+      "forecast": {
+        "home_prob": 46,
+        "draw_prob": 26,
+        "away_prob": 28,
+        "tip": "1"
+      }
+    },
+    {
+      "id": 564765,
+      "competition": "Primera Division",
+      "utcDate": "2026-11-27T20:00:00Z",
+      "status": "TIMED",
+      "homeTeam": "Levante",
+      "awayTeam": "Santander",
+      "score": {
+        "home": null,
+        "away": null
+      },
+      "forecast": {
+        "home_prob": 46,
+        "draw_prob": 26,
+        "away_prob": 28,
+        "tip": "1"
+      }
+    },
+    {
+      "id": 567361,
+      "competition": "Primeira Liga",
+      "utcDate": "2026-11-27T20:15:00Z",
+      "status": "TIMED",
+      "homeTeam": "Mar\u00edtimo",
+      "awayTeam": "CD Nacional",
+      "score": {
+        "home": null,
+        "away": null
+      },
+      "forecast": {
+        "home_prob": 46,
+        "draw_prob": 26,
+        "away_prob": 28,
+        "tip": "1"
+      }
+    },
+    {
+      "id": 555105,
+      "competition": "Campeonato Brasileiro S\u00e9rie A",
+      "utcDate": "2026-11-27T23:00:00Z",
+      "status": "TIMED",
+      "homeTeam": "Fluminense",
+      "awayTeam": "Cruzeiro",
+      "score": {
+        "home": null,
+        "away": null
+      },
+      "forecast": {
+        "home_prob": 46,
+        "draw_prob": 26,
+        "away_prob": 28,
+        "tip": "1"
+      }
+    },
+    {
+      "id": 557186,
+      "competition": "Copa Libertadores",
+      "utcDate": "2026-11-28T00:00:00Z",
+      "status": "SCHEDULED",
+      "homeTeam": null,
+      "awayTeam": null,
       "score": {
         "home": null,
         "away": null
