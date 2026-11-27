@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-27T04:56:58.060488+00:00",
+  "updated_at": "2026-11-27T08:54:53.408784+00:00",
   "matches": [
     {
       "id": 558820,
@@ -92,12 +92,12 @@
       }
     },
     {
-      "id": 561968,
-      "competition": "Championship",
+      "id": 564765,
+      "competition": "Primera Division",
       "utcDate": "2026-11-27T20:00:00Z",
-      "status": "SCHEDULED",
-      "homeTeam": "Southampton",
-      "awayTeam": "Middlesbrough",
+      "status": "TIMED",
+      "homeTeam": "Levante",
+      "awayTeam": "Santander",
       "score": {
         "home": null,
         "away": null
@@ -110,12 +110,12 @@
       }
     },
     {
-      "id": 564765,
-      "competition": "Primera Division",
+      "id": 561968,
+      "competition": "Championship",
       "utcDate": "2026-11-27T20:00:00Z",
-      "status": "TIMED",
-      "homeTeam": "Levante",
-      "awayTeam": "Santander",
+      "status": "SCHEDULED",
+      "homeTeam": "Southampton",
+      "awayTeam": "Middlesbrough",
       "score": {
         "home": null,
         "away": null
