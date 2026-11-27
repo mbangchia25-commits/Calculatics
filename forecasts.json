@@ -1,16 +1,16 @@
 {
-  "updated_at": "2026-11-27T16:57:00.128590+00:00",
+  "updated_at": "2026-11-27T20:46:10.147905+00:00",
   "matches": [
     {
       "id": 558820,
       "competition": "Eredivisie",
       "utcDate": "2026-11-27T19:00:00Z",
-      "status": "TIMED",
+      "status": "IN_PLAY",
       "homeTeam": "Groningen",
       "awayTeam": "Willem II",
       "score": {
-        "home": null,
-        "away": null
+        "home": 0,
+        "away": 1
       },
       "forecast": {
         "home_prob": 46,
@@ -23,30 +23,12 @@
       "id": 565869,
       "competition": "Bundesliga",
       "utcDate": "2026-11-27T19:30:00Z",
-      "status": "TIMED",
+      "status": "IN_PLAY",
       "homeTeam": "Bremen",
       "awayTeam": "M'gladbach",
       "score": {
-        "home": null,
-        "away": null
-      },
-      "forecast": {
-        "home_prob": 46,
-        "draw_prob": 26,
-        "away_prob": 28,
-        "tip": "1"
-      }
-    },
-    {
-      "id": 559616,
-      "competition": "Ligue 1",
-      "utcDate": "2026-11-27T19:45:00Z",
-      "status": "TIMED",
-      "homeTeam": "Brest",
-      "awayTeam": "Paris FC",
-      "score": {
-        "home": null,
-        "away": null
+        "home": 1,
+        "away": 2
       },
       "forecast": {
         "home_prob": 46,
@@ -59,12 +41,12 @@
       "id": 558515,
       "competition": "Serie A",
       "utcDate": "2026-11-27T19:45:00Z",
-      "status": "TIMED",
+      "status": "IN_PLAY",
       "homeTeam": "Venezia FC",
       "awayTeam": "Bologna",
       "score": {
-        "home": null,
-        "away": null
+        "home": 0,
+        "away": 0
       },
       "forecast": {
         "home_prob": 46,
@@ -74,33 +56,15 @@
       }
     },
     {
-      "id": 560658,
-      "competition": "Premier League",
-      "utcDate": "2026-11-27T20:00:00Z",
-      "status": "TIMED",
-      "homeTeam": "Nottingham",
-      "awayTeam": "Chelsea",
+      "id": 559616,
+      "competition": "Ligue 1",
+      "utcDate": "2026-11-27T19:45:00Z",
+      "status": "IN_PLAY",
+      "homeTeam": "Brest",
+      "awayTeam": "Paris FC",
       "score": {
-        "home": null,
-        "away": null
-      },
-      "forecast": {
-        "home_prob": 46,
-        "draw_prob": 26,
-        "away_prob": 28,
-        "tip": "1"
-      }
-    },
-    {
-      "id": 564765,
-      "competition": "Primera Division",
-      "utcDate": "2026-11-27T20:00:00Z",
-      "status": "TIMED",
-      "homeTeam": "Levante",
-      "awayTeam": "Santander",
-      "score": {
-        "home": null,
-        "away": null
+        "home": 1,
+        "away": 0
       },
       "forecast": {
         "home_prob": 46,
@@ -113,12 +77,48 @@
       "id": 561968,
       "competition": "Championship",
       "utcDate": "2026-11-27T20:00:00Z",
-      "status": "SCHEDULED",
+      "status": "IN_PLAY",
       "homeTeam": "Southampton",
       "awayTeam": "Middlesbrough",
       "score": {
-        "home": null,
-        "away": null
+        "home": 0,
+        "away": 0
+      },
+      "forecast": {
+        "home_prob": 46,
+        "draw_prob": 26,
+        "away_prob": 28,
+        "tip": "1"
+      }
+    },
+    {
+      "id": 564765,
+      "competition": "Primera Division",
+      "utcDate": "2026-11-27T20:00:00Z",
+      "status": "IN_PLAY",
+      "homeTeam": "Levante",
+      "awayTeam": "Santander",
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "forecast": {
+        "home_prob": 46,
+        "draw_prob": 26,
+        "away_prob": 28,
+        "tip": "1"
+      }
+    },
+    {
+      "id": 560658,
+      "competition": "Premier League",
+      "utcDate": "2026-11-27T20:00:00Z",
+      "status": "IN_PLAY",
+      "homeTeam": "Nottingham",
+      "awayTeam": "Chelsea",
+      "score": {
+        "home": 1,
+        "away": 0
       },
       "forecast": {
         "home_prob": 46,
@@ -131,12 +131,12 @@
       "id": 567361,
       "competition": "Primeira Liga",
       "utcDate": "2026-11-27T20:15:00Z",
-      "status": "TIMED",
+      "status": "IN_PLAY",
       "homeTeam": "Mar\u00edtimo",
       "awayTeam": "CD Nacional",
       "score": {
-        "home": null,
-        "away": null
+        "home": 0,
+        "away": 0
       },
       "forecast": {
         "home_prob": 46,
