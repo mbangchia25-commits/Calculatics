@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-28T00:53:17.867501+00:00",
+  "updated_at": "2026-11-28T04:51:51.073442+00:00",
   "matches": [
     {
       "id": 557186,
@@ -38,12 +38,12 @@
       }
     },
     {
-      "id": 561969,
+      "id": 561973,
       "competition": "Championship",
       "utcDate": "2026-11-28T12:30:00Z",
       "status": "SCHEDULED",
-      "homeTeam": "Blackburn",
-      "awayTeam": "Charlton",
+      "homeTeam": "Preston NE",
+      "awayTeam": "Norwich",
       "score": {
         "home": null,
         "away": null
@@ -56,12 +56,12 @@
       }
     },
     {
-      "id": 561973,
+      "id": 561969,
       "competition": "Championship",
       "utcDate": "2026-11-28T12:30:00Z",
       "status": "SCHEDULED",
-      "homeTeam": "Preston NE",
-      "awayTeam": "Norwich",
+      "homeTeam": "Blackburn",
+      "awayTeam": "Charlton",
       "score": {
         "home": null,
         "away": null
@@ -218,24 +218,6 @@
       }
     },
     {
-      "id": 560655,
-      "competition": "Premier League",
-      "utcDate": "2026-11-28T15:00:00Z",
-      "status": "TIMED",
-      "homeTeam": "Man United",
-      "awayTeam": "Brentford",
-      "score": {
-        "home": null,
-        "away": null
-      },
-      "forecast": {
-        "home_prob": 46,
-        "draw_prob": 26,
-        "away_prob": 28,
-        "tip": "1"
-      }
-    },
-    {
       "id": 561965,
       "competition": "Championship",
       "utcDate": "2026-11-28T15:00:00Z",
@@ -326,6 +308,24 @@
       }
     },
     {
+      "id": 560655,
+      "competition": "Premier League",
+      "utcDate": "2026-11-28T15:00:00Z",
+      "status": "TIMED",
+      "homeTeam": "Man United",
+      "awayTeam": "Brentford",
+      "score": {
+        "home": null,
+        "away": null
+      },
+      "forecast": {
+        "home_prob": 46,
+        "draw_prob": 26,
+        "away_prob": 28,
+        "tip": "1"
+      }
+    },
+    {
       "id": 561966,
       "competition": "Championship",
       "utcDate": "2026-11-28T15:00:00Z",
@@ -362,12 +362,12 @@
       }
     },
     {
-      "id": 558825,
-      "competition": "Eredivisie",
+      "id": 567362,
+      "competition": "Primeira Liga",
       "utcDate": "2026-11-28T15:30:00Z",
       "status": "TIMED",
-      "homeTeam": "Excelsior",
-      "awayTeam": "Telstar",
+      "homeTeam": "Arouca",
+      "awayTeam": "Rio Ave",
       "score": {
         "home": null,
         "away": null
@@ -380,12 +380,12 @@
       }
     },
     {
-      "id": 567362,
-      "competition": "Primeira Liga",
+      "id": 558825,
+      "competition": "Eredivisie",
       "utcDate": "2026-11-28T15:30:00Z",
       "status": "TIMED",
-      "homeTeam": "Arouca",
-      "awayTeam": "Rio Ave",
+      "homeTeam": "Excelsior",
+      "awayTeam": "Telstar",
       "score": {
         "home": null,
         "away": null
@@ -470,12 +470,12 @@
       }
     },
     {
-      "id": 564759,
-      "competition": "Primera Division",
+      "id": 565870,
+      "competition": "Bundesliga",
       "utcDate": "2026-11-28T17:30:00Z",
       "status": "TIMED",
-      "homeTeam": "Elche",
-      "awayTeam": "Atleti",
+      "homeTeam": "Stuttgart",
+      "awayTeam": "Frankfurt",
       "score": {
         "home": null,
         "away": null
@@ -488,12 +488,12 @@
       }
     },
     {
-      "id": 565870,
-      "competition": "Bundesliga",
+      "id": 564759,
+      "competition": "Primera Division",
       "utcDate": "2026-11-28T17:30:00Z",
       "status": "TIMED",
-      "homeTeam": "Stuttgart",
-      "awayTeam": "Frankfurt",
+      "homeTeam": "Elche",
+      "awayTeam": "Atleti",
       "score": {
         "home": null,
         "away": null
@@ -632,12 +632,12 @@
       }
     },
     {
-      "id": 558819,
-      "competition": "Eredivisie",
+      "id": 576807,
+      "competition": "Copa Libertadores",
       "utcDate": "2026-11-28T20:00:00Z",
-      "status": "TIMED",
-      "homeTeam": "Cambuur",
-      "awayTeam": "Sparta",
+      "status": "SCHEDULED",
+      "homeTeam": "Palmeiras",
+      "awayTeam": "Estudiantes LP",
       "score": {
         "home": null,
         "away": null
@@ -668,12 +668,12 @@
       }
     },
     {
-      "id": 576807,
-      "competition": "Copa Libertadores",
+      "id": 558819,
+      "competition": "Eredivisie",
       "utcDate": "2026-11-28T20:00:00Z",
-      "status": "SCHEDULED",
-      "homeTeam": "Palmeiras",
-      "awayTeam": "Estudiantes LP",
+      "status": "TIMED",
+      "homeTeam": "Cambuur",
+      "awayTeam": "Sparta",
       "score": {
         "home": null,
         "away": null
